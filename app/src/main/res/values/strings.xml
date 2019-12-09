@@ -1,6 +1,34 @@
 <resources>
     <string name="app_name" translatable="false">piscineNetPtut</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loginButton">login</string>
+    <string name="imageoflogoapp">this picture represent logo of app</string>
+    <string name="mdp">password</string>
+    <string name="login">login</string>
+    <string name="forgottenPassword">forgotten password</string>
+
+    <string name="titleNewUser">Add new User</string>
+    <string name="textName">Name</string>
+    <string name="textSurname">Surname</string>
+    <string name="textMail">Mail</string>
+
+    <string name="town">Town</string>
+    <string name="postalCode">Postal code</string>
+
+    <string name="telFix">Landline number</string>
+    <string name="telMob">Phone number</string>
+    <string name="guardian">Guardian  </string>
+
+    <string name="textContract">Contract type</string>
+    <string name="technical_visit">Technical visit</string>
+    <string name="full_visit">Full visit</string>
+
+    <string name="textProductContract">Product contract</string>
+    <string name="included">Included</string>
+    <string name="notIncluded">Not included</string>
+    <string name="addPool">Add new pool for this user</string>
+    <string name="textOk">Ok</string>
+
+
+    <string name="titleNewPool">Add new Pool</string>
 </resources>

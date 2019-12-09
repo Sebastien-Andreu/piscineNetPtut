@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="loginButton">s\'identifiant</string>
+    <string name="imageoflogoapp">cette image représente le logo de l\'application</string>
+    <string name="mdp">mot de passe</string>
+    <string name="login">identifiant</string>
+    <string name="forgottenPassword">mot de passe oublié</string>
 
+    <string name="titleNewUser">Ajouter un nouvel utilisateur</string>
+    <string name="textName">Nom</string>
+    <string name="textSurname">Prénom</string>
+    <string name="textMail">Mail</string>
+
+    <string name="town">Ville</string>
+    <string name="postalCode">Code postal</string>
+
+    <string name="telFix">Numéro de téléphone fixe</string>
+    <string name="telMob">Numéro de téléphone</string>
+    <string name="guardian">Gardien</string>
+
+    <string name="textContract">Type de contrat</string>
+    <string name="technical_visit">Visite technique</string>
+    <string name="full_visit">Visite complète</string>
+
+    <string name="textProductContract">Contrat de produit</string>
+    <string name="included">Inclus</string>
+    <string name="notIncluded">Non inclus</string>
+    <string name="addPool">Ajouter un nouveau pool pour cet utilisateur</string>
+    <string name="textOk">Ok</string>
+
+
+    <string name="titleNewPool">Ajouter une nouvelle piscine</string>
 </resources>

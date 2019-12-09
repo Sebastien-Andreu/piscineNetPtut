@@ -59,7 +59,7 @@
                         android:id="@+id/textView3"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="Chlore" />
 
                     <EditText
@@ -115,7 +115,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="stabilisant" />
 
                     <EditText
@@ -138,7 +138,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="TAC" />
 
                     <EditText
@@ -161,7 +161,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="SEL" />
 
                     <EditText
@@ -200,7 +200,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="Chlore" />
 
                     <EditText
@@ -223,7 +223,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="PH" />
 
                     <EditText
@@ -246,7 +246,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="Galets" />
 
                     <EditText
@@ -269,7 +269,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="SEL" />
 
                     <EditText
@@ -292,7 +292,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="Floculents" />
 
                     <EditText
@@ -315,7 +315,7 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="Autres" />
 
                     <EditText
