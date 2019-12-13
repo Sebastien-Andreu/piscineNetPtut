@@ -7,7 +7,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -229,7 +228,7 @@
                         android:id="@+id/labelGuardian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:text="@string/telMob"
                         android:textSize="15sp"
                         android:visibility="gone"
@@ -277,7 +276,7 @@
                         android:id="@+id/radioButton5"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:textSize="15sp"
                         android:text="@string/technical_visit"
                         tools:ignore="RtlSymmetry" />
@@ -320,7 +319,7 @@
                         android:id="@+id/radioButton7"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
                         android:textSize="15sp"
                         android:text="@string/included"
                         tools:ignore="RtlSymmetry" />
