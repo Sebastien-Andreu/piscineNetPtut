@@ -23,10 +23,13 @@ class HomeActivtyMvcImpl(
                 root!!.findViewById<Button>(R.id.addUserHomeButton)?.setOnClickListener {
                     homeActivity.onUserWantToAddAClient()
                 }
+
+                root!!.findViewById<Button>(R.id.showAllUserHomeButton)?.setOnClickListener {
+                    homeActivity.onUserWantToSeeAllClient()
+                }
             }
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
     }
-
 }

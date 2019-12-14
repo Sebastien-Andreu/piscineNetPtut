@@ -3,6 +3,7 @@ package fr.iut.piscinenetptut.ui.listOfUser
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.LinearLayout
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.User

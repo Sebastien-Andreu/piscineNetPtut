@@ -19,5 +19,8 @@
         <activity android:name=".ui.listOfUser.ListUserActivity" android:screenOrientation="portrait"/>
 
         <activity android:name=".ui.home.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.customerdetails.CustomerDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workingmethod.WorkingMethodActivity" android:screenOrientation="portrait"/>
+
     </application>
 </manifest>

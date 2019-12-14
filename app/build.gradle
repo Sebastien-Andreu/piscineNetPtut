@@ -46,4 +46,5 @@ dependencies {
 
     //rx ui observable event
     implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 }

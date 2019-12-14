@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
 
 class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
 
@@ -40,5 +41,11 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
         }
     }
 
-
+    override fun onUserWantToSeeAllClient() {
+        try {
+            this@HomeActivity.finish()
+            ListUserActivity.start(this)
+        } catch (exception: Exception) {
+            exception.toTreatFor(TAG)
+        }    }
 }

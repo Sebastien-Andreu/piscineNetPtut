@@ -38,9 +38,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
                     android:text="Old password :"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -61,9 +61,9 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
                     android:text="New password :"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp" />
 
                 <EditText
                     android:id="@+id/editText2"
@@ -111,9 +111,9 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
                     android:text="Adresse mail :"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:layout_marginRight="20dp" />
 
                 <EditText
                     android:id="@+id/editText"
