@@ -1,0 +1,37 @@
+package fr.iut.piscinenetptut.ui.workingmethod
+
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import fr.iut.piscinenetptut.library.extension.toTreatFor
+import java.lang.Exception
+
+class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.listeners {
+
+    companion object {
+        private val TAG:String = "WorkingMethodActivity"
+
+        fun start(context: Context) {
+            try {
+                context.startActivity(Intent(context, WorkingMethodActivity::class.java))
+            }catch (exception: Exception){
+                exception.toTreatFor(TAG)
+            }
+        }
+    }
+
+    lateinit var workingMethodActivityMcvImpl: WorkingMethodActivityMcvImpl
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        try {
+            super.onCreate(savedInstanceState)
+            workingMethodActivityMcvImpl = WorkingMethodActivityMcvImpl(this, this)
+            setContentView(workingMethodActivityMcvImpl.root)
+
+        } catch (exception: Exception) {
+            exception.toTreatFor(TAG)
+        }
+    }
+
+}
