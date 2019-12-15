@@ -338,22 +338,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal">
-
-                <Button
-                    android:id="@+id/buttonAddPool"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/addPool"
-                    android:textAllCaps="false" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="25dp"
@@ -366,22 +350,6 @@
                     android:layout_weight="1"
                     android:text="pool added"
                     android:visibility="gone" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="20dp">
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/textOk"
-                    android:textAllCaps="false" />
-
             </LinearLayout>
 
         </LinearLayout>

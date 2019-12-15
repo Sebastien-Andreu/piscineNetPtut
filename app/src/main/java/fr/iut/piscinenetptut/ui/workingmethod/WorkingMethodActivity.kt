@@ -21,12 +21,12 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
         }
     }
 
-    lateinit var workingMethodActivityMcvImpl: WorkingMethodActivityMcvImpl
+    lateinit var workingMethodActivityMcvImpl: WorkingMethodActivityMvcImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-            workingMethodActivityMcvImpl = WorkingMethodActivityMcvImpl(this, this)
+            workingMethodActivityMcvImpl = WorkingMethodActivityMvcImpl(this, this)
             setContentView(workingMethodActivityMcvImpl.root)
 
         } catch (exception: Exception) {

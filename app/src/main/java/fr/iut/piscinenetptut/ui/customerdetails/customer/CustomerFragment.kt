@@ -6,8 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
+import fr.iut.piscinenetptut.ui.workingmethod.WorkingMethodActivity
+import kotlinx.android.synthetic.main.activity_customer_details.*
 
 class CustomerFragment : Fragment() {
 
@@ -16,6 +20,13 @@ class CustomerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_customer, container, false)
+        val root: View = inflater.inflate(R.layout.fragment_customer, container, false)
+
+
+        root.findViewById<Button>(R.id.buttonFragCustomer).setOnClickListener {
+            this.activity!!.finish()
+            this.context?.let { WorkingMethodActivity.start(it) }
+        }
+        return root
     }
 }

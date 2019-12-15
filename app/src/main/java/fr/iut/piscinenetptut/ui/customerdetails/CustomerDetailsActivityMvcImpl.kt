@@ -2,7 +2,6 @@ package fr.iut.piscinenetptut.ui.customerdetails
 
 import android.content.Context
 import android.view.View
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import fr.iut.piscinenetptut.R
@@ -34,10 +33,6 @@ class CustomerDetailsActivityMvcImpl(
                 root!!.findViewById<SwipeDisabledViewPager>(R.id.customerDetailsViewPager)?.let {viewPager ->
                     viewPager.adapter = ViewPagerAdapter(customerDetailsActivity.supportFragmentManager, listFragmentForViewPager, listFragmentTitleForViewPager)
                     root!!.findViewById<TabLayout>(R.id.customerDetailsTabLayout)?.setupWithViewPager(viewPager)
-                }
-
-                listFragmentForViewPager[0].activity!!.findViewById<Button>(R.id.buttonFragCustomer)?.setOnClickListener {
-                    customerDetailsActivity.onUserWantStartWork()
                 }
             }
 
