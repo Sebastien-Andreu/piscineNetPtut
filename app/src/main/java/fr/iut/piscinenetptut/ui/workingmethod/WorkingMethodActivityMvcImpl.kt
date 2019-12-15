@@ -13,7 +13,7 @@ import fr.iut.piscinenetptut.ui.workingmethod.maintenancesheet.MaintenanceSheetF
 import fr.iut.piscinenetptut.ui.workingmethod.observation.ObservationFragment
 import fr.iut.piscinenetptut.ui.workingmethod.technicalsheet.TechnicalSheetFragment
 
-class WorkingMethodActivityMcvImpl(
+class WorkingMethodActivityMvcImpl(
     private val context: Context,
     private val workingMethodActivity: WorkingMethodActivity
 ): CustomerDetailsActivityMvc {
@@ -32,7 +32,7 @@ class WorkingMethodActivityMcvImpl(
             val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Maintenance", "Technique", "Observation")
 
             if (null != root) {
-                root!!.findViewById<SwipeDisabledViewPager>(R.id.customerDetailsViewPager)?.let { viewPager ->
+                root!!.findViewById<SwipeDisabledViewPager>(R.id.workingMethodViewPager)?.let { viewPager ->
                     viewPager.adapter = ViewPagerAdapter(workingMethodActivity.supportFragmentManager, listFragmentForViewPager, listFragmentTitleForViewPager)
                     root!!.findViewById<TabLayout>(R.id.workingMethodTabLayout)?.setupWithViewPager(viewPager)
                 }

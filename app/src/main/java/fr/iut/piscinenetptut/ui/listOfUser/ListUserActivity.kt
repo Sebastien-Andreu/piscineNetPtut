@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toDebug
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
+import fr.iut.piscinenetptut.ui.home.HomeActivity
 
 class ListUserActivity: AppCompatActivity(), ListUserActivityMvc.Listeners {
 
@@ -42,11 +43,16 @@ class ListUserActivity: AppCompatActivity(), ListUserActivityMvc.Listeners {
 
     override fun onUserTouchUserPreview(userId: String) {
         try {
-            "userId : $userId".toDebug("COUCOU")
+//            "userId : $userId".toDebug("COUCOU")
             this@ListUserActivity.finish()
             CustomerDetailsActivity.start(this)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun onBackPressed() {
+        this@ListUserActivity.finish()
+        HomeActivity.start(this)
     }
 }

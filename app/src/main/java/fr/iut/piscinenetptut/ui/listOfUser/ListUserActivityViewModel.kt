@@ -20,8 +20,8 @@ class ListUserActivityViewModel {
                 ),
                 User (
                     poolPictureId = 0,
-                    firstName = "Sébastien",
-                    surName = "Andreux",
+                    firstName = "Sebastien",
+                    surName = "Andreu",
                     isWarnings = true
                 ),
                 User (

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
 import java.lang.Exception
 
 class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.listeners {
@@ -21,12 +22,12 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
         }
     }
 
-    lateinit var workingMethodActivityMcvImpl: WorkingMethodActivityMcvImpl
+    lateinit var workingMethodActivityMcvImpl: WorkingMethodActivityMvcImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-            workingMethodActivityMcvImpl = WorkingMethodActivityMcvImpl(this, this)
+            workingMethodActivityMcvImpl = WorkingMethodActivityMvcImpl(this, this)
             setContentView(workingMethodActivityMcvImpl.root)
 
         } catch (exception: Exception) {
@@ -34,4 +35,17 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
         }
     }
 
+    override fun onBackPressed() {
+        this@WorkingMethodActivity.finish()
+        ListUserActivity.start(this)
+    }
+
+    override fun onUserFinishWorking() {
+        try{
+            this@WorkingMethodActivity.finish()
+            ListUserActivity.start(this)
+        }catch (exception: Exception){
+            exception.toTreatFor(TAG)
+        }
+    }
 }

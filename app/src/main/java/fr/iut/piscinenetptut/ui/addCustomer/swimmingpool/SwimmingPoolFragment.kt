@@ -1,26 +1,26 @@
-package fr.iut.piscinenetptut.ui.workingmethod.observation
+package fr.iut.piscinenetptut.ui.addCustomer.swimmingpool
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.fragment.app.Fragment
+
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
 
-class ObservationFragment : Fragment(){
+class SwimmingPoolFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val root: View? = inflater.inflate(R.layout.fragment_add_pool, container, false)
 
-        val root:View = inflater.inflate(R.layout.fragment_observation, container, false)
-
-        root.findViewById<Button>(R.id.finalizeVisitButton).setOnClickListener {
-            this@ObservationFragment.activity!!.finish()
+        root?.findViewById<Button>(R.id.addCustomerButton)?.setOnClickListener {
+            this@SwimmingPoolFragment.activity!!.finish()
             this.context?.let { ListUserActivity.start(it) }
         }
 

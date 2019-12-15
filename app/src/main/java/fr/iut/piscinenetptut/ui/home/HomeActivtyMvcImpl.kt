@@ -12,7 +12,6 @@ class HomeActivtyMvcImpl(
 ): HomeActivtyMvc {
 
     val TAG: String = "HomeActivtyMvcImpl"
-
     var root: View? = null
 
     init {
@@ -27,6 +26,11 @@ class HomeActivtyMvcImpl(
                 root!!.findViewById<Button>(R.id.showAllUserHomeButton)?.setOnClickListener {
                     homeActivity.onUserWantToSeeAllClient()
                 }
+
+                root!!.findViewById<Button>(R.id.showAllVisitButton)?.setOnClickListener {
+                    homeActivity.onUserWanttoSeeAllVisit()
+                }
+
             }
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
