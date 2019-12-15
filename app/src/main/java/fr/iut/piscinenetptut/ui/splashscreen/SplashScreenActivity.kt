@@ -22,6 +22,11 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listen
         }
     }
 
+//    override fun onPause() {
+//        super.onPause()
+//        overridePendingTransition(0, 0)
+//    }
+
     override fun onUserWantToLogin() {
         try {
             this@SplashScreenActivity.finish()

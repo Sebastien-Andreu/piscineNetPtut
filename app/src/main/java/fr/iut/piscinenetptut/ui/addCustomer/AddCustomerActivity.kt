@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.home.HomeActivity
-import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
 
 class AddCustomerActivity : AppCompatActivity(), AddCustomerActivityMvc.listeners {
 
