@@ -47,6 +47,10 @@ class AddCustomerActivityMvcImpl(
 
                 root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener(){
                     override fun onPageSelected(position: Int) {
+
+                        //  afficher un message pour dire qu'il manque des infos
+
+
                         if (1 == position){
                             if( listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerSurname)?.text.isNullOrEmpty() ||
                                 listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerName)?.text.isNullOrEmpty() ||
