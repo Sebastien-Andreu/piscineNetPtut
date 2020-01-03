@@ -38,4 +38,8 @@ class AddCustomerActivity : AppCompatActivity(), AddCustomerActivityMvc.listener
         this@AddCustomerActivity.finish()
         HomeActivity.start(this)
     }
+
+    override fun onUserWantToAddNewCustomer() {
+        //TODO recup info fragment
+    }
 }
