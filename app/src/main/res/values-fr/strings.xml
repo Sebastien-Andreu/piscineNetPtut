@@ -14,8 +14,8 @@
     <string name="town">Ville</string>
     <string name="postalCode">Code postal</string>
 
-    <string name="telFix">Numéro de téléphone fixe</string>
-    <string name="telMob">Numéro de téléphone</string>
+    <string name="telFix">Téléphone fixe</string>
+    <string name="telMob">Téléphone portable</string>
     <string name="guardian">Gardien</string>
 
     <string name="textContract">Type de contrat</string>

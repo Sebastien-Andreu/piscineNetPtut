@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Button
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import java.net.URL
+
 
 class SplashScreenActivityMvcImpl (
     splashScreenActivity: SplashScreenActivity,
@@ -17,6 +19,15 @@ class SplashScreenActivityMvcImpl (
 
     init {
         try {
+//            val thread = Thread(Runnable {
+//                try {
+//                    println(URL("https://good-goose-90.tunnel.datahub.at/auth").readText())
+//                } catch (e: java.lang.Exception) {
+//                    e.printStackTrace()
+//                }
+//            })
+//            thread.start()
+
             root = View.inflate(context, R.layout.activity_splashscreen, null)
 
             if (null != root) {

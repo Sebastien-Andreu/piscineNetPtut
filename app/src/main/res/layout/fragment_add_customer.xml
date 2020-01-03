@@ -34,7 +34,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/textSurname"
+                        android:id="@+id/addCustomerSurname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -56,6 +56,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/addCustomerName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -88,6 +89,7 @@
                         tools:ignore="RtlHardcoded" />
 
                     <EditText
+                        android:id="@+id/addCustomerMail"
                         style="@style/Widget.AppCompat.EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -119,6 +121,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/addCustomerTown"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -141,6 +144,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/addCustomerPostalCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -171,10 +175,11 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/addCustomerTelPhoneNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="number"
+                        android:inputType="phone"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -197,7 +202,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="number"
+                        android:inputType="phone"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -212,7 +217,7 @@
 
 
                 <Switch
-                    android:id="@+id/switchGuardian"
+                    android:id="@+id/addCustomerSwitchGuardian"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:switchPadding="10dp"
@@ -220,9 +225,11 @@
                     tools:ignore="RtlSymmetry" />
 
                 <LinearLayout
+                    android:id="@+id/layoutGuardian"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="left">
+                    android:gravity="left"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/labelGuardian"
@@ -231,17 +238,17 @@
                         android:layout_marginRight="15dp"
                         android:text="@string/telMob"
                         android:textSize="15sp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         tools:ignore="RtlSymmetry" />
 
                     <EditText
-                        android:id="@+id/inputGuardian"
+                        android:id="@+id/addCustomerInputGuardian"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="number"
                         android:textSize="15sp"
-                        android:visibility="gone" />
+                        android:visibility="visible" />
 
                 </LinearLayout>
 
@@ -265,6 +272,7 @@
                     tools:ignore="RtlHardcoded" />
 
                 <RadioGroup
+                    android:id="@+id/addCustomerRadioTypeContract"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/labelContract"
@@ -277,16 +285,16 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:textSize="15sp"
                         android:text="@string/technical_visit"
+                        android:textSize="15sp"
                         tools:ignore="RtlSymmetry" />
 
                     <RadioButton
                         android:id="@+id/radioButton6"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:text="@string/full_visit" />
+                        android:text="@string/full_visit"
+                        android:textSize="15sp" />
 
                 </RadioGroup>
 
@@ -308,6 +316,7 @@
                     tools:ignore="RtlHardcoded" />
 
                 <RadioGroup
+                    android:id="@+id/addCustomerRadioContractOfProduct"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/productContract"
@@ -320,16 +329,16 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:textSize="15sp"
                         android:text="@string/included"
+                        android:textSize="15sp"
                         tools:ignore="RtlSymmetry" />
 
                     <RadioButton
                         android:id="@+id/radioButton8"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
-                        android:text="@string/notIncluded" />
+                        android:text="@string/notIncluded"
+                        android:textSize="15sp" />
 
                 </RadioGroup>
 

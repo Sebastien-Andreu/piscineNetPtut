@@ -28,7 +28,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/buttonAddPicturePool"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -39,7 +39,7 @@
                     android:textStyle="normal" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageViewPicturePool"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginStart="10dp"
@@ -53,7 +53,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
@@ -61,16 +61,15 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Taille du bassin"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginRight="15dp"
+                    android:text="Taille du bassin" />
 
                 <EditText
                     android:id="@+id/editText3"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
                     android:ems="10"
                     android:inputType="number" />
 
@@ -78,15 +77,13 @@
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:text="m    x   "
-                    android:layout_marginLeft="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:text="x" />
 
                 <EditText
                     android:id="@+id/editText4"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
                     android:ems="10"
                     android:inputType="number" />
 
@@ -94,9 +91,8 @@
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="m"
-                    android:layout_marginLeft="5dp" />
+                    android:layout_marginLeft="5dp"
+                    android:text="m" />
             </LinearLayout>
 
             <LinearLayout
@@ -106,12 +102,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="0"
                     android:text="Profondeur"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:layout_marginRight="15dp" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <EditText
                     android:layout_width="75dp"
@@ -638,12 +634,14 @@
                 android:orientation="vertical">
 
                 <Switch
+                    android:id="@+id/switchAddPoolPH"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Appareil PH" />
 
                 <LinearLayout
+                    android:id="@+id/layoutAddPoolPH"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="15dp"
@@ -656,9 +654,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
                         android:text="Date de l'apppareil"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:layout_marginRight="15dp" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
                         android:layout_width="150dp"
@@ -677,12 +675,14 @@
                 android:orientation="vertical">
 
                 <Switch
+                    android:id="@+id/switchAddPoolPompe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Pompe à chaleur" />
 
                 <LinearLayout
+                    android:id="@+id/layoutAddPoolPompe"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="15dp"
@@ -695,9 +695,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
                         android:text="Date de l'apppareil"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:layout_marginRight="15dp" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
                         android:layout_width="150dp"
@@ -713,15 +713,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <Switch
-                    android:layout_width="wrap_content"
+                    android:id="@+id/switchAddPoolRemp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Remplissage automatique" />
 
                 <LinearLayout
+                    android:id="@+id/layoutAddPoolRemp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="15dp"
@@ -734,9 +736,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
                         android:text="Date de l'apppareil"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:layout_marginRight="15dp" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
                         android:layout_width="150dp"

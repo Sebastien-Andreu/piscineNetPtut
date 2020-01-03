@@ -1,10 +1,13 @@
 package fr.iut.piscinenetptut.ui.splashscreen
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
-import fr.iut.piscinenetptut.R
+import android.os.StrictMode
+import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.home.HomeActivity
+
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listeners {
 
@@ -22,10 +25,7 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listen
         }
     }
 
-//    override fun onPause() {
-//        super.onPause()
-//        overridePendingTransition(0, 0)
-//    }
+    //jeu de test pour la base de données, "générate data ( generer donnée dans base de données )"
 
     override fun onUserWantToLogin() {
         try {
