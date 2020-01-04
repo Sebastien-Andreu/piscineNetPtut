@@ -38,13 +38,26 @@ class AddCustomerActivityMvcImpl(
                     root!!.findViewById<TabLayout>(R.id.addCustomerTabLayout)?.setupWithViewPager(viewPager)
                 }
 
-                root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
+                root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener(){
                     override fun onPageSelected(position: Int) {
-                        if (1 == position) {
-                            if (!(listFragmentForViewPager[0] as CustomerFragment).verifyIfAllInputAreNotEmpty()){
-                                Toast.makeText(listFragmentForViewPager[0].activity, "pas bon", Toast.LENGTH_LONG).show()
+                        if (1 == position){
+                            if( listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerSurname)?.text.isNullOrEmpty() ||
+                                listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerName)?.text.isNullOrEmpty() ||
+                                listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerMail)?.text.isNullOrEmpty() ||
+                                listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerTown)?.text.isNullOrEmpty() ||
+                                listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerPostalCode)?.text.isNullOrEmpty() ||
+                                listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerTelPhoneNumber)?.text.isNullOrEmpty() ||
+                                listFragmentForViewPager[0].activity?.findViewById<RadioGroup>(R.id.addCustomerRadioTypeContract)?.checkedRadioButtonId == -1 ||
+                                listFragmentForViewPager[0].activity?.findViewById<RadioGroup>(R.id.addCustomerRadioContractOfProduct)?.checkedRadioButtonId == -1){
+
                                 root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.currentItem = 0
                                 root!!.findViewById<TabLayout>(R.id.addCustomerTabLayout)?.setScrollPosition(0,0f,true)
+                            } else
+                                if (View.VISIBLE == listFragmentForViewPager[0].activity?.findViewById<LinearLayout>(R.id.layoutGuardian)?.visibility){
+                                    if( listFragmentForViewPager[0].activity?.findViewById<TextView>(R.id.addCustomerInputGuardian)?.text.isNullOrEmpty()){
+                                        root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.currentItem = 0
+                                        root!!.findViewById<TabLayout>(R.id.addCustomerTabLayout)?.setScrollPosition(0,0f,true)
+                                    }
                             }
                         }
                     }
