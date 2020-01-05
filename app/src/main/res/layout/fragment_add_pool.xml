@@ -383,7 +383,7 @@
                 android:orientation="horizontal">
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/addPoolWarning"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -434,6 +434,7 @@
                 android:orientation="horizontal">
 
                 <Switch
+                    android:id="@+id/addPoolWinterCover"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -455,6 +456,7 @@
                     android:layout_marginRight="15dp" />
 
                 <EditText
+                    android:id="@+id/dateSandFilter"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -478,6 +480,7 @@
                     android:layout_marginRight="15dp" />
 
                 <EditText
+                    android:id="@+id/brandSandFilter"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
@@ -518,6 +521,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
+                        android:id="@+id/brandFilter"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -543,6 +547,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
+                        android:id="@+id/cvFilter"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -568,6 +573,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
+                        android:id="@+id/dateFilter"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -638,6 +644,7 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
+                        android:id="@+id/addPoolDateElectronicalProduct"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -800,7 +807,7 @@
                     android:visibility="visible">
 
                     <EditText
-                        android:id="@+id/editText6"
+                        android:id="@+id/addPoolObservation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
