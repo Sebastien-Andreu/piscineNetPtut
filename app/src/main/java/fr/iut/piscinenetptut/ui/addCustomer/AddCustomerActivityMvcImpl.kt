@@ -1,16 +1,14 @@
 package fr.iut.piscinenetptut.ui.addCustomer
 
 import android.content.Context
-import android.os.Build
-import android.text.Layout
-import android.util.Log
+import android.nfc.Tag
 import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import com.jakewharton.rxbinding3.widget.checked
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.adapter.ViewPagerAdapter
 import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
@@ -51,12 +49,23 @@ class AddCustomerActivityMvcImpl(
                                 root!!.findViewById<TabLayout>(R.id.addCustomerTabLayout)?.setScrollPosition(0,0f,true)
                             }
                         }
-
                     }
                 })
+
+
             }
 
         } catch (exception: Exception) {
+            exception.toTreatFor(TAG)
+        }
+    }
+
+    override fun onCustomerInformationIsLoaded(customer: Customer) {
+        try {
+            if (null != root){
+                println(customer)
+            }
+        }catch (exception: Exception){
             exception.toTreatFor(TAG)
         }
     }

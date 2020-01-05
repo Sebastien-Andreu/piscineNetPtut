@@ -34,7 +34,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/addCustomerSurname"
+                        android:id="@+id/addCustomerName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -56,7 +56,7 @@
                         android:textSize="15sp" />
 
                     <EditText
-                        android:id="@+id/addCustomerName"
+                        android:id="@+id/addCustomerSurname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -199,6 +199,7 @@
                         tools:ignore="RtlSymmetry" />
 
                     <EditText
+                        android:id="@+id/addCustomerTelFixNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"

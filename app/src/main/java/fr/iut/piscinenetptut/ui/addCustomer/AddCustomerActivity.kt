@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.home.HomeActivity
 
@@ -22,12 +23,20 @@ class AddCustomerActivity : AppCompatActivity(), AddCustomerActivityMvc.listener
     }
 
     lateinit var addCustomerActivityMvcImpl: AddCustomerActivityMvcImpl
+    lateinit var addCustomerActivityViewModel: AddCustomerActivityViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
             addCustomerActivityMvcImpl = AddCustomerActivityMvcImpl(this, this)
+            addCustomerActivityViewModel = AddCustomerActivityViewModel()
+
             setContentView(addCustomerActivityMvcImpl.root)
+
+            addCustomerActivityViewModel.customerCallBack.observe(this, Observer {
+                addCustomerActivityMvcImpl.onCustomerInformationIsLoaded(it)
+            })
 
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
@@ -40,6 +49,6 @@ class AddCustomerActivity : AppCompatActivity(), AddCustomerActivityMvc.listener
     }
 
     override fun onUserWantToAddNewCustomer() {
-        //TODO recup info fragment
+        addCustomerActivityViewModel.onNeedToGetCustomerInformation(addCustomerActivityMvcImpl.root)
     }
 }

@@ -17,11 +17,9 @@ class ListUserActivityMvcImpl(
 
     val TAG: String = "ListUserActivityMvcImpl"
 
-    val userPreviewClickListener: View.OnClickListener = object : View.OnClickListener {
-        override fun onClick(v: View?) {
-            if (null != v) {
-                listUserActivity.onUserTouchUserPreview(v.tag.toString())
-            }
+    val userPreviewClickListener: View.OnClickListener = View.OnClickListener { v ->
+        if (null != v) {
+            listUserActivity.onUserTouchUserPreview(v.tag.toString())
         }
     }
 

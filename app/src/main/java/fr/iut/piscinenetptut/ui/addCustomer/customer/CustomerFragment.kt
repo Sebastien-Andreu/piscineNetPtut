@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.RadioGroup
-import android.widget.Switch
-import android.widget.TextView
+import android.widget.*
 import fr.iut.piscinenetptut.R
 
 class CustomerFragment : Fragment() {

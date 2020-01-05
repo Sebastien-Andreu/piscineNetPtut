@@ -43,7 +43,6 @@ class ListUserActivity: AppCompatActivity(), ListUserActivityMvc.Listeners {
 
     override fun onUserTouchUserPreview(userId: String) {
         try {
-//            "userId : $userId".toDebug("COUCOU")
             this@ListUserActivity.finish()
             CustomerDetailsActivity.start(this)
         } catch (exception: Exception) {
