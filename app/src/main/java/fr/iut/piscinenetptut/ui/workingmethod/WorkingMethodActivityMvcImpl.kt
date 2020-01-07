@@ -26,7 +26,7 @@ class WorkingMethodActivityMvcImpl(
         try {
             root = View.inflate(context, R.layout.activity_working_method, null)
 
-            workingMethodActivity.actionBar?.hide()
+//            workingMethodActivity.actionBar?.hide()
 
             val listFragmentForViewPager: ArrayList<Fragment> = arrayListOf(MaintenanceSheetFragment(), TechnicalSheetFragment(), ObservationFragment())
             val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Maintenance", "Technique", "Observation")

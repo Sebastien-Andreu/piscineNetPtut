@@ -1,15 +1,17 @@
 package fr.iut.piscinenetptut.entities
 
-data class Customer(
-    val ID: Int?,
-    val name: CharSequence?,
-    val surname: CharSequence?,
-    val mail: CharSequence?,
-    val town: CharSequence?,
-    val postalCode: CharSequence?,
-    val telPhoneNumber: CharSequence?,
-    val telFixNumber: CharSequence?,
-    val typeOfContract: CharSequence?,
-    val contractOfProduct: CharSequence?,
-    val guardianNumber: CharSequence?
+import kotlinx.serialization.*
+
+@Serializable
+data class Customer (
+    val name: String?,
+    val surname: String?,
+    val mail: String?,
+    val town: String?,
+    val postalCode: Int?,
+    val telPhoneNumber: Double?,
+    val telFixNumber: Double?,
+    val typeOfContract: String?,
+    val contractOfProduct: String?,
+    val guardianNumber: Double?
 )

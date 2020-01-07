@@ -11,6 +11,7 @@ import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledVie
 import fr.iut.piscinenetptut.ui.customerdetails.customer.CustomerFragment
 import fr.iut.piscinenetptut.ui.customerdetails.swimmingpool.SwimmingPoolFragment
 
+
 class CustomerDetailsActivityMvcImpl(
     private val context: Context,
     private val customerDetailsActivity: CustomerDetailsActivity

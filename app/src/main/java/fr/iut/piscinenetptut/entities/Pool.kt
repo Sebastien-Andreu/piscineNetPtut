@@ -1,7 +1,6 @@
 package fr.iut.piscinenetptut.entities
 
 data class Pool(
-    val ID: Int?,
     val ID_Customer: Int?,
     val picture: CharSequence?,
     val sizeLo: CharSequence?,

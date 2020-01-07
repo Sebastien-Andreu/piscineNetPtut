@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.github.kittinunf.fuel.Fuel
 import com.google.android.material.tabs.TabLayout
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
@@ -15,6 +16,7 @@ import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledVie
 import fr.iut.piscinenetptut.ui.addCustomer.customer.CustomerFragment
 import fr.iut.piscinenetptut.ui.addCustomer.swimmingpool.SwimmingPoolFragment
 
+import kotlinx.serialization.json.*
 
 class AddCustomerActivityMvcImpl(
     private val context: Context,
@@ -62,11 +64,27 @@ class AddCustomerActivityMvcImpl(
 
     override fun onCustomerInformationIsLoaded(customer: Customer) {
         try {
-            if (null != root){
-                println(customer)
+            if (null != root) {
 
-                // récup l'ID du mec ajouter a la bd
-                addCustomerActivity.onUserWantToAddNewPool(customer.ID)
+                val json = Json(JsonConfiguration.Stable)
+                val jsonData = json.stringify(Customer.serializer(), customer).replace("\"", "")
+                                                                              .replace("{","")
+                                                                              .replace("}", "")
+                                                                              .replace(":", "=")
+                                                                              .replace(",", "&")
+
+                Fuel.post("https://piscinenetptut1.tunnel.datahub.at/Customer")
+                    .body(jsonData)
+                    .header("Content-Type" to "application/x-www-form-urlencoded")
+                    .responseString { request, response, result ->
+                        result.fold({ d ->
+                            println(d)
+                            //addCustomerActivity.onUserWantToAddNewPool(ID)
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
+
             }
         }catch (exception: Exception){
             exception.toTreatFor(TAG)

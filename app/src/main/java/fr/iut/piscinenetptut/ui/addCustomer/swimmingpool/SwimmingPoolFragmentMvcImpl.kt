@@ -68,11 +68,13 @@ class SwimmingPoolFragmentMvcImpl (
     }
 
     override fun verifyAllInput(){
-        if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
-            (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
-        } else {
-            Toast.makeText(root?.context, "pas bon", Toast.LENGTH_LONG).show()
-        }
+        (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
+
+//        if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
+//            (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
+//        } else {
+//            Toast.makeText(root?.context, "pas bon", Toast.LENGTH_LONG).show()
+//        }
     }
 
     override fun verifyIfAllInputTextAreNotEmpty(): Boolean {

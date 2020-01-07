@@ -53,10 +53,10 @@ class AddCustomerActivity : AppCompatActivity(), AddCustomerActivityMvc.listener
     }
 
     override fun onUserWantToAddNewCustomer() {
-        addCustomerActivityViewModel.onNeedToGetCustomerInformation(addCustomerActivityMvcImpl.root)
+        addCustomerActivityViewModel.onNeedToGetCustomerInformation(addCustomerActivityMvcImpl.root!!)
     }
 
     override fun onUserWantToAddNewPool(id_Customer: Int?) {
-        addCustomerActivityViewModel.onNeedToGetPoolInformation(addCustomerActivityMvcImpl.root, id_Customer)
+        addCustomerActivityViewModel.onNeedToGetPoolInformation(addCustomerActivityMvcImpl.root!!, id_Customer)
     }
 }
