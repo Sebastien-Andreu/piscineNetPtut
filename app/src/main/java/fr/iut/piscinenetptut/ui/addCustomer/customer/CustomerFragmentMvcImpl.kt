@@ -44,6 +44,7 @@ class CustomerFragmentMvcImpl (
         return ( !root?.findViewById<TextView>(R.id.addCustomerSurname)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerName)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerMail)?.text.isNullOrEmpty() &&
+                 !root?.findViewById<TextView>(R.id.addCustomerAddr)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerTown)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerPostalCode)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerTelPhoneNumber)?.text.isNullOrEmpty())

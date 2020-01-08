@@ -26,8 +26,6 @@ class SwimmingPoolFragmentMvcImpl (
 
             root?.findViewById<Button>(R.id.addCustomerButton)?.setOnClickListener {
                 verifyAllInput()
-//            this@SwimmingPoolFragment.activity!!.finish()
-//            this.context?.let { ListUserActivity.start(it) }
             }
 
             root?.findViewById<Button>(R.id.buttonAddPicturePool)?.setOnClickListener {
@@ -62,25 +60,41 @@ class SwimmingPoolFragmentMvcImpl (
                 root!!.findViewById<LinearLayout>(R.id.layoutAddPoolRemp).visibility = View.GONE
             }
 
+            root?.findViewById<Switch>(R.id.addPoolWarning)?.setOnCheckedChangeListener {_,  isChecked ->
+                if (isChecked) {
+                    root!!.findViewById<TextView>(R.id.addPoolTextValueOfSwitchWarning)?.text = true.toString()
+                    return@setOnCheckedChangeListener
+                }
+                root!!.findViewById<TextView>(R.id.addPoolTextValueOfSwitchWarning)?.text = false.toString()
+            }
+
+            root?.findViewById<Switch>(R.id.addPoolWinterCover)?.setOnCheckedChangeListener {_,  isChecked ->
+                if (isChecked) {
+                    root!!.findViewById<TextView>(R.id.addPoolTextValueOfSwitchWinterCover)?.text = true.toString()
+                    return@setOnCheckedChangeListener
+                }
+                root!!.findViewById<TextView>(R.id.addPoolTextValueOfSwitchWinterCover)?.text = false.toString()
+            }
+
+
         } catch (exception: Exception){
             exception.toTreatFor(TAG)
         }
     }
 
     override fun verifyAllInput(){
-        (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
-
-//        if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
-//            (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
-//        } else {
-//            Toast.makeText(root?.context, "pas bon", Toast.LENGTH_LONG).show()
-//        }
+        if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
+            (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
+        } else {
+            Toast.makeText(root?.context, "pas bon", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun verifyIfAllInputTextAreNotEmpty(): Boolean {
         return ( !root?.findViewById<TextView>(R.id.addPoolLo)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addPoolLa)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addPoolDepth)?.text.isNullOrEmpty() &&
+                 !root?.findViewById<TextView>(R.id.addPoolDateElectronicalProduct)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addPoolDistance)?.text.isNullOrEmpty())
     }
 

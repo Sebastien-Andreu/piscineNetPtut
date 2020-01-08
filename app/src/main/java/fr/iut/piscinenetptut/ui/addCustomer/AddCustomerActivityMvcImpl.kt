@@ -1,22 +1,34 @@
 package fr.iut.piscinenetptut.ui.addCustomer
 
 import android.content.Context
+import android.content.ContextWrapper
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.core.FileDataPart
 import com.google.android.material.tabs.TabLayout
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.adapter.ViewPagerAdapter
+import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
 import fr.iut.piscinenetptut.ui.addCustomer.customer.CustomerFragment
 import fr.iut.piscinenetptut.ui.addCustomer.swimmingpool.SwimmingPoolFragment
+import fr.iut.piscinenetptut.ui.home.HomeActivity
+import kotlinx.io.OutputStream
 
 import kotlinx.serialization.json.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 class AddCustomerActivityMvcImpl(
     private val context: Context,
@@ -26,6 +38,8 @@ class AddCustomerActivityMvcImpl(
     val TAG: String = "AddCustomerActivityMvcImpl"
 
     var root: View? = null
+
+    lateinit var request: httpRequest
 
     init {
         try {
@@ -67,24 +81,18 @@ class AddCustomerActivityMvcImpl(
             if (null != root) {
 
                 val json = Json(JsonConfiguration.Stable)
-                val jsonData = json.stringify(Customer.serializer(), customer).replace("\"", "")
-                                                                              .replace("{","")
-                                                                              .replace("}", "")
-                                                                              .replace(":", "=")
-                                                                              .replace(",", "&")
+                request = httpRequest()
 
-                Fuel.post("https://piscinenetptut1.tunnel.datahub.at/Customer")
-                    .body(jsonData)
+                Fuel.post(request.url+"Customer")
+                    .body(request.convertData(json.stringify(Customer.serializer(), customer)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")
                     .responseString { request, response, result ->
                         result.fold({ d ->
-                            println(d)
-                            //addCustomerActivity.onUserWantToAddNewPool(ID)
+                            addCustomerActivity.onUserWantToAddNewPool(json.parse(Customer.serializer(), d).ID)
                         }, { err ->
                             println(err.message)
                         })
                     }
-
             }
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
@@ -94,7 +102,18 @@ class AddCustomerActivityMvcImpl(
     override fun onPoolInformationIsLoaded(pool: Pool){
         try {
             if (null != root){
-                println(pool)
+                val json = Json(JsonConfiguration.Stable)
+                Fuel.post(request.url+"Pool")
+                    .body(request.convertData(json.stringify(Pool.serializer(), pool)))
+                    .header("Content-Type" to "application/x-www-form-urlencoded")
+                    .responseString { request, response, result ->
+                        result.fold({ d ->
+                            this@AddCustomerActivityMvcImpl.addCustomerActivity.finish()
+                            HomeActivity.start(this@AddCustomerActivityMvcImpl.addCustomerActivity)
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
             }
         }catch (exception: Exception){
             exception.toTreatFor(TAG)

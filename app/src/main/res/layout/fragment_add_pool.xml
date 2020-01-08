@@ -388,6 +388,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Système d'alarme" />
+
+                <TextView
+                    android:id="@+id/addPoolTextValueOfSwitchWarning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="false"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout
@@ -439,6 +446,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Bâche d'hivernage" />
+
+                <TextView
+                    android:id="@+id/addPoolTextValueOfSwitchWinterCover"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="false"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <LinearLayout
@@ -521,7 +535,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
-                        android:id="@+id/brandFilter"
+                        android:id="@+id/addPoolBrandFilter"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
