@@ -49,7 +49,7 @@ class AddCustomerActivityViewModel {
             val idElectronicalProduct = root.findViewById<RadioGroup>(R.id.addPoolElectronicalProduct)?.checkedRadioButtonId
             val pool = Pool (
                  ID_Customer = idCustomer,
-                 picture = "picture" + createUniqueIdV4(),
+                 picture = "picture" + createUniqueIdV4() + ".jpg",
                  sizeLo = root.findViewById<EditText>(R.id.addPoolLo)?.text.toString(),
                  sizeLa = root.findViewById<EditText>(R.id.addPoolLa)?.text.toString(),
                  depth = root.findViewById<EditText>(R.id.addPoolDepth)?.text.toString(),

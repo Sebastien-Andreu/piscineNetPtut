@@ -1,13 +1,8 @@
 package fr.iut.piscinenetptut.ui.addCustomer
 
 import android.content.Context
-import android.content.ContextWrapper
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.net.Uri
 import android.view.View
-import android.widget.*
-import androidx.core.content.ContextCompat
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.github.kittinunf.fuel.Fuel
@@ -23,12 +18,10 @@ import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledVie
 import fr.iut.piscinenetptut.ui.addCustomer.customer.CustomerFragment
 import fr.iut.piscinenetptut.ui.addCustomer.swimmingpool.SwimmingPoolFragment
 import fr.iut.piscinenetptut.ui.home.HomeActivity
-import kotlinx.io.OutputStream
-
-import kotlinx.serialization.json.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+
 
 class AddCustomerActivityMvcImpl(
     private val context: Context,
@@ -40,6 +33,7 @@ class AddCustomerActivityMvcImpl(
     var root: View? = null
 
     lateinit var request: httpRequest
+    lateinit var listFragmentForViewPager: ArrayList<Fragment>
 
     init {
         try {
@@ -47,7 +41,7 @@ class AddCustomerActivityMvcImpl(
 
             addCustomerActivity.actionBar?.hide()
 
-            val listFragmentForViewPager: ArrayList<Fragment> = arrayListOf(CustomerFragment(), SwimmingPoolFragment())
+            listFragmentForViewPager = arrayListOf(CustomerFragment(), SwimmingPoolFragment())
             val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Client", "Piscine")
 
             if (null != root) {
@@ -101,8 +95,15 @@ class AddCustomerActivityMvcImpl(
 
     override fun onPoolInformationIsLoaded(pool: Pool){
         try {
-            if (null != root){
+            if (null != root) {
+
                 val json = Json(JsonConfiguration.Stable)
+                val file = (listFragmentForViewPager[1] as SwimmingPoolFragment).uriPicture!!
+
+                Fuel.upload(request.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename=pool.picture) }
+                    .response { result ->
+                        println(result)
+                    }
                 Fuel.post(request.url+"Pool")
                     .body(request.convertData(json.stringify(Pool.serializer(), pool)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")

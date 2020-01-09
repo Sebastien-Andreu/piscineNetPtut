@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 
 
 class SwimmingPoolFragment : Fragment() {
 
     lateinit var swimmingPoolFragmentMvcImpl: SwimmingPoolFragmentMvcImpl
+    var uriPicture: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,13 +21,20 @@ class SwimmingPoolFragment : Fragment() {
     ): View? {
 
         swimmingPoolFragmentMvcImpl = SwimmingPoolFragmentMvcImpl(inflater.context, this)
+
+        swimmingPoolFragmentMvcImpl.filePicture.observe(this, Observer {
+            uriPicture = it.toString()
+        })
+
         return swimmingPoolFragmentMvcImpl.root
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1463) {
-            swimmingPoolFragmentMvcImpl.showPicture(data)
+            if (data != null){
+                swimmingPoolFragmentMvcImpl.showPicture(data)
+            }
         }
     }
 }

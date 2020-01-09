@@ -1,15 +1,24 @@
 package fr.iut.piscinenetptut.ui.addCustomer.swimmingpool
 
+import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
+import androidx.lifecycle.MutableLiveData
 import fr.iut.piscinenetptut.R
-import android.content.Context
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
 import fr.iut.piscinenetptut.ui.addCustomer.AddCustomerActivity
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.util.*
+
 
 class SwimmingPoolFragmentMvcImpl (
     private val context: Context,
@@ -20,6 +29,8 @@ class SwimmingPoolFragmentMvcImpl (
 
     var root: View? = null
 
+    val filePicture: MutableLiveData<Uri> = MutableLiveData()
+
     init {
         try {
             root = View.inflate(context, R.layout.fragment_add_pool, null)
@@ -29,8 +40,12 @@ class SwimmingPoolFragmentMvcImpl (
             }
 
             root?.findViewById<Button>(R.id.buttonAddPicturePool)?.setOnClickListener {
-                val i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                swimmingPoolFragment.startActivityForResult(i, 1463)
+                try {
+                    val i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                    swimmingPoolFragment.startActivityForResult(i, 1463)
+                }catch (exception: Exception) {
+                    exception.toTreatFor("Camera")
+                }
             }
 
             root?.findViewById<Switch>(R.id.switchAddPoolPH)?.setOnCheckedChangeListener {_,  isChecked ->
@@ -132,5 +147,30 @@ class SwimmingPoolFragmentMvcImpl (
         val imageView: ImageView = root?.findViewById(R.id.addPoolPicture) as ImageView
         imageView.setImageBitmap(picture)
         imageView.visibility = View.VISIBLE
+
+        bitmapToFile(picture)
+        println(filePicture)
+
+    }
+
+    private fun bitmapToFile(bitmap:Bitmap) {
+        // Get the context wrapper
+        val wrapper = ContextWrapper(context)
+
+        // Initialize a new file instance to save bitmap object
+        var file = wrapper.getDir("Images", Context.MODE_PRIVATE)
+        file = File(file,"${UUID.randomUUID()}.jpg")
+
+        try{
+            // Compress the bitmap and save in jpg format
+            val stream: OutputStream = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream)
+            stream.flush()
+            stream.close()
+        }catch (e: IOException){
+            e.printStackTrace()
+        }
+
+        filePicture.postValue(Uri.parse(file.absolutePath))
     }
 }
