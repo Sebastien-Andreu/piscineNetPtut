@@ -24,7 +24,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Photo de la piscine"
+                    android:text="@string/labelPicturePool"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <Button
@@ -34,7 +34,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
-                    android:text="Sélectionner une photo de la piscine"
+                    android:text="@string/textButtonPicturePool"
                     android:textAllCaps="false"
                     android:textStyle="normal" />
 
@@ -64,7 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:text="Taille du bassin" />
+                    android:text="@string/poolSize" />
 
                 <EditText
                     android:id="@+id/addPoolLo"
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
                     android:layout_weight="0"
-                    android:text="Profondeur"
+                    android:text="@string/depth"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <EditText
@@ -133,7 +133,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Environnement"
+                    android:text="@string/environment"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
@@ -156,14 +156,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Pas de végération" />
+                            android:text="@string/noVegetation" />
 
                         <RadioButton
                             android:id="@+id/group12"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0"
-                            android:text="peu de végétation" />
+                            android:text="@string/littleVegetation" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -178,7 +178,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Beaucoup de végétation" />
+                            android:text="@string/denseVegetation" />
 
                         <RadioButton
                             android:layout_width="110dp"
@@ -199,7 +199,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="État général du bassin"
+                    android:text="@string/statePool"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
@@ -222,14 +222,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Très bon état" />
+                            android:text="@string/goodCondition" />
 
                         <RadioButton
                             android:id="@+id/group22"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0"
-                            android:text="Bon état" />
+                            android:text="@string/soundCondition" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -244,14 +244,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Passable" />
+                            android:text="@string/passable" />
 
                         <RadioButton
                             android:id="@+id/group24"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
-                            android:text="Médiocre" />
+                            android:text="@string/mediocre" />
                     </LinearLayout>
                 </fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup>
 
@@ -266,7 +266,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Type de revêtement"
+                    android:text="@string/TypeCover"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
@@ -289,14 +289,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Liner" />
+                            android:text="@string/liner" />
 
                         <RadioButton
                             android:id="@+id/group32"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0"
-                            android:text="PVC Armé" />
+                            android:text="@string/pvc" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -311,14 +311,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Carrelage" />
+                            android:text="@string/tiling" />
 
                         <RadioButton
                             android:id="@+id/group34"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
-                            android:text="Polyester" />
+                            android:text="@string/polyester" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -333,7 +333,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="15dp"
                             android:layout_weight="0"
-                            android:text="Béton enduit" />
+                            android:text="@string/coatedConcrete" />
 
                         <RadioButton
                             android:layout_width="110dp"
@@ -355,10 +355,10 @@
                     android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
                     android:layout_weight="0"
-                    android:text="Distance du siège"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:layout_marginRight="15dp" />
+                    android:text="@string/distance"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <EditText
                     android:id="@+id/addPoolDistance"
@@ -387,7 +387,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Système d'alarme" />
+                    android:text="@string/alarmSystem" />
 
                 <TextView
                     android:id="@+id/addPoolTextValueOfSwitchWarning"
@@ -406,7 +406,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accès"
+                    android:text="@string/acces"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <RadioGroup
@@ -421,14 +421,14 @@
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
                         android:layout_weight="0"
-                        android:text="Échelle" />
+                        android:text="@string/scale" />
 
                     <RadioButton
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
                         android:layout_weight="0"
-                        android:text="Escaliers" />
+                        android:text="@string/stairs" />
 
                 </RadioGroup>
 
@@ -445,7 +445,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Bâche d'hivernage" />
+                    android:text="@string/winterCover" />
 
                 <TextView
                     android:id="@+id/addPoolTextValueOfSwitchWinterCover"
@@ -465,7 +465,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="Filtre à sable changé le "
+                    android:text="@string/sandFilterDate"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:layout_marginRight="15dp" />
 
@@ -489,7 +489,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="Marque du filtre à sable"
+                    android:text="@string/sandFilterBrand"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:layout_marginRight="15dp" />
 
@@ -514,7 +514,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    android:text="Filtration"
+                    android:text="@string/filtration"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:layout_marginRight="15dp" />
 
@@ -530,7 +530,7 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
-                        android:text="Marque"
+                        android:text="@string/filtrationBrand"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:layout_marginRight="15dp" />
 
@@ -556,7 +556,7 @@
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:text="CV"
+                        android:text="@string/CV"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:layout_marginRight="15dp" />
 
@@ -582,7 +582,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date de l'apppareil"
+                        android:text="@string/deviceDate"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:layout_marginRight="15dp" />
 
@@ -606,7 +606,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Appareil électronique"
+                    android:text="@string/electronicDevice"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <RadioGroup
@@ -622,14 +622,14 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="15dp"
                         android:layout_weight="0"
-                        android:text="Sel" />
+                        android:text="@string/salt" />
 
                     <RadioButton
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
                         android:layout_weight="0"
-                        android:text="Cuivre" />
+                        android:text="@string/copper" />
 
                     <RadioButton
                         android:id="@+id/radioButton"
@@ -637,7 +637,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
                         android:layout_weight="0"
-                        android:text="Chlore" />
+                        android:text="@string/chlorine" />
 
                 </RadioGroup>
 
@@ -654,7 +654,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Date de l'apppareil"
+                        android:text="@string/deviceDate"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
@@ -680,7 +680,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Appareil PH"
+                    android:text="@string/phDevice"
                     android:visibility="visible" />
 
                 <LinearLayout
@@ -698,7 +698,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Date de l'apppareil"
+                        android:text="@string/deviceDate"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
@@ -723,7 +723,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pompe à chaleur" />
+                    android:text="@string/heatPump" />
 
                 <LinearLayout
                     android:id="@+id/layoutAddPoolPompe"
@@ -740,7 +740,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Date de l'apppareil"
+                        android:text="@string/deviceDate"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
@@ -765,7 +765,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Remplissage automatique" />
+                    android:text="@string/automaticRefilling" />
 
                 <LinearLayout
                     android:id="@+id/layoutAddPoolRemp"
@@ -782,7 +782,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Date de l'apppareil"
+                        android:text="@string/deviceDate"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                     <EditText
@@ -807,7 +807,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Observation"
+                    android:text="@string/observation"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:layout_marginRight="15dp" />
 
@@ -848,7 +848,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/textOk"
+                    android:text="@string/finishAddCustomer"
                     android:textAllCaps="false" />
 
             </LinearLayout>

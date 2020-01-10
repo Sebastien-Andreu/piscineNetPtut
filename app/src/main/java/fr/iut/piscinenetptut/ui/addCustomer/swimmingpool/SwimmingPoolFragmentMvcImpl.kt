@@ -1,13 +1,20 @@
 package fr.iut.piscinenetptut.ui.addCustomer.swimmingpool
 
+import android.Manifest
+import android.app.AlertDialog
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.provider.MediaStore
+import android.provider.Settings
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.library.extension.toTreatFor
@@ -40,11 +47,14 @@ class SwimmingPoolFragmentMvcImpl (
             }
 
             root?.findViewById<Button>(R.id.buttonAddPicturePool)?.setOnClickListener {
-                try {
-                    val i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                    swimmingPoolFragment.startActivityForResult(i, 1463)
-                }catch (exception: Exception) {
-                    exception.toTreatFor("Camera")
+                if (verifyPermissionCamera() || this.swimmingPoolFragment.permissionResult){
+                    println("tu a acces")
+                    try {
+                        val i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                        swimmingPoolFragment.startActivityForResult(i, 1463)
+                    }catch (exception: Exception) {
+                        exception.toTreatFor("Camera")
+                    }
                 }
             }
 
@@ -142,6 +152,7 @@ class SwimmingPoolFragmentMvcImpl (
         return true
     }
 
+    /* PICTURE */
     override fun showPicture(data: Intent?){
         val picture = data?.extras?.get("data") as Bitmap
         val imageView: ImageView = root?.findViewById(R.id.addPoolPicture) as ImageView
@@ -149,20 +160,15 @@ class SwimmingPoolFragmentMvcImpl (
         imageView.visibility = View.VISIBLE
 
         bitmapToFile(picture)
-        println(filePicture)
-
     }
 
     private fun bitmapToFile(bitmap:Bitmap) {
-        // Get the context wrapper
         val wrapper = ContextWrapper(context)
 
-        // Initialize a new file instance to save bitmap object
         var file = wrapper.getDir("Images", Context.MODE_PRIVATE)
         file = File(file,"${UUID.randomUUID()}.jpg")
 
         try{
-            // Compress the bitmap and save in jpg format
             val stream: OutputStream = FileOutputStream(file)
             bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream)
             stream.flush()
@@ -173,4 +179,37 @@ class SwimmingPoolFragmentMvcImpl (
 
         filePicture.postValue(Uri.parse(file.absolutePath))
     }
+    /* END PICTURE */
+
+
+
+    /* PERMISSION */
+    private fun verifyPermissionCamera(): Boolean{
+        if (ContextCompat.checkSelfPermission(this.context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (this.swimmingPoolFragment.permissionCamera.neverAskAgainSelected(this.swimmingPoolFragment.activity!!, Manifest.permission.CAMERA)) {
+                    displayNeverAskAgainDialog()
+                } else {
+                    this.swimmingPoolFragment.requestPermissions(arrayOf(Manifest.permission.CAMERA), 1)
+                }
+            }
+        }
+        return true
+    }
+    private fun displayNeverAskAgainDialog() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this.context)
+        builder.setMessage(R.string.warning_permission_camera)
+        builder.setCancelable(false)
+        builder.setPositiveButton(R.string.permiteManually) { dialog, which ->
+            dialog.dismiss()
+            val intent = Intent()
+            intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            val uri = Uri.fromParts("package", this.context.packageName, null)
+            intent.data = uri
+            startActivity(this.context, intent, null)
+        }
+        builder.setNegativeButton(R.string.cancelPermission, null)
+        builder.show()
+    }
+    /* PERMISSION */
 }
