@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.home.HomeActivity
 
@@ -14,23 +15,26 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listen
     val TAG: String = "SplashScreenActivity"
 
     lateinit var splashScreenActivityMvcImpl: SplashScreenActivityMvcImpl
+    lateinit var splashScreenActivityViewModel: SplashScreenActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
             splashScreenActivityMvcImpl = SplashScreenActivityMvcImpl(this, this)
+            splashScreenActivityViewModel = SplashScreenActivityViewModel()
+
+            splashScreenActivityViewModel.registerCallBack.observe(this, Observer {
+                splashScreenActivityMvcImpl.onRegisterInformationIdLoaded(it)
+            })
             setContentView(splashScreenActivityMvcImpl.root)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
     }
 
-    //jeu de test pour la base de données, "générate data ( generer donnée dans base de données )"
-
     override fun onUserWantToLogin() {
         try {
-            this@SplashScreenActivity.finish()
-            HomeActivity.start(this@SplashScreenActivity)
+            splashScreenActivityViewModel.onNeedToGetCustomerInformation(splashScreenActivityMvcImpl.root!!)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
