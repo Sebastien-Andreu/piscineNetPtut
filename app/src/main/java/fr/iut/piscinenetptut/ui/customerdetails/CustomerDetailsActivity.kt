@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
+import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.workingmethod.WorkingMethodActivity
 
 class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.listeners {
@@ -46,6 +46,6 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
 
     override fun onBackPressed() {
         this@CustomerDetailsActivity.finish()
-        ListUserActivity.start(this)
+        ListCustomerActivity.start(this)
     }
 }

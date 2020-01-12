@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
+import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import java.lang.Exception
 
 class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.listeners {
@@ -37,13 +37,13 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
 
     override fun onBackPressed() {
         this@WorkingMethodActivity.finish()
-        ListUserActivity.start(this)
+        ListCustomerActivity.start(this)
     }
 
     override fun onUserFinishWorking() {
         try{
             this@WorkingMethodActivity.finish()
-            ListUserActivity.start(this)
+            ListCustomerActivity.start(this)
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
         }

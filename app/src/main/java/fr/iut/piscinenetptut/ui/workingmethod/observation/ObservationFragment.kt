@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.ui.listOfUser.ListUserActivity
+import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 
 class ObservationFragment : Fragment(){
 
@@ -21,7 +21,7 @@ class ObservationFragment : Fragment(){
 
         root.findViewById<Button>(R.id.finalizeVisitButton).setOnClickListener {
             this@ObservationFragment.activity!!.finish()
-            this.context?.let { ListUserActivity.start(it) }
+            this.context?.let { ListCustomerActivity.start(it) }
         }
 
         return root
