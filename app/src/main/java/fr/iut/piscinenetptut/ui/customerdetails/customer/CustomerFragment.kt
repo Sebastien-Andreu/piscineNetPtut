@@ -20,7 +20,7 @@ class CustomerFragment : Fragment() {
     ): View? {
         val root: View? = inflater.inflate(R.layout.fragment_customer, container, false)
 
-        root?.findViewById<Button>(R.id.buttonFragCustomer)?.setOnClickListener {
+        root?.findViewById<Button>(R.id.detailCustomerMakeVisitButton)?.setOnClickListener {
             this@CustomerFragment.activity!!.finish()
             this.context?.let { WorkingMethodActivity.start(it) }
         }

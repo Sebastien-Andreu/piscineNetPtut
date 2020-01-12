@@ -127,6 +127,7 @@ class SwimmingPoolFragmentMvcImpl (
         return ( root?.findViewById<RecursiveRadioGroup>(R.id.addPoolEnvironment)?.checkedItemId != null &&
                  root?.findViewById<RecursiveRadioGroup>(R.id.addPoolState)?.checkedItemId != null &&
                  root?.findViewById<RecursiveRadioGroup>(R.id.addPoolTypeOfCover)?.checkedItemId != null &&
+                 root?.findViewById<RecursiveRadioGroup>(R.id.addPoolShape)?.checkedItemId != null &&
                  root?.findViewById<RadioGroup>(R.id.addPoolAcces)?.checkedRadioButtonId != -1 &&
                  root?.findViewById<RadioGroup>(R.id.addPoolElectronicalProduct)?.checkedRadioButtonId != -1)
     }

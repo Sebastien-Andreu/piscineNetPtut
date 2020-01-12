@@ -42,6 +42,7 @@ class AddCustomerActivityViewModel {
 
     fun onNeedToGetPoolInformation(root: View, idCustomer: Int?) {
         try {
+            val idShape = root.findViewById<RecursiveRadioGroup>(R.id.addPoolShape)?.checkedItemId
             val idEnvironment = root.findViewById<RecursiveRadioGroup>(R.id.addPoolEnvironment)?.checkedItemId
             val idState = root.findViewById<RecursiveRadioGroup>(R.id.addPoolState)?.checkedItemId
             val idCover = root.findViewById<RecursiveRadioGroup>(R.id.addPoolTypeOfCover)?.checkedItemId
@@ -53,6 +54,7 @@ class AddCustomerActivityViewModel {
                  sizeLo = root.findViewById<EditText>(R.id.addPoolLo)?.text.toString(),
                  sizeLa = root.findViewById<EditText>(R.id.addPoolLa)?.text.toString(),
                  depth = root.findViewById<EditText>(R.id.addPoolDepth)?.text.toString(),
+                 shape = root.findViewById<RadioButton>(idShape!!)?.text.toString(),
                  environment = root.findViewById<RadioButton>(idEnvironment!!)?.text.toString(),
                  state = root.findViewById<RadioButton>(idState!!)?.text.toString(),
                  cover = root.findViewById<RadioButton>(idCover!!)?.text.toString(),

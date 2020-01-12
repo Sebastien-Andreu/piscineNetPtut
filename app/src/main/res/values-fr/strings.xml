@@ -38,6 +38,13 @@
     <string name="poolSize">Taille du bassin *</string>
     <string name="depth">Profondeur *</string>
 
+    <string name="shape">Forme *</string>
+    <string name="rectangular">Resctangulaire</string>
+    <string name="square">Carré</string>
+    <string name="swimmingLane">Couloir de nage</string>
+    <string name="bean">Haricot</string>
+
+
     <string name="environment">Environnement *</string>
     <string name="noVegetation">Pas de végétation</string>
     <string name="littleVegetation">Peu de végétation</string>

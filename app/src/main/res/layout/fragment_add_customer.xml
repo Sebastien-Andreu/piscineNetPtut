@@ -7,11 +7,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -128,10 +130,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:inputType="textEmailAddress|textMultiLine"
                         android:lines="3"
                         android:maxLines="3"
                         android:minLines="1"
-                        android:inputType="textEmailAddress|textMultiLine"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -249,7 +251,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/customborder"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -259,7 +262,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:switchPadding="10dp"
+                    android:switchTextAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:text="@string/guardian"
+                    android:textColor="@color/secondary_text_default_material_light"
                     tools:ignore="RtlSymmetry" />
 
                 <LinearLayout
@@ -291,13 +296,12 @@
                 </LinearLayout>
 
 
-
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -306,12 +310,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/textContract"
-                    android:textSize="15sp"
+                    android:textColor="@color/secondary_text_default_material_light"
+                    android:textSize="18sp"
                     tools:ignore="RtlHardcoded" />
 
                 <RadioGroup
                     android:id="@+id/addCustomerRadioTypeContract"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/labelContract"
                     android:layout_marginTop="10dp"
@@ -324,6 +329,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
                         android:text="@string/technical_visit"
+                        android:textColor="@color/secondary_text_default_material_light"
                         android:textSize="15sp"
                         tools:ignore="RtlSymmetry" />
 
@@ -332,6 +338,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/full_visit"
+                        android:textColor="@color/secondary_text_default_material_light"
                         android:textSize="15sp" />
 
                 </RadioGroup>
@@ -341,7 +348,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -350,12 +358,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/textProductContract"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     tools:ignore="RtlHardcoded" />
 
                 <RadioGroup
                     android:id="@+id/addCustomerRadioContractOfProduct"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/productContract"
                     android:layout_marginTop="10dp"
@@ -368,6 +376,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
                         android:text="@string/included"
+                        android:textColor="@color/secondary_text_default_material_light"
                         android:textSize="15sp"
                         tools:ignore="RtlSymmetry" />
 
@@ -376,6 +385,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/notIncluded"
+                        android:textColor="@color/secondary_text_default_material_light"
                         android:textSize="15sp" />
 
                 </RadioGroup>

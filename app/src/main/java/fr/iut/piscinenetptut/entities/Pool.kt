@@ -10,6 +10,7 @@ data class Pool(
     val sizeLo: String?,
     val sizeLa: String?,
     val depth: String?,
+    val shape: String?,
     val environment: String?,
     val state: String?,
     val cover: String?,

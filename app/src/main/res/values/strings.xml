@@ -43,6 +43,12 @@
     <string name="poolSize">Pool size *</string>
     <string name="depth">Depth *</string>
 
+    <string name="shape">Shape *</string>
+    <string name="rectangular">Rectangular</string>
+    <string name="square">Square</string>
+    <string name="swimmingLane">Swimming lane</string>
+    <string name="bean">Bean</string>
+
     <string name="environment">Environment *</string>
     <string name="noVegetation">No vegetation</string>
     <string name="littleVegetation">Little vegetation</string>
