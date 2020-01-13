@@ -7,30 +7,96 @@
     <string name="login">login</string>
     <string name="forgottenPassword">forgotten password</string>
 
+    <!--                                                                 -->
+    <!--                          AddCustomer                            -->
+    <!--                                                                 -->
     <string name="titleNewUser">Add new User</string>
-    <string name="textName">Name</string>
-    <string name="textSurname">Surname</string>
-    <string name="textMail">Mail</string>
+    <string name="textName">Name *</string>
+    <string name="textSurname">Surname *</string>
+    <string name="textMail">Mail *</string>
+    <string name="addr">Adresse *</string>
 
-    <string name="town">Town</string>
-    <string name="postalCode">Postal code</string>
+
+    <string name="town">Town *</string>
+    <string name="postalCode">Postal code *</string>
 
     <string name="telFix">Landline number</string>
-    <string name="telMob">Phone number</string>
+    <string name="telMob">Phone number *</string>
     <string name="guardian">Guardian  </string>
 
-    <string name="textContract">Contract type</string>
+    <string name="textContract">Contract type *</string>
     <string name="technical_visit">Technical visit</string>
     <string name="full_visit">Full visit</string>
 
-    <string name="textProductContract">Product contract</string>
+    <string name="textProductContract">Product contract *</string>
     <string name="included">Included</string>
     <string name="notIncluded">Not included</string>
     <string name="addPool">Add new pool for this user</string>
-    <string name="textOk">Ok</string>
 
 
-    <string name="titleNewPool">Add new Pool</string>
+    <!--                                                                 -->
+    <!--                              AddPool                            -->
+    <!--                                                                 -->
+
+    <string name="labelPicturePool">Photo of the pool *</string>
+    <string name="textButtonPicturePool">Take a picture of the pool</string>
+    <string name="poolSize">Pool size *</string>
+    <string name="depth">Depth *</string>
+
+    <string name="shape">Shape *</string>
+    <string name="rectangular">Rectangular</string>
+    <string name="square">Square</string>
+    <string name="swimmingLane">Swimming lane</string>
+    <string name="bean">Bean</string>
+
+    <string name="environment">Environment *</string>
+    <string name="noVegetation">No vegetation</string>
+    <string name="littleVegetation">Little vegetation</string>
+    <string name="denseVegetation">Dense vegetation</string>
+
+    <string name="statePool">General state of the basin *</string>
+    <string name="goodCondition">Mint condition</string>
+    <string name="soundCondition">Sound condition</string>
+    <string name="passable">Passable</string>
+    <string name="mediocre">Mediocre</string>
+
+    <string name="TypeCover">Type of cover *</string>
+    <string name="liner">Liner</string>
+    <string name="pvc">Reinforced PVC</string>
+    <string name="tiling">Tiling</string>
+    <string name="polyester">Polyester</string>
+    <string name="coatedConcrete">Coated concrete</string>
+    
+    <string name="distance">Company distance *</string>
+
+    <string name="alarmSystem">Alarm system</string>
+    
+    <string name="acces">Acces *</string>
+    <string name="scale">Scale</string>
+    <string name="stairs">Stairs</string>
+    
+    <string name="winterCover">Winter cover</string>
+    
+    <string name="sandFilterDate">Sand filter changed on</string>
+    <string name="sandFilterBrand">Brand of sand filter</string>
+    
+    <string name="filtration">Filtration</string>
+    <string name="filtrationBrand">Brand</string>
+    <string name="CV">CV</string>
+    <string name="deviceDate">Device date *</string>
+
+    <string name="electronicDevice">Electronic device *</string>
+    <string name="salt">Salt</string>
+    <string name="copper">Copper</string>
+    <string name="chlorine">Chlorine</string>
+    
+    <string name="phDevice">PH device</string>
+    <string name="heatPump">Heat pump</string>
+    <string name="automaticRefilling">Automatic refilling</string>
+    <string name="observation">Observation</string>
+
+    <string name="finishAddCustomer">Add new customer</string>
+
 
     <!--                                                                 -->
     <!--                          ListUserActivity                       -->
@@ -38,11 +104,15 @@
     <string name="list_user_activity_search">Search...</string>
 
     <!--                                                                 -->
-    <!--                             UserPreviewFactory                         -->
+    <!--                      UserPreviewFactory                         -->
     <!--                                                                 -->
     <string name="user_preview_warning">Warning</string>
 
 
-
-
+    <!--                                                                 -->
+    <!--                          Permission                             -->
+    <!--                                                                 -->
+    <string name="warning_permission_camera">We need access to the camera to perform the necessary tasks. Please authorize authorization via the Settings screen. Select Authorizations -> Activate Authorization</string>
+    <string name="permiteManually">Settings</string>
+    <string name="cancelPermission">Cancel</string>
 </resources>

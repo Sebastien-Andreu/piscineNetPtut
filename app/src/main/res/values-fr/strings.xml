@@ -1,35 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="loginButton">s\'identifiant</string>
+    <string name="loginButton">s\'identifier</string>
     <string name="imageoflogoapp">cette image représente le logo de l\'application</string>
     <string name="mdp">mot de passe</string>
     <string name="login">identifiant</string>
     <string name="forgottenPassword">mot de passe oublié</string>
 
     <string name="titleNewUser">Ajouter un nouvel utilisateur</string>
-    <string name="textName">Nom</string>
-    <string name="textSurname">Prénom</string>
-    <string name="textMail">Mail</string>
+    <string name="textName">Nom *</string>
+    <string name="textSurname">Prénom *</string>
+    <string name="textMail">Mail *</string>
+    <string name="addr">Adresse *</string>
 
-    <string name="town">Ville</string>
-    <string name="postalCode">Code postal</string>
+    <string name="town">Ville *</string>
+    <string name="postalCode">Code postal *</string>
 
-    <string name="telFix">Numéro de téléphone fixe</string>
-    <string name="telMob">Numéro de téléphone</string>
+    <string name="telFix">Téléphone fixe</string>
+    <string name="telMob">Téléphone portable *</string>
     <string name="guardian">Gardien</string>
 
-    <string name="textContract">Type de contrat</string>
+    <string name="textContract">Type de contrat *</string>
     <string name="technical_visit">Visite technique</string>
     <string name="full_visit">Visite complète</string>
 
-    <string name="textProductContract">Contrat de produit</string>
+    <string name="textProductContract">Contrat de produit *</string>
     <string name="included">Inclus</string>
     <string name="notIncluded">Non inclus</string>
     <string name="addPool">Ajouter un nouveau pool pour cet utilisateur</string>
-    <string name="textOk">Ok</string>
 
 
-    <string name="titleNewPool">Ajouter une nouvelle piscine</string>
+    <!--                                                                 -->
+    <!--                              AddPool                            -->
+    <!--                                                                 -->
+
+    <string name="labelPicturePool">Photo de la piscine *</string>
+    <string name="textButtonPicturePool">Prendre une photo de la piscine</string>
+    <string name="poolSize">Taille du bassin *</string>
+    <string name="depth">Profondeur *</string>
+
+    <string name="shape">Forme *</string>
+    <string name="rectangular">Resctangulaire</string>
+    <string name="square">Carré</string>
+    <string name="swimmingLane">Couloir de nage</string>
+    <string name="bean">Haricot</string>
+
+
+    <string name="environment">Environnement *</string>
+    <string name="noVegetation">Pas de végétation</string>
+    <string name="littleVegetation">Peu de végétation</string>
+    <string name="denseVegetation">Beaucoup de végétation</string>
+
+    <string name="statePool">État général du bassin *</string>
+    <string name="goodCondition">Très bon état</string>
+    <string name="soundCondition">Bon état</string>
+    <string name="passable">Passable</string>
+    <string name="mediocre">Médiocre</string>
+
+    <string name="TypeCover">Type de revêtement *</string>
+    <string name="liner">Liner</string>
+    <string name="pvc">PVC armé</string>
+    <string name="tiling">Carrelage</string>
+    <string name="polyester">Polyester</string>
+    <string name="coatedConcrete">Béton enduit</string>
+
+    <string name="distance">distance du siège *</string>
+
+    <string name="alarmSystem">Système d\'alarme</string>
+
+    <string name="acces">Accès *</string>
+    <string name="scale">Échelle</string>
+    <string name="stairs">Escaliers</string>
+
+    <string name="winterCover">Bâche d\'hivernage</string>
+
+    <string name="sandFilterDate">Filtre à sable changé le</string>
+    <string name="sandFilterBrand">Marque du filtre à sable</string>
+
+    <string name="filtration">Filtration</string>
+    <string name="filtrationBrand">Marque</string>
+    <string name="CV">CV</string>
+    <string name="deviceDate">Date de l\'appareil *</string>
+
+    <string name="electronicDevice">Appareil électronique *</string>
+    <string name="salt">Sel</string>
+    <string name="copper">Cuivre</string>
+    <string name="chlorine">Chlore</string>
+
+    <string name="phDevice">Appareil PH</string>
+    <string name="heatPump">Pompe à chaleur</string>
+    <string name="automaticRefilling">Remplissage automatique</string>
+    <string name="observation">Observation</string>
+
+    <string name="finishAddCustomer">ajouter un nouveau client</string>
 
     <!--                                                                 -->
     <!--                          ListUserActivity                       -->
@@ -40,4 +102,8 @@
     <!--                             UserPreviewFactory                         -->
     <!--                                                                 -->
     <string name="user_preview_warning">Attention</string>
+
+    <string name="warning_permission_camera">Nous devons avoir accès à la caméra pour effectuer les tâches nécessaires. Veuillez autoriser l\'autorisation par l\'écran Paramètres.\n\n-Sélectionner les autorisations -> Activer l\'autorisation</string>
+    <string name="permiteManually">Paramètres</string>
+    <string name="cancelPermission">Annuler</string>
 </resources>

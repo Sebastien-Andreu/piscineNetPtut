@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "fr.iut.piscinenetptut"
-        minSdkVersion 15
+        minSdkVersion 19 // 15 avant mais Fuel bloque
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -22,6 +22,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+apply plugin: 'kotlinx-serialization'
+
+
+repositories {
+    // artifacts are published to JCenter
+    jcenter()
 }
 
 dependencies {
@@ -46,4 +54,15 @@ dependencies {
 
     //rx ui observable event
     implementation 'com.jakewharton.rxbinding3:rxbinding:3.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //Fuel
+    implementation 'com.github.kittinunf.fuel:fuel:2.2.1' //Core package
+    implementation 'com.github.kittinunf.fuel:fuel-android:2.2.1' //Android
+    implementation 'com.github.kittinunf.fuel:fuel-gson:2.2.1' //Fuel Gson
+    implementation 'com.google.code.gson:gson:2.8.6' //Gson
+
+    //serialization
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0" // JVM dependency
 }
