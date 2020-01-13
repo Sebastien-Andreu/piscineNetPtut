@@ -111,7 +111,7 @@ class SwimmingPoolFragmentMvcImpl (
         if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
             (swimmingPoolFragment.activity as AddCustomerActivity).onUserWantToAddNewCustomer()
         } else {
-            Toast.makeText(root?.context, "pas bon", Toast.LENGTH_LONG).show()
+            Toast.makeText(root?.context, "Some information is missing to add", Toast.LENGTH_LONG).show()
         }
     }
 
