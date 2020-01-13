@@ -54,7 +54,7 @@ class AddCustomerActivityMvcImpl(
                     override fun onPageSelected(position: Int) {
                         if (1 == position){
                             if (!(listFragmentForViewPager[0] as CustomerFragment).onUserWantToVerifyAlInput()){
-                                Toast.makeText(listFragmentForViewPager[0].activity, "pas bon", Toast.LENGTH_LONG).show()
+                                Toast.makeText(listFragmentForViewPager[0].activity, "Some information is missing to access the pool addition", Toast.LENGTH_LONG).show()
                                 root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.currentItem = 0
                                 root!!.findViewById<TabLayout>(R.id.addCustomerTabLayout)?.setScrollPosition(0,0f,true)
                             }

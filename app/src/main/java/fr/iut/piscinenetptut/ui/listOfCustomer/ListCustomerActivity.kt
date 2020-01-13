@@ -11,6 +11,7 @@ import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.home.HomeActivity
 
+
 class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listeners {
 
     companion object {
@@ -51,10 +52,23 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
         }
     }
 
-    override fun onUserTouchUserPreview(userId: String) {
+    override fun onUserTouchUserPreview(id: Int) {
         try {
             this@ListCustomerActivity.finish()
-            CustomerDetailsActivity.start(this)
+            var customer: Customer? = null
+            var pool: Pool? = null
+
+            listCustomer.forEach{
+                if (it.ID!! == id) {
+                    customer = it
+                }
+            }
+            listPool.forEach{
+                if (it.ID_Customer!! == id) {
+                    pool = it
+                }
+            }
+            CustomerDetailsActivity.start(this, customer!!, pool!!)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }

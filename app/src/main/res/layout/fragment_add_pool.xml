@@ -15,7 +15,9 @@
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="25dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,7 +64,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:id="@+id/textView3"
@@ -105,7 +109,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -439,7 +445,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -557,7 +565,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -581,7 +591,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -623,7 +635,9 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="15dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="50dp"
@@ -650,7 +664,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="15dp"
                     android:layout_weight="0"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="50dp"
@@ -676,7 +692,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="15dp"
                     android:layout_weight="0"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -751,7 +769,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="15dp"
                     android:layout_weight="0"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -797,7 +817,9 @@
                     android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -841,7 +863,9 @@
                     android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -885,7 +909,9 @@
                     android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -927,7 +953,9 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="15dp"
                     android:orientation="vertical"
-                    android:visibility="visible">
+                    android:visibility="visible"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <EditText
                         android:id="@+id/addPoolObservation"

@@ -11,6 +11,7 @@
         android:layout_marginEnd="25dp">
 
         <ImageView
+            android:id="@+id/detailPoolPicture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -25,7 +26,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Caractéristique de la piscine"
                 android:textSize="24sp"
@@ -37,91 +38,220 @@
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailPoolSize"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Taille du bassin : " />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolDepth"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taille du bassin : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Profondeur : " />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolShape"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Forme : " />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profondeur : " />
 
-                <TextView
-                    android:id="@+id/detailPoolEnvronment"
+                    <TextView
+                        android:id="@+id/detailPoolDepth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Environnement : " />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolState"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Forme : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolShape"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="État général du bassin : " />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolTypeOfCover"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Environnement : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolEnvronment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Type de revêtement : " />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolDistance"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="État général du bassin : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Distance du siège : " />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolWarning"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type de revêtement : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolTypeOfCover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Il y a un système d'alarme"
-                    android:visibility="gone" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolAcces"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Distance du siège : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDistance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Accès : " />
+                    android:layout_marginBottom="35dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolWinterCover"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Accès : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolAcces"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detailPoolLayoutWarning"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="35dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Il y a un système d'alarme" />
+
+                    <TextView
+                        android:id="@+id/detailPoolWarning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detailPoolLayoutWinterCover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Il y a une bache d'hivernage"
-                    android:visibility="gone" />
+                    android:layout_marginBottom="35dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
-                <TextView
-                    android:id="@+id/detailPoolDateSandFilter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="35dp"
-                    android:text="Filtre à sable changé le " />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Il y a une bache d'hivernage" />
 
-                <TextView
-                    android:id="@+id/detailPoolBrandSandFilter"
+                    <TextView
+                        android:id="@+id/detailPoolWinterCover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Filtre à sable changé le " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDateSandFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Marque du filtre à sable : " />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marque du filtre à sable : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolBrandSandFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -132,7 +262,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/filtration"
                 android:textSize="24sp"
@@ -144,24 +274,58 @@
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailPoolBrandFilter"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Marque : " />
 
-                <TextView
-                    android:id="@+id/detailPoolCV"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marque : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolBrandFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="CV : " />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolDateFilter"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CV : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolCV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Date de l'appareil : " />
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date de l'appareil : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDateFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
 
             </LinearLayout>
 
@@ -172,10 +336,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Appareil électronique"
                 android:textSize="24sp"
@@ -187,18 +352,39 @@
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailPoolElectronicalType"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Type d'appareil : " />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/detailPoolDateElectronicalDevice"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type d'appareil : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolElectronicalType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
-                    android:text="Date de l'appareil : " />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date de l'appareil : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDateElectronicalDevice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -209,13 +395,14 @@
             android:id="@+id/detailPoolLayoutPH"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/customborder"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Appareil PH"
                 android:textSize="24sp"
@@ -224,30 +411,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailPoolDatePH"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Date de l'appareil : " />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date de l'appareil : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDatePH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/detailPoolHeatPump"
+            android:id="@+id/detailPoolLayoutHeatPump"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/customborder"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pompe à chaleur"
                 android:textSize="24sp"
@@ -256,31 +454,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailPoolDateHeatPump"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Date de l'appareil : " />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date de l'appareil : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDateHeatPump"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/detailPoolRemp"
+            android:id="@+id/detailPoolLayoutRemp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/customborder"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remplissage automatique"
                 android:textSize="24sp"
@@ -289,15 +497,25 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/detailPoolDateRemp"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:text="Date de l'appareil : " />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date de l'appareil : " />
+
+                    <TextView
+                        android:id="@+id/detailPoolDateRemp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
             </LinearLayout>
 
         </LinearLayout>

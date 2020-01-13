@@ -11,7 +11,9 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/customerDetailsTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:tabTextColor="@android:color/white" />
 
     <fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
         android:id="@+id/customerDetailsViewPager"
