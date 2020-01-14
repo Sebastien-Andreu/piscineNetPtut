@@ -16,7 +16,7 @@ import fr.iut.piscinenetptut.ui.workingmethod.technicalsheet.TechnicalSheetFragm
 class WorkingMethodActivityMvcImpl(
     private val context: Context,
     private val workingMethodActivity: WorkingMethodActivity
-): CustomerDetailsActivityMvc {
+): WorkingMethodActivityMvc {
 
     val TAG: String = "WorkingMethodActivityMcvImpl"
 

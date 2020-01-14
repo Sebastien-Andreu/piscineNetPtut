@@ -9,6 +9,6 @@ interface ListCustomerActivityMvc {
     fun getPictureOfCustomer(idCustomer: Int)
 
     interface Listeners {
-        fun onUserTouchUserPreview(userId: String)
+        fun onUserTouchUserPreview(id: Int)
     }
 }

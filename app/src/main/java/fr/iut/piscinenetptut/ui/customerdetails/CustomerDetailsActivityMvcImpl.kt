@@ -8,8 +8,8 @@ import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.adapter.ViewPagerAdapter
 import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
-import fr.iut.piscinenetptut.ui.customerdetails.customer.CustomerFragment
-import fr.iut.piscinenetptut.ui.customerdetails.swimmingpool.SwimmingPoolFragment
+import fr.iut.piscinenetptut.ui.customerdetails.customer.CustomerDetailFragment
+import fr.iut.piscinenetptut.ui.customerdetails.swimmingpool.SwimmingPoolDetailFragment
 
 
 class CustomerDetailsActivityMvcImpl(
@@ -21,13 +21,15 @@ class CustomerDetailsActivityMvcImpl(
 
     var root: View? = null
 
+    lateinit var listFragmentForViewPager: ArrayList<Fragment>
+
     init {
         try {
             root = View.inflate(context, R.layout.activity_customer_details, null)
 
             customerDetailsActivity.supportActionBar?.hide()
 
-            val listFragmentForViewPager: ArrayList<Fragment> = arrayListOf(CustomerFragment(), SwimmingPoolFragment())
+            listFragmentForViewPager = arrayListOf(CustomerDetailFragment(), SwimmingPoolDetailFragment())
             val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Client", "Piscine")
 
             if (null != root) {

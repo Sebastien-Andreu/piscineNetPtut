@@ -3,6 +3,7 @@ package fr.iut.piscinenetptut.ui.listOfCustomer
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
@@ -20,7 +21,7 @@ class ListCustomerActivityMvcImpl(
 
     private val userPreviewClickListener: View.OnClickListener = View.OnClickListener { v ->
         if (null != v) {
-            listUserActivity.onUserTouchUserPreview(v.tag.toString())
+            listUserActivity.onUserTouchUserPreview(v.tag.toString().toInt())
         }
     }
 
@@ -39,8 +40,7 @@ class ListCustomerActivityMvcImpl(
             if (null != root) {
                 for ((i, customer) in customers.withIndex()) {
                     val view = UserPreviewFactory.createUserPreviewForUser(
-                        userPreviewClickListener = userPreviewClickListener, customer = customer, picture = pools[i].picture!!, context = context
-                    )
+                        userPreviewClickListener = userPreviewClickListener, customer = customer, picture = pools[i].picture!!, context = context)
 
                     root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.addView(view)
                 }
