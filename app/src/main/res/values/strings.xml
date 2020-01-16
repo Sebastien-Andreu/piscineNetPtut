@@ -33,6 +33,10 @@
     <string name="notIncluded">Not included</string>
     <string name="addPool">Add new pool for this user</string>
 
+    <string name="updateCustomerButton">Update the Customer</string>
+    <string name="updatePoolButton">Update the pool</string>
+
+
 
     <!--                                                                 -->
     <!--                              AddPool                            -->

@@ -248,10 +248,18 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/detailCustomerMakeVisitButton"
+            android:id="@+id/updateCustomer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:text="@string/updateCustomerButton"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/detailCustomerMakeVisitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="Faire une visite"
             android:textAllCaps="false" />
 

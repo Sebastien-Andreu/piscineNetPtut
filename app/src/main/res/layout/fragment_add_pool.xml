@@ -978,16 +978,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/addCustomerButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
                     android:gravity="center"
                     android:text="@string/finishAddCustomer"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/updatePoolButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:gravity="center"
+                    android:text="@string/updatePoolButton"
+                    android:textAllCaps="false"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

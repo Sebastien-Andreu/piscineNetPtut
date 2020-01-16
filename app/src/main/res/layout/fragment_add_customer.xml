@@ -410,22 +410,13 @@
 
             </RelativeLayout>
 
-            <LinearLayout
+            <Button
+                android:id="@+id/updateCustomerButton"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="25dp"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:id="@+id/textViewPoolAdded"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="pool added"
-                    android:visibility="gone" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:text="@string/updateCustomerButton"
+                android:textAllCaps="false"
+                android:visibility="gone" />
 
         </LinearLayout>
 

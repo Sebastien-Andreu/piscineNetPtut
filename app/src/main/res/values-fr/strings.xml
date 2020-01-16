@@ -28,6 +28,10 @@
     <string name="notIncluded">Non inclus</string>
     <string name="addPool">Ajouter un nouveau pool pour cet utilisateur</string>
 
+    <string name="updateCustomerButton">Mettre à jour le client</string>
+    <string name="updatePoolButton">Mettre à jour la piscine</string>
+
+
 
     <!--                                                                 -->
     <!--                              AddPool                            -->
