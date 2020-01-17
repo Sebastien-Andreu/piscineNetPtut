@@ -20,7 +20,6 @@ class SwimmingPoolDetailFragmentViewModel {
 
     fun showDetailOfPool(root: View, pool: Pool){
         try {
-            println(requestHttp.url+"Picture/${pool.picture}")
             Fuel.get(requestHttp.url+"Picture/${pool.picture}")
                 .response{ request, response, result ->
                     val (bytes, error) = result
@@ -68,8 +67,6 @@ class SwimmingPoolDetailFragmentViewModel {
                 root.findViewById<LinearLayout>(R.id.detailPoolLayoutRemp).visibility = View.VISIBLE
                 root.findViewById<TextView>(R.id.detailPoolDateRemp).text = pool.dateRemp.toString()
             }
-
-            println(pool.warning == true.toString() && pool.winterCover == false.toString())
 
             if (pool.warning == true.toString() && pool.winterCover == true.toString()) {
                 root.findViewById<LinearLayout>(R.id.detailPoolLayoutWarning).setMargin(null,null,null,0)

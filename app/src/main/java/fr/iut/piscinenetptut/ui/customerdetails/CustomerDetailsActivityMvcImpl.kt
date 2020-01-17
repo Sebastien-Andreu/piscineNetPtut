@@ -2,6 +2,7 @@ package fr.iut.piscinenetptut.ui.customerdetails
 
 import android.content.Context
 import android.view.View
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayout
 import fr.iut.piscinenetptut.R

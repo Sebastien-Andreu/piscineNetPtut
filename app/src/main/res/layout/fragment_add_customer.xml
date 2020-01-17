@@ -342,7 +342,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton5"
+                        android:id="@+id/addCustomerRadioButtonTechnicalVisit"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
@@ -352,7 +352,7 @@
                         tools:ignore="RtlSymmetry" />
 
                     <RadioButton
-                        android:id="@+id/radioButton6"
+                        android:id="@+id/addCustomerRadioButtonCompletVisit"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/full_visit"
@@ -389,7 +389,7 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton7"
+                        android:id="@+id/addCustomerRadioButtonInclus"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
@@ -399,7 +399,7 @@
                         tools:ignore="RtlSymmetry" />
 
                     <RadioButton
-                        android:id="@+id/radioButton8"
+                        android:id="@+id/addCustomerRadioButtonNonInclus"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/notIncluded"
@@ -411,20 +411,30 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/updateCustomerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="25dp"
-                android:gravity="center_horizontal">
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
 
-                <TextView
-                    android:id="@+id/textViewPoolAdded"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/updateCustomerButtonCancel"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="pool added"
-                    android:visibility="gone" />
+                    android:text="@android:string/cancel"
+                    android:textAllCaps="false"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/updateCustomerButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/updateText"
+                    android:textAllCaps="false"
+                    android:visibility="visible" />
             </LinearLayout>
 
         </LinearLayout>

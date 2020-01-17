@@ -7,14 +7,11 @@ import android.os.Bundle
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.workingmethod.WorkingMethodActivity
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.Serializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
-import kotlinx.serialization.json.json
-import kotlinx.serialization.parse
 
 class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.listeners {
 
@@ -66,6 +63,15 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
         try {
             this@CustomerDetailsActivity.finish()
             WorkingMethodActivity.start(this)
+        } catch (exception: Exception) {
+            exception.toTreatFor(TAG)
+        }
+    }
+
+    override fun onUserWantToUpdateCustomer() {
+        try {
+            this@CustomerDetailsActivity.finish()
+            ManagementCustomerActivity.start(this, customer, pool)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }

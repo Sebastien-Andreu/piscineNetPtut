@@ -4,5 +4,6 @@ interface CustomerDetailsActivityMvc {
 
     interface listeners {
         fun onUserWantStartWork()
+        fun onUserWantToUpdateCustomer()
     }
 }

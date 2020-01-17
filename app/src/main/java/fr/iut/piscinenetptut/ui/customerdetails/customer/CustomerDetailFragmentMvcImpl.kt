@@ -32,6 +32,10 @@ class CustomerDetailFragmentMvcImpl (
                 this.context.let { WorkingMethodActivity.start(it) }
             }
 
+            root?.findViewById<Button>(R.id.updateCustomer)?.setOnClickListener{
+                (customerDetailFragment.activity as CustomerDetailsActivity).onUserWantToUpdateCustomer()
+            }
+
             onUserWantToShowDetailCustomer((customerDetailFragment.activity as CustomerDetailsActivity).customer)
         } catch (exception : Exception){
             exception.toTreatFor(TAG)

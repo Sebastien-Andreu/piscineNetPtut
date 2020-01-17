@@ -975,19 +975,55 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/addPoolLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/addCustomerButton"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="25dp"
                     android:gravity="center"
                     android:text="@string/finishAddCustomer"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/updatePoolLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/updatePoolCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@android:string/cancel"
+                    android:textAllCaps="false"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/updatePoolUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/updateText"
+                    android:textAllCaps="false"
+                    android:visibility="visible" />
 
             </LinearLayout>
 

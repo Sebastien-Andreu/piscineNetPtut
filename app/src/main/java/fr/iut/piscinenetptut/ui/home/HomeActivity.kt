@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.addCustomer.AddCustomerActivity
+import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfVisit.ListOfVisitActivity
 
@@ -40,7 +40,7 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     override fun onUserWantToAddAClient() {
         try {
             this@HomeActivity.finish()
-            AddCustomerActivity.start(this)
+            ManagementCustomerActivity.start(this)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
