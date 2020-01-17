@@ -23,10 +23,3 @@ class CustomerFragment : Fragment() , CustomerFragmentMvc.Listener {
         return customerFragmentMvcImpl.verifyAllInput()
     }
 }
-
-
-
-
-// il faudra changer le bouton ( le text du bouton pour la piscine et afficher un bouton pour le customer
-// savoir comment mettre a on le switch
-// savoir comment selectionner un radiobutton

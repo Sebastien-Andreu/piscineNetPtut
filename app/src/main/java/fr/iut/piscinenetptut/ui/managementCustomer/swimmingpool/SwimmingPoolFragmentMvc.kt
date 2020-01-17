@@ -4,7 +4,7 @@ import android.content.Intent
 
 interface SwimmingPoolFragmentMvc {
 
-    fun verifyAllInput()
+    fun verifyAllInput(): Boolean
     fun verifyIfAllInputTextAreNotEmpty(): Boolean
     fun verifyIfAllRadioGroupAreSelected(): Boolean
     fun verifyIfPictureIsSelected(): Boolean

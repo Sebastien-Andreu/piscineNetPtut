@@ -63,12 +63,20 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
 
             setContentView(managementCustomerActivityMvcImpl.root)
 
-            managementCustomerActivityViewModel.customerCallBack.observe(this, Observer {
-                managementCustomerActivityMvcImpl.onCustomerInformationIsLoaded(it)
+            managementCustomerActivityViewModel.addCustomerCallBack.observe(this, Observer {
+                managementCustomerActivityMvcImpl.addCustomer(it)
             })
 
-            managementCustomerActivityViewModel.poolCallBack.observe(this, Observer {
-                managementCustomerActivityMvcImpl.onPoolInformationIsLoaded(it)
+            managementCustomerActivityViewModel.addPoolCallBack.observe(this, Observer {
+                managementCustomerActivityMvcImpl.addPool(it)
+            })
+
+            managementCustomerActivityViewModel.updateCustomerCallBack.observe(this, Observer {
+                managementCustomerActivityMvcImpl.updateCustomer(it)
+            })
+
+            managementCustomerActivityViewModel.updatePoolCallBack.observe(this, Observer {
+                managementCustomerActivityMvcImpl.updatePool(it)
             })
 
         } catch (exception: Exception) {
@@ -82,19 +90,19 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
     }
 
     override fun onUserWantToAddNewCustomer() {
-        if (pool != null) {
-            managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!, customer!!.ID)
-        }else {
-            managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!)
-        }
+        managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!)
+
     }
 
     override fun onUserWantToAddNewPool(id_Customer: Int?) {
-        if (pool != null){
-            println("------------------------------------------------------1")
-            managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer!!.ID, pool!!.picture)
-        } else {
-            managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, id_Customer)
-        }
+        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer!!)
+    }
+
+    override fun onUserWantToUpdateCustomer() {
+        managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!, customer!!.ID)
+    }
+
+    override fun onUserWantToUpdatePool() {
+        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer!!, pool!!.picture)
     }
 }

@@ -4,10 +4,14 @@ import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 
 interface ManagementCustomerActivityMvc {
-    fun onCustomerInformationIsLoaded(customer: Customer)
-    fun onPoolInformationIsLoaded(pool: Pool)
+    fun addCustomer(customer: Customer)
+    fun addPool(pool: Pool)
+    fun updateCustomer(customer: Customer)
+    fun updatePool(pool: Pool)
     interface listeners {
         fun onUserWantToAddNewCustomer()
         fun onUserWantToAddNewPool(id_Customer: Int?= null)
+        fun onUserWantToUpdateCustomer()
+        fun onUserWantToUpdatePool()
     }
 }

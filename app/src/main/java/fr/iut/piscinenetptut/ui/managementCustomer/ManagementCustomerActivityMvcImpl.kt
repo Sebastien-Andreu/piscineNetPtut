@@ -2,7 +2,6 @@ package fr.iut.piscinenetptut.ui.managementCustomer
 
 import android.content.Context
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
@@ -30,6 +29,9 @@ class ManagementCustomerActivityMvcImpl(
 ): ManagementCustomerActivityMvc {
 
     val TAG: String = "ManagementCustomerActivityMvc"
+
+    val json = Json(JsonConfiguration.Stable)
+    val requestHttp = httpRequest()
 
     var root: View? = null
 
@@ -68,83 +70,99 @@ class ManagementCustomerActivityMvcImpl(
         }
     }
 
-    override fun onCustomerInformationIsLoaded(customer: Customer) {
+
+    override fun addCustomer(customer: Customer) {
         try {
             if (null != root) {
-
-                val json = Json(JsonConfiguration.Stable)
-                val request = httpRequest()
-
-                if (managementCustomerActivity.customer != null){
-                    Fuel.put(request.url+"Customer/" + managementCustomerActivity.customer!!.ID)
-                        .body(request.convertData(json.stringify(Customer.serializer(), customer)))
-                        .header("Content-Type" to "application/x-www-form-urlencoded")
-                        .responseString { request, response, result ->
-                            result.fold({ d ->
-                                Toast.makeText(listFragmentForViewPager[0].activity, "Updated !", Toast.LENGTH_LONG).show()
-                            }, { err ->
-                                println(err.message)
-                            })
-                        }
-                }else {
-                    Fuel.post(request.url+"Customer")
-                        .body(request.convertData(json.stringify(Customer.serializer(), customer)))
-                        .header("Content-Type" to "application/x-www-form-urlencoded")
-                        .responseString { request, response, result ->
-                            result.fold({ d ->
-                                managementCustomerActivity.onUserWantToAddNewPool(json.parse(Customer.serializer(), d).ID)
-                            }, { err ->
-                                println(err.message)
-                            })
-                        }
-                }
-
+                Fuel.post(requestHttp.url+"Customer")
+                    .body(requestHttp.convertData(json.stringify(Customer.serializer(), customer)))
+                    .header("Content-Type" to "application/x-www-form-urlencoded")
+                    .responseString { request, response, result ->
+                        result.fold({ d ->
+                            managementCustomerActivity.onUserWantToAddNewPool(json.parse(Customer.serializer(), d).ID)
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
             }
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
         }
     }
 
-    override fun onPoolInformationIsLoaded(pool: Pool){
+    override fun addPool(pool: Pool) {
         try {
             if (null != root) {
 
-                val json = Json(JsonConfiguration.Stable)
                 val file : String? = (listFragmentForViewPager[1] as SwimmingPoolFragment).uriPicture
-                val request = httpRequest()
 
                 if (file != null){
-                    Fuel.upload(request.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename=pool.picture) }
+                    Fuel.upload(requestHttp.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename=pool.picture) }
                         .response { result ->
                             println(result)
                         }
                 }
 
-                if (managementCustomerActivity.pool != null){
-                    println(request.url+"Pool/" + pool.ID_Customer)
-                    Fuel.put(request.url+"Pool/" + pool.ID_Customer)
-                        .body(request.convertData(json.stringify(Pool.serializer(), pool)))
-                        .header("Content-Type" to "application/x-www-form-urlencoded")
-                        .responseString { request, response, result ->
-                            result.fold({ d ->
-                                Toast.makeText(listFragmentForViewPager[1].activity, "Updated !", Toast.LENGTH_LONG).show()
-                            }, { err ->
-                                println(err.message)
-                            })
-                        }
-                } else {
-                    Fuel.post(request.url+"Pool")
-                        .body(request.convertData(json.stringify(Pool.serializer(), pool)))
-                        .header("Content-Type" to "application/x-www-form-urlencoded")
-                        .responseString { request, response, result ->
-                            result.fold({ d ->
-                                this@ManagementCustomerActivityMvcImpl.managementCustomerActivity.finish()
-                                HomeActivity.start(this@ManagementCustomerActivityMvcImpl.managementCustomerActivity)
-                            }, { err ->
-                                println(err.message)
-                            })
+                Fuel.post(requestHttp.url+"Pool")
+                    .body(requestHttp.convertData(json.stringify(Pool.serializer(), pool)))
+                    .header("Content-Type" to "application/x-www-form-urlencoded")
+                    .responseString { request, response, result ->
+                        result.fold({ d ->
+                            this@ManagementCustomerActivityMvcImpl.managementCustomerActivity.finish()
+                            HomeActivity.start(this@ManagementCustomerActivityMvcImpl.managementCustomerActivity)
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
+            }
+        }catch (exception: Exception){
+            exception.toTreatFor(TAG)
+        }
+    }
+
+    override fun updateCustomer(customer: Customer) {
+        try {
+            if (null != root) {
+
+                Fuel.put(requestHttp.url+"Customer/" + managementCustomerActivity.customer!!.ID)
+                    .body(requestHttp.convertData(json.stringify(Customer.serializer(), customer)))
+                    .header("Content-Type" to "application/x-www-form-urlencoded")
+                    .responseString { request, response, result ->
+                        result.fold({ d ->
+                            Toast.makeText(listFragmentForViewPager[0].activity, "Updated !", Toast.LENGTH_LONG).show()
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
+            }
+        }catch (exception: Exception){
+            exception.toTreatFor(TAG)
+        }
+    }
+
+    override fun updatePool(pool: Pool) {
+        try {
+            if (null != root) {
+
+                val file : String? = (listFragmentForViewPager[1] as SwimmingPoolFragment).uriPicture
+
+                if (file != null){
+                    Fuel.upload(requestHttp.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename=pool.picture) }
+                        .response { result ->
+                            println(result)
                         }
                 }
+
+                Fuel.put(requestHttp.url+"Pool/" + pool.ID_Customer)
+                    .body(requestHttp.convertData(json.stringify(Pool.serializer(), pool)))
+                    .header("Content-Type" to "application/x-www-form-urlencoded")
+                    .responseString { request, response, result ->
+                        result.fold({ d ->
+                            Toast.makeText(listFragmentForViewPager[1].activity, "Updated !", Toast.LENGTH_LONG).show()
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
             }
         }catch (exception: Exception){
             exception.toTreatFor(TAG)

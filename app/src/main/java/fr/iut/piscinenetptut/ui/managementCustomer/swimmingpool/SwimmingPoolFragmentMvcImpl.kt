@@ -47,7 +47,9 @@ class SwimmingPoolFragmentMvcImpl (
             root = View.inflate(context, R.layout.fragment_add_pool, null)
 
             root?.findViewById<Button>(R.id.addCustomerButton)?.setOnClickListener {
-                verifyAllInput()
+                if (verifyAllInput()){
+                    (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToAddNewPool()
+                }
             }
 
             root?.findViewById<Button>(R.id.buttonAddPicturePool)?.setOnClickListener {
@@ -107,13 +109,16 @@ class SwimmingPoolFragmentMvcImpl (
                 root!!.findViewById<TextView>(R.id.addPoolTextValueOfSwitchWinterCover)?.text = false.toString()
             }
 
+            /*-----------------------UPDATE-----------------------*/
             if ((swimmingPoolFragment.activity as ManagementCustomerActivity).pool != null) {
 
                 root!!.findViewById<LinearLayout>(R.id.updatePoolLayout)?.visibility = View.VISIBLE
                 root!!.findViewById<LinearLayout>(R.id.addPoolLayout)?.visibility = View.GONE
 
                 root!!.findViewById<Button>(R.id.updatePoolUpdate)?.setOnClickListener{
-                    verifyAllInput()
+                    if (verifyAllInput()){
+                        (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToUpdatePool()
+                    }
                 }
                 root!!.findViewById<Button>(R.id.updatePoolCancel)?.setOnClickListener{
                     (swimmingPoolFragment.activity as ManagementCustomerActivity).onBackPressed()
@@ -121,6 +126,7 @@ class SwimmingPoolFragmentMvcImpl (
 
                 onUserWantToShowDetailPoolToUpdate()
             }
+            /*-----------------------UPDATE-----------------------*/
 
         } catch (exception: Exception){
             exception.toTreatFor(TAG)
@@ -131,11 +137,12 @@ class SwimmingPoolFragmentMvcImpl (
         swimmingPoolFragmentViewModel.showInformationOfPoolWhenUserWantToUpdate(root!!, (swimmingPoolFragment.activity as ManagementCustomerActivity).pool!!)
     }
 
-    override fun verifyAllInput(){
-        if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
-            (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToAddNewPool()
+    override fun verifyAllInput(): Boolean{
+        return if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
+            true
         } else {
             Toast.makeText(root?.context, "Some information is missing to add", Toast.LENGTH_LONG).show()
+            false
         }
     }
 

@@ -36,17 +36,20 @@ class CustomerFragmentMvcImpl (
 
             }
 
-
+            /*-----------------------UPDATE-----------------------*/
             if ((customerFragment.activity as ManagementCustomerActivity).customer != null) {
                 root!!.findViewById<LinearLayout>(R.id.updateCustomerLayout)?.visibility = View.VISIBLE
                 root!!.findViewById<Button>(R.id.updateCustomerButton)?.setOnClickListener{
-                    (customerFragment.activity as ManagementCustomerActivity).onUserWantToAddNewCustomer()
+                    if (verifyAllInput()){
+                        (customerFragment.activity as ManagementCustomerActivity).onUserWantToUpdateCustomer()
+                    }
                 }
                 root!!.findViewById<Button>(R.id.updateCustomerButtonCancel)?.setOnClickListener{
                     (customerFragment.activity as ManagementCustomerActivity).onBackPressed()
                 }
                 onUserWantToShowDetailCustomerToUpdate()
             }
+            /*-----------------------UPDATE-----------------------*/
 
         } catch (exception: Exception){
             exception.toTreatFor(TAG)

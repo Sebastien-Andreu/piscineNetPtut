@@ -1,28 +1,24 @@
 package fr.iut.piscinenetptut.ui.managementCustomer
 
-import android.graphics.BitmapFactory
-import android.graphics.Picture
 import android.view.View
 import  android.widget.*
 import androidx.lifecycle.MutableLiveData
-import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.createUniqueIdV4
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
-import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 
 class ManagementCustomerActivityViewModel {
 
     val TAG: String = "AddCustomerActivityViewModel"
 
-    val customerCallBack: MutableLiveData<Customer> = MutableLiveData()
-    val poolCallBack: MutableLiveData<Pool> = MutableLiveData()
+    val addCustomerCallBack: MutableLiveData<Customer> = MutableLiveData()
+    val addPoolCallBack: MutableLiveData<Pool> = MutableLiveData()
 
-    private val requestHttp = httpRequest()
-
+    val updateCustomerCallBack: MutableLiveData<Customer> = MutableLiveData()
+    val updatePoolCallBack: MutableLiveData<Pool> = MutableLiveData()
 
     fun onNeedToGetCustomerInformation(root: View, id: Int? = null) {
         try {
@@ -42,16 +38,19 @@ class ManagementCustomerActivityViewModel {
                 typeOfContract = root.findViewById<RadioButton>(idTypeOfContract!!)?.text.toString(),
                 contractOfProduct = root.findViewById<RadioButton>(idContractOfProduct!!)?.text.toString()
             )
-            customerCallBack.postValue(customer)
+
+            if (id != null){
+                updateCustomerCallBack.postValue(customer)
+            } else {
+                addCustomerCallBack.postValue(customer)
+            }
         } catch (exception: Exception){
             exception.toTreatFor(TAG)
         }
     }
 
-    fun onNeedToGetPoolInformation(root: View, idCustomer: Int?, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
+    fun onNeedToGetPoolInformation(root: View, customer: Customer, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
         try {
-            println(idCustomer)
-            println(picture)
             val idShape = root.findViewById<RecursiveRadioGroup>(R.id.addPoolShape)?.checkedItemId
             val idEnvironment = root.findViewById<RecursiveRadioGroup>(R.id.addPoolEnvironment)?.checkedItemId
             val idState = root.findViewById<RecursiveRadioGroup>(R.id.addPoolState)?.checkedItemId
@@ -59,7 +58,7 @@ class ManagementCustomerActivityViewModel {
             val idAcces = root.findViewById<RadioGroup>(R.id.addPoolAcces)?.checkedRadioButtonId
             val idElectronicalProduct = root.findViewById<RadioGroup>(R.id.addPoolElectronicalProduct)?.checkedRadioButtonId
             val pool = Pool (
-                 ID_Customer = idCustomer,
+                 ID_Customer = customer.ID,
                  picture = picture,
                  sizeLo = root.findViewById<EditText>(R.id.addPoolLo)?.text.toString(),
                  sizeLa = root.findViewById<EditText>(R.id.addPoolLa)?.text.toString(),
@@ -84,7 +83,11 @@ class ManagementCustomerActivityViewModel {
                  dateRemp = getValue(root.findViewById<EditText>(R.id.addPoolDateRemp)?.text.toString()),
                  observation = getValue(root.findViewById<EditText>(R.id.addPoolObservation)?.text.toString())
             )
-            poolCallBack.postValue(pool)
+            if (customer.ID != null){
+                updatePoolCallBack.postValue(pool)
+            } else {
+                addPoolCallBack.postValue(pool)
+            }
 
         } catch (exception: Exception){
             exception.toTreatFor(TAG)
