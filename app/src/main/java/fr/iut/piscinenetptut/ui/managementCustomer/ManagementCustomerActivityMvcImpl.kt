@@ -33,7 +33,6 @@ class ManagementCustomerActivityMvcImpl(
 
     var root: View? = null
 
-    lateinit var request: httpRequest
     lateinit var listFragmentForViewPager: ArrayList<Fragment>
 
     init {
@@ -74,11 +73,20 @@ class ManagementCustomerActivityMvcImpl(
             if (null != root) {
 
                 val json = Json(JsonConfiguration.Stable)
-                request = httpRequest()
+                val request = httpRequest()
 
                 if (managementCustomerActivity.customer != null){
-                    //TODO
-                } else {
+                    Fuel.put(request.url+"Customer/" + managementCustomerActivity.customer!!.ID)
+                        .body(request.convertData(json.stringify(Customer.serializer(), customer)))
+                        .header("Content-Type" to "application/x-www-form-urlencoded")
+                        .responseString { request, response, result ->
+                            result.fold({ d ->
+                                Toast.makeText(listFragmentForViewPager[0].activity, "Updated !", Toast.LENGTH_LONG).show()
+                            }, { err ->
+                                println(err.message)
+                            })
+                        }
+                }else {
                     Fuel.post(request.url+"Customer")
                         .body(request.convertData(json.stringify(Customer.serializer(), customer)))
                         .header("Content-Type" to "application/x-www-form-urlencoded")
@@ -102,15 +110,29 @@ class ManagementCustomerActivityMvcImpl(
             if (null != root) {
 
                 val json = Json(JsonConfiguration.Stable)
-                val file = (listFragmentForViewPager[1] as SwimmingPoolFragment).uriPicture!!
+                val file : String? = (listFragmentForViewPager[1] as SwimmingPoolFragment).uriPicture
+                val request = httpRequest()
 
-                if (managementCustomerActivity.pool != null){
-                    //TODO
-                } else {
+                if (file != null){
                     Fuel.upload(request.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename=pool.picture) }
                         .response { result ->
                             println(result)
                         }
+                }
+
+                if (managementCustomerActivity.pool != null){
+                    println(request.url+"Pool/" + pool.ID_Customer)
+                    Fuel.put(request.url+"Pool/" + pool.ID_Customer)
+                        .body(request.convertData(json.stringify(Pool.serializer(), pool)))
+                        .header("Content-Type" to "application/x-www-form-urlencoded")
+                        .responseString { request, response, result ->
+                            result.fold({ d ->
+                                Toast.makeText(listFragmentForViewPager[1].activity, "Updated !", Toast.LENGTH_LONG).show()
+                            }, { err ->
+                                println(err.message)
+                            })
+                        }
+                } else {
                     Fuel.post(request.url+"Pool")
                         .body(request.convertData(json.stringify(Pool.serializer(), pool)))
                         .header("Content-Type" to "application/x-www-form-urlencoded")

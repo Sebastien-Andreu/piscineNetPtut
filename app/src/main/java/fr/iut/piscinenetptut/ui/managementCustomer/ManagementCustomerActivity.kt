@@ -82,10 +82,19 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
     }
 
     override fun onUserWantToAddNewCustomer() {
-        managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!)
+        if (pool != null) {
+            managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!, customer!!.ID)
+        }else {
+            managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!)
+        }
     }
 
     override fun onUserWantToAddNewPool(id_Customer: Int?) {
-        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, id_Customer)
+        if (pool != null){
+            println("------------------------------------------------------1")
+            managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer!!.ID, pool!!.picture)
+        } else {
+            managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, id_Customer)
+        }
     }
 }

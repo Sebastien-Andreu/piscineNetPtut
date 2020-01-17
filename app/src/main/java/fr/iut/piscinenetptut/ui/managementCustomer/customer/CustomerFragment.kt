@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 
 class CustomerFragment : Fragment() , CustomerFragmentMvc.Listener {
 

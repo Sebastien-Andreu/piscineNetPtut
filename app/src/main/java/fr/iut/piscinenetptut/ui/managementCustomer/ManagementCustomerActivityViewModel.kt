@@ -1,6 +1,7 @@
 package fr.iut.piscinenetptut.ui.managementCustomer
 
 import android.graphics.BitmapFactory
+import android.graphics.Picture
 import android.view.View
 import  android.widget.*
 import androidx.lifecycle.MutableLiveData
@@ -23,11 +24,12 @@ class ManagementCustomerActivityViewModel {
     private val requestHttp = httpRequest()
 
 
-    fun onNeedToGetCustomerInformation(root: View) {
+    fun onNeedToGetCustomerInformation(root: View, id: Int? = null) {
         try {
             val idTypeOfContract = root.findViewById<RadioGroup>(R.id.addCustomerRadioTypeContract)?.checkedRadioButtonId
             val idContractOfProduct = root.findViewById<RadioGroup>(R.id.addCustomerRadioContractOfProduct)?.checkedRadioButtonId
             val customer = Customer (
+                ID = id,
                 telFixNumber = getValue(root.findViewById<EditText>(R.id.addCustomerTelFixNumber)?.text.toString()),
                 guardianNumber = getValue(root.findViewById<EditText>(R.id.addCustomerInputGuardian)?.text.toString()),
                 name = root.findViewById<EditText>(R.id.addCustomerName)?.text.toString(),
@@ -46,8 +48,10 @@ class ManagementCustomerActivityViewModel {
         }
     }
 
-    fun onNeedToGetPoolInformation(root: View, idCustomer: Int?) {
+    fun onNeedToGetPoolInformation(root: View, idCustomer: Int?, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
         try {
+            println(idCustomer)
+            println(picture)
             val idShape = root.findViewById<RecursiveRadioGroup>(R.id.addPoolShape)?.checkedItemId
             val idEnvironment = root.findViewById<RecursiveRadioGroup>(R.id.addPoolEnvironment)?.checkedItemId
             val idState = root.findViewById<RecursiveRadioGroup>(R.id.addPoolState)?.checkedItemId
@@ -56,7 +60,7 @@ class ManagementCustomerActivityViewModel {
             val idElectronicalProduct = root.findViewById<RadioGroup>(R.id.addPoolElectronicalProduct)?.checkedRadioButtonId
             val pool = Pool (
                  ID_Customer = idCustomer,
-                 picture = "picture" + createUniqueIdV4() + ".jpg",
+                 picture = picture,
                  sizeLo = root.findViewById<EditText>(R.id.addPoolLo)?.text.toString(),
                  sizeLa = root.findViewById<EditText>(R.id.addPoolLa)?.text.toString(),
                  depth = root.findViewById<EditText>(R.id.addPoolDepth)?.text.toString(),

@@ -17,7 +17,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
@@ -68,6 +67,7 @@ class SwimmingPoolFragmentMvcImpl (
                     root!!.findViewById<TextView>(R.id.addPoolDatePH)?.text = null
                     return@setOnCheckedChangeListener
                 }
+                root!!.findViewById<TextView>(R.id.addPoolDatePH)?.text = null
                 root!!.findViewById<LinearLayout>(R.id.layoutAddPoolPH).visibility = View.GONE
             }
 
@@ -77,6 +77,7 @@ class SwimmingPoolFragmentMvcImpl (
                     root!!.findViewById<TextView>(R.id.addPoolDatePompe)?.text = null
                     return@setOnCheckedChangeListener
                 }
+                root!!.findViewById<TextView>(R.id.addPoolDatePompe)?.text = null
                 root!!.findViewById<LinearLayout>(R.id.layoutAddPoolPompe).visibility = View.GONE
             }
 
@@ -86,6 +87,7 @@ class SwimmingPoolFragmentMvcImpl (
                     root!!.findViewById<TextView>(R.id.addPoolDateRemp)?.text = null
                     return@setOnCheckedChangeListener
                 }
+                root!!.findViewById<TextView>(R.id.addPoolDateRemp)?.text = null
                 root!!.findViewById<LinearLayout>(R.id.layoutAddPoolRemp).visibility = View.GONE
             }
 
@@ -106,6 +108,17 @@ class SwimmingPoolFragmentMvcImpl (
             }
 
             if ((swimmingPoolFragment.activity as ManagementCustomerActivity).pool != null) {
+
+                root!!.findViewById<LinearLayout>(R.id.updatePoolLayout)?.visibility = View.VISIBLE
+                root!!.findViewById<LinearLayout>(R.id.addPoolLayout)?.visibility = View.GONE
+
+                root!!.findViewById<Button>(R.id.updatePoolUpdate)?.setOnClickListener{
+                    verifyAllInput()
+                }
+                root!!.findViewById<Button>(R.id.updatePoolCancel)?.setOnClickListener{
+                    (swimmingPoolFragment.activity as ManagementCustomerActivity).onBackPressed()
+                }
+
                 onUserWantToShowDetailPoolToUpdate()
             }
 
@@ -120,7 +133,7 @@ class SwimmingPoolFragmentMvcImpl (
 
     override fun verifyAllInput(){
         if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
-            (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToAddNewCustomer()
+            (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToAddNewPool()
         } else {
             Toast.makeText(root?.context, "Some information is missing to add", Toast.LENGTH_LONG).show()
         }

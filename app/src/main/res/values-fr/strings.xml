@@ -29,8 +29,6 @@
     <string name="addPool">Ajouter un nouveau pool pour cet utilisateur</string>
 
     <string name="updateCustomerButton">Mettre à jour le client</string>
-    <string name="updatePoolButton">Mettre à jour la piscine</string>
-
 
 
     <!--                                                                 -->
@@ -43,7 +41,7 @@
     <string name="depth">Profondeur *</string>
 
     <string name="shape">Forme *</string>
-    <string name="rectangular">Resctangulaire</string>
+    <string name="rectangular">Rectangulaire</string>
     <string name="square">Carré</string>
     <string name="swimmingLane">Couloir de nage</string>
     <string name="bean">Haricot</string>
@@ -96,6 +94,7 @@
     <string name="observation">Observation</string>
 
     <string name="finishAddCustomer">ajouter un nouveau client</string>
+    <string name="updateText">Mettre à jour</string>
 
     <!--                                                                 -->
     <!--                          ListUserActivity                       -->

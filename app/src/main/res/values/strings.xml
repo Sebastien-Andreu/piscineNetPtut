@@ -34,8 +34,6 @@
     <string name="addPool">Add new pool for this user</string>
 
     <string name="updateCustomerButton">Update the Customer</string>
-    <string name="updatePoolButton">Update the pool</string>
-
 
 
     <!--                                                                 -->
@@ -100,6 +98,8 @@
     <string name="observation">Observation</string>
 
     <string name="finishAddCustomer">Add new customer</string>
+    <string name="updateText">Update</string>
+
 
 
     <!--                                                                 -->

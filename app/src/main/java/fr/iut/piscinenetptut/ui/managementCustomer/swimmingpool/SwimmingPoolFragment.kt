@@ -9,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.shared.permission.PermissionCamera
-import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 
 
 class SwimmingPoolFragment : Fragment(), SwimmingPoolFragmentMvc.Listener {

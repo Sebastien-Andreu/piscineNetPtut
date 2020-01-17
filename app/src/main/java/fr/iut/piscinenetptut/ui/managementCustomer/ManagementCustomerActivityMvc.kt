@@ -8,6 +8,6 @@ interface ManagementCustomerActivityMvc {
     fun onPoolInformationIsLoaded(pool: Pool)
     interface listeners {
         fun onUserWantToAddNewCustomer()
-        fun onUserWantToAddNewPool(id_Customer: Int?)
+        fun onUserWantToAddNewPool(id_Customer: Int?= null)
     }
 }
