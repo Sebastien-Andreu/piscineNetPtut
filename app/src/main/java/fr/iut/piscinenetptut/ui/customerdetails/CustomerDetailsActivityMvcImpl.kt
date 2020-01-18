@@ -28,8 +28,6 @@ class CustomerDetailsActivityMvcImpl(
         try {
             root = View.inflate(context, R.layout.activity_customer_details, null)
 
-            customerDetailsActivity.supportActionBar?.hide()
-
             listFragmentForViewPager = arrayListOf(CustomerDetailFragment(), SwimmingPoolDetailFragment())
             val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Client", "Piscine")
 

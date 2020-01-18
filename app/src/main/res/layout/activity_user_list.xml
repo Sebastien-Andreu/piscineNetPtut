@@ -5,12 +5,6 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <EditText
-        android:id="@+id/schearchEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/list_user_activity_search" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

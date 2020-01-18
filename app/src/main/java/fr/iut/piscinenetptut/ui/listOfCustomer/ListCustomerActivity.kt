@@ -3,8 +3,12 @@ package fr.iut.piscinenetptut.ui.listOfCustomer
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
@@ -35,6 +39,8 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
             listUserActivityViewModel = ListCustomerActivityViewModel()
 
             setContentView(listUserActivityMvcImpl.root)
+
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
             listUserActivityViewModel.customerCallBack.observe(this, Observer {
                 listCustomer = it
@@ -72,6 +78,26 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_setting -> {
+                Toast.makeText(applicationContext, "click on setting", Toast.LENGTH_LONG).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onBackPressed() {

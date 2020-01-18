@@ -119,4 +119,11 @@
     <string name="warning_permission_camera">We need access to the camera to perform the necessary tasks. Please authorize authorization via the Settings screen. Select Authorizations -> Activate Authorization</string>
     <string name="permiteManually">Settings</string>
     <string name="cancelPermission">Cancel</string>
+
+
+    <!--                                                                 -->
+    <!--                            Setting                              -->
+    <!--                                                                 -->
+    <string name="setting">Setting</string>
+
 </resources>
