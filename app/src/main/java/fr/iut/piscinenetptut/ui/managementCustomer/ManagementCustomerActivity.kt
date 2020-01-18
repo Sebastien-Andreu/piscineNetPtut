@@ -102,7 +102,7 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_setting -> {
-                Toast.makeText(applicationContext, "click on setting", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "setting", Toast.LENGTH_LONG).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
