@@ -4,6 +4,10 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
@@ -47,6 +51,9 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
         try {
             super.onCreate(savedInstanceState)
 
+            supportActionBar?.title = "Customer details"
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
             this.customer = json.parse(Customer.serializer(),intent.getStringExtra(EXTRA_CUSTOMER_DETAIL)!!)
             this.pool = json.parse(Pool.serializer(),intent.getStringExtra(EXTRA_POOL_DETAIL)!!)
 
@@ -75,6 +82,26 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_setting -> {
+                Toast.makeText(applicationContext, "setting", Toast.LENGTH_LONG).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+            override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     override fun onBackPressed() {

@@ -109,4 +109,9 @@
     <string name="warning_permission_camera">Nous devons avoir accès à la caméra pour effectuer les tâches nécessaires. Veuillez autoriser l\'autorisation par l\'écran Paramètres.\n\n-Sélectionner les autorisations -> Activer l\'autorisation</string>
     <string name="permiteManually">Paramètres</string>
     <string name="cancelPermission">Annuler</string>
+
+    <!--                                                                 -->
+    <!--                            Setting                              -->
+    <!--                                                                 -->
+    <string name="setting">Paramètre</string>
 </resources>

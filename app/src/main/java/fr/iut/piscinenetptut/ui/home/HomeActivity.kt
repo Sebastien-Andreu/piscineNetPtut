@@ -3,7 +3,11 @@ package fr.iut.piscinenetptut.ui.home
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
@@ -34,6 +38,21 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
             setContentView(homeActivityMvcImpl.root)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_setting -> {
+                Toast.makeText(applicationContext, "setting", Toast.LENGTH_LONG).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
