@@ -120,12 +120,12 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
     }
 
     override fun onUserWantToAddNewCustomer() {
-        managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!)
+        managementCustomerActivityViewModel.onNeedToGetCustomerInformation(managementCustomerActivityMvcImpl.root!!, null)
 
     }
 
     override fun onUserWantToAddNewPool(id_Customer: Int?) {
-        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer!!)
+        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, null, id_Customer)
     }
 
     override fun onUserWantToUpdateCustomer() {
@@ -133,6 +133,6 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
     }
 
     override fun onUserWantToUpdatePool() {
-        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer!!, pool!!.picture)
+        managementCustomerActivityViewModel.onNeedToGetPoolInformation(managementCustomerActivityMvcImpl.root!!, customer, customer!!.ID, pool!!.picture)
     }
 }

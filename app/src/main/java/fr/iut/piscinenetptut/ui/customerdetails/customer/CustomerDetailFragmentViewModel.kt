@@ -20,11 +20,11 @@ class CustomerDetailFragmentViewModel {
             root.findViewById<TextView>(R.id.detailCustomerAddr).text = customer.address
             root.findViewById<TextView>(R.id.detailCustomerPostalCode).text = customer.postalCode.toString()
             root.findViewById<TextView>(R.id.detailCustomerPhoneNumber).text = customer.telPhoneNumber
-            if (customer.telFixNumber != "null"){
+            if (customer.telFixNumber != null.toString()){
                 root.findViewById<TextView>(R.id.detailCustomerFixPhoneNumber).visibility = View.VISIBLE
                 root.findViewById<TextView>(R.id.detailCustomerFixPhoneNumber).text = customer.telFixNumber
             }
-            if (customer.guardianNumber != "null"){
+            if (customer.guardianNumber != null.toString()){
                 root.findViewById<LinearLayout>(R.id.detailCustomerLayoutGuardian).visibility = View.VISIBLE
                 root.findViewById<TextView>(R.id.detailCustomerGuardianNumber).text = customer.guardianNumber
             }

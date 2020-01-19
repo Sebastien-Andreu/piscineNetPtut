@@ -49,7 +49,7 @@ class ManagementCustomerActivityViewModel {
         }
     }
 
-    fun onNeedToGetPoolInformation(root: View, customer: Customer, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
+    fun onNeedToGetPoolInformation(root: View,customer: Customer?, ID_Customer: Int?, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
         try {
             val idShape = root.findViewById<RecursiveRadioGroup>(R.id.addPoolShape)?.checkedItemId
             val idEnvironment = root.findViewById<RecursiveRadioGroup>(R.id.addPoolEnvironment)?.checkedItemId
@@ -58,7 +58,7 @@ class ManagementCustomerActivityViewModel {
             val idAcces = root.findViewById<RadioGroup>(R.id.addPoolAcces)?.checkedRadioButtonId
             val idElectronicalProduct = root.findViewById<RadioGroup>(R.id.addPoolElectronicalProduct)?.checkedRadioButtonId
             val pool = Pool (
-                 ID_Customer = customer.ID,
+                 ID_Customer = ID_Customer,
                  picture = picture,
                  sizeLo = root.findViewById<EditText>(R.id.addPoolLo)?.text.toString(),
                  sizeLa = root.findViewById<EditText>(R.id.addPoolLa)?.text.toString(),
@@ -83,7 +83,7 @@ class ManagementCustomerActivityViewModel {
                  dateRemp = getValue(root.findViewById<EditText>(R.id.addPoolDateRemp)?.text.toString()),
                  observation = getValue(root.findViewById<EditText>(R.id.addPoolObservation)?.text.toString())
             )
-            if (customer.ID != null){
+            if (customer != null){
                 updatePoolCallBack.postValue(pool)
             } else {
                 addPoolCallBack.postValue(pool)
