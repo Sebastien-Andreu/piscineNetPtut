@@ -9,6 +9,7 @@ interface SwimmingPoolFragmentMvc {
     fun verifyIfAllRadioGroupAreSelected(): Boolean
     fun verifyIfPictureIsSelected(): Boolean
     fun verifyIfOtherParametersAreSelected(): Boolean
+    fun verifyIfFilterIsNotEmpty(): Boolean
     fun showPicture(data: Intent?)
 
     fun onUserWantToShowDetailPoolToUpdate()

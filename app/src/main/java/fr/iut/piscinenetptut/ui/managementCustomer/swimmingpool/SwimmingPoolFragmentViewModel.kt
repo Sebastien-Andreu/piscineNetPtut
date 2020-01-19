@@ -55,11 +55,11 @@ class SwimmingPoolFragmentViewModel {
             setTextOfPossibleNullText(R.id.addPoolDateElectronicalProduct, pool.dateElectronicalProduct!!)
             setTextOfPossibleNullText(R.id.addPoolObservation, pool.observation!!)
 
-            if (pool.warning != null.toString()){
+            if (pool.warning != false.toString()){
                 root.findViewById<Switch>(R.id.addPoolWarning)?.isChecked = true
             }
 
-            if (pool.winterCover != null.toString()){
+            if (pool.winterCover != false.toString()){
                 root.findViewById<Switch>(R.id.addPoolWinterCover)?.isChecked = true
             }
 

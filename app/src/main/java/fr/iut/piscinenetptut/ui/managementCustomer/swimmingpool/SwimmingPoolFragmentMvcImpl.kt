@@ -48,7 +48,7 @@ class SwimmingPoolFragmentMvcImpl (
 
             root?.findViewById<Button>(R.id.addCustomerButton)?.setOnClickListener {
                 if (verifyAllInput()){
-                    (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToAddNewPool()
+                    (swimmingPoolFragment.activity as ManagementCustomerActivity).onUserWantToAddNewCustomer()
                 }
             }
 
@@ -138,7 +138,8 @@ class SwimmingPoolFragmentMvcImpl (
     }
 
     override fun verifyAllInput(): Boolean{
-        return if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected() && verifyIfOtherParametersAreSelected()){
+        return if (verifyIfPictureIsSelected() && verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreSelected()
+            && verifyIfOtherParametersAreSelected() && verifyIfFilterIsNotEmpty()){
             true
         } else {
             Toast.makeText(root?.context, "Some information is missing to add", Toast.LENGTH_LONG).show()
@@ -180,6 +181,39 @@ class SwimmingPoolFragmentMvcImpl (
         }
         if (root?.findViewById<LinearLayout>(R.id.layoutAddPoolRemp)?.visibility == View.VISIBLE) {
             return !root?.findViewById<TextView>(R.id.addPoolDateRemp)?.text.isNullOrEmpty()
+        }
+        return true
+    }
+
+    override fun verifyIfFilterIsNotEmpty(): Boolean {
+
+        //Sand Filter
+        if (!root?.findViewById<EditText>(R.id.brandSandFilter)?.text.isNullOrEmpty()){
+            if (root?.findViewById<EditText>(R.id.dateSandFilter)?.text.isNullOrEmpty()){
+                return false
+            }
+        }
+        if (!root?.findViewById<EditText>(R.id.dateSandFilter)?.text.isNullOrEmpty()){
+            if (root?.findViewById<EditText>(R.id.brandSandFilter)?.text.isNullOrEmpty()){
+                return false
+            }
+        }
+
+        //Other Filter
+        if (!root?.findViewById<EditText>(R.id.addPoolBrandFilter)?.text.isNullOrEmpty()) {
+            if (root?.findViewById<EditText>(R.id.cvFilter)?.text.isNullOrEmpty() || root?.findViewById<EditText>(R.id.dateFilter)?.text.isNullOrEmpty()) {
+                return false
+            }
+        }
+        if (!root?.findViewById<EditText>(R.id.cvFilter)?.text.isNullOrEmpty()) {
+            if (root?.findViewById<EditText>(R.id.addPoolBrandFilter)?.text.isNullOrEmpty() || root?.findViewById<EditText>(R.id.dateFilter)?.text.isNullOrEmpty()) {
+                return false
+            }
+        }
+        if (!root?.findViewById<EditText>(R.id.dateFilter)?.text.isNullOrEmpty()) {
+            if (root?.findViewById<EditText>(R.id.addPoolBrandFilter)?.text.isNullOrEmpty() || root?.findViewById<EditText>(R.id.cvFilter)?.text.isNullOrEmpty()) {
+                return false
+            }
         }
         return true
     }

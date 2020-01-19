@@ -35,6 +35,7 @@ class UserPreviewFactory {
                 Fuel.get(requestHttp.url+"Picture/$picture")
                     .response{ request, response, result ->
                         val (bytes, error) = result
+                        println("--------------------------------------------$error")
                         if (bytes != null) {
                             val bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.size)
                             view.findViewById<ImageView>(R.id.pictureListCustomer)?.setImageBitmap(bitmap)
