@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
 class AccountSettingActivityMvcImpl (
@@ -50,7 +51,7 @@ class AccountSettingActivityMvcImpl (
 
     override fun verifyDataOfPassword(): Boolean {
         return if (verifyIfAllInputPassIsNotEmpty()){
-            if (root?.findViewById<EditText>(R.id.accountSettingOldPass)?.text.toString() == accountSettingActivity.register.password){
+            if (root?.findViewById<EditText>(R.id.accountSettingOldPass)?.text.toString() == Account.register.password){
                 return if (root?.findViewById<EditText>(R.id.accountSettingNewPass)?.text.toString() == root?.findViewById<EditText>(R.id.accountSettingNewPassVerify)?.text.toString()){
                     true
                 } else {

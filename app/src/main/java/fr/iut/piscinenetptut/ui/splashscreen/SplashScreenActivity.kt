@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
 
-class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listeners {
+class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listeners {
 
     val TAG: String = "SplashScreenActivity"
 
@@ -20,7 +20,7 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listen
             splashScreenActivityViewModel = SplashScreenActivityViewModel()
 
             splashScreenActivityViewModel.registerCallBack.observe(this, Observer {
-                splashScreenActivityMvcImpl.onRegisterInformationIdLoaded(it)
+                splashScreenActivityMvcImpl.onRegisterInformationIdLoaded()
             })
             setContentView(splashScreenActivityMvcImpl.root)
         } catch (exception: Exception) {

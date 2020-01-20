@@ -5,6 +5,7 @@ import  android.widget.*
 import androidx.lifecycle.MutableLiveData
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.createUniqueIdV4
 import fr.iut.piscinenetptut.library.extension.toTreatFor
@@ -20,7 +21,7 @@ class ManagementCustomerActivityViewModel {
     val updateCustomerCallBack: MutableLiveData<Customer> = MutableLiveData()
     val updatePoolCallBack: MutableLiveData<Pool> = MutableLiveData()
 
-    fun onNeedToGetCustomerInformation(root: View, id: Int? = null) {
+    fun onNeedToGetCustomerInformation(root: View, id : Int? = CustomerSelected.customer.ID) {
         try {
             val idTypeOfContract = root.findViewById<RadioGroup>(R.id.addCustomerRadioTypeContract)?.checkedRadioButtonId
             val idContractOfProduct = root.findViewById<RadioGroup>(R.id.addCustomerRadioContractOfProduct)?.checkedRadioButtonId
@@ -49,7 +50,7 @@ class ManagementCustomerActivityViewModel {
         }
     }
 
-    fun onNeedToGetPoolInformation(root: View,customer: Customer?, ID_Customer: Int?, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
+    fun onNeedToGetPoolInformation(root: View,ID_Customer: Int? = CustomerSelected.pool.ID_Customer, picture: String?= "picture" + createUniqueIdV4() + ".jpg") {
         try {
             val idShape = root.findViewById<RecursiveRadioGroup>(R.id.addPoolShape)?.checkedItemId
             val idEnvironment = root.findViewById<RecursiveRadioGroup>(R.id.addPoolEnvironment)?.checkedItemId
@@ -83,7 +84,7 @@ class ManagementCustomerActivityViewModel {
                  dateRemp = getValue(root.findViewById<EditText>(R.id.addPoolDateRemp)?.text.toString()),
                  observation = getValue(root.findViewById<EditText>(R.id.addPoolObservation)?.text.toString())
             )
-            if (customer != null){
+            if (CustomerSelected.pool.ID != null){
                 updatePoolCallBack.postValue(pool)
             } else {
                 addPoolCallBack.postValue(pool)

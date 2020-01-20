@@ -7,14 +7,12 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Register
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfVisit.ListOfVisitActivity
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 
 
 class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
@@ -22,19 +20,9 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     companion object {
         private val TAG: String = "HomeActivity"
 
-        private val EXTRA_REGISTER_DETAIL: String = "EXTRA_REGISTER_DETAIL"
-
-        val json = Json(JsonConfiguration.Stable)
-
-        fun start(
-            context: Context,
-            register: Register
-        ) {
+        fun start(context: Context) {
             try {
-                context.startActivity(Intent(context, HomeActivity::class.java)
-                    .putExtra(EXTRA_REGISTER_DETAIL, json.stringify(Register.serializer(), register)))
-
-
+                context.startActivity(Intent(context, HomeActivity::class.java))
             } catch (exception: Exception) {
                 exception.toTreatFor(TAG)
             }
@@ -42,13 +30,12 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     }
 
     lateinit var homeActivityMvcImpl: HomeActivtyMvcImpl
-    lateinit var register: Register
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
 
-            this.register = json.parse(Register.serializer(),intent.getStringExtra(EXTRA_REGISTER_DETAIL)!!)
+            CustomerSelected.reset()
 
             homeActivityMvcImpl = HomeActivtyMvcImpl(this, this)
             setContentView(homeActivityMvcImpl.root)
@@ -65,7 +52,7 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_setting -> {
-                AccountSettingActivity.start(this, register)
+                AccountSettingActivity.start(this)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -75,7 +62,7 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     override fun onUserWantToAddAClient() {
         try {
             this@HomeActivity.finish()
-            ManagementCustomerActivity.start(this, register)
+            ManagementCustomerActivity.start(this)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
@@ -84,7 +71,7 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     override fun onUserWantToSeeAllClient() {
         try {
             this@HomeActivity.finish()
-            ListCustomerActivity.start(this, register)
+            ListCustomerActivity.start(this)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }

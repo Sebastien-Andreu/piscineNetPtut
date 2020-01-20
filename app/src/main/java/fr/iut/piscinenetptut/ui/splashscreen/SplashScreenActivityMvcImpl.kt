@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Customer
+import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.entities.Register
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
@@ -37,17 +37,17 @@ class SplashScreenActivityMvcImpl (
         }
     }
 
-    override fun onRegisterInformationIdLoaded(register: Register) {
+    override fun onRegisterInformationIdLoaded() {
         val json = Json(JsonConfiguration.Stable)
         val requestHttp = httpRequest()
 
         Fuel.post(requestHttp.url+"auth")
-            .body(requestHttp.convertData(json.stringify(Register.serializer(), register)))
+            .body(requestHttp.convertData(json.stringify(Register.serializer(), Account.register)))
             .header("Content-Type" to "application/x-www-form-urlencoded")
             .responseString { request, response, result ->
                 result.fold({ d ->
                     this@SplashScreenActivityMvcImpl.splashScreenActivity.finish()
-                    HomeActivity.start(this@SplashScreenActivityMvcImpl.splashScreenActivity, register)
+                    HomeActivity.start(this@SplashScreenActivityMvcImpl.splashScreenActivity)
                 }, { err ->
                     Toast.makeText(root?.context, "error with login or password", Toast.LENGTH_LONG).show()
                 })
