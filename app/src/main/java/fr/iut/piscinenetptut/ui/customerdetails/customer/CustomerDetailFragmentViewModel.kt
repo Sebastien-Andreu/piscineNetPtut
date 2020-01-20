@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Customer
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import java.lang.Exception
 
@@ -12,8 +12,12 @@ class CustomerDetailFragmentViewModel {
 
     private val TAG: String = "CustomerDetailFragmentViewModel"
 
-    fun showDetailOfCustomer(root: View, customer: Customer){
+
+
+    fun showDetailOfCustomer(root: View){
         try {
+            val customer = CustomerSelected.customer
+
             root.findViewById<TextView>(R.id.detailCustomerName).text = customer.name
             root.findViewById<TextView>(R.id.detailCustomerSurname).text = customer.surname
             root.findViewById<TextView>(R.id.detailCustomerMail).text = customer.mail

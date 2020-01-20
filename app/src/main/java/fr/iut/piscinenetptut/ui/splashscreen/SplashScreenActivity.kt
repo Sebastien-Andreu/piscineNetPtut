@@ -1,16 +1,12 @@
 package fr.iut.piscinenetptut.ui.splashscreen
 
-import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
-import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.home.HomeActivity
 
 
-class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listeners {
+class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listeners {
 
     val TAG: String = "SplashScreenActivity"
 
@@ -24,7 +20,7 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listen
             splashScreenActivityViewModel = SplashScreenActivityViewModel()
 
             splashScreenActivityViewModel.registerCallBack.observe(this, Observer {
-                splashScreenActivityMvcImpl.onRegisterInformationIdLoaded(it)
+                splashScreenActivityMvcImpl.onRegisterInformationIdLoaded()
             })
             setContentView(splashScreenActivityMvcImpl.root)
         } catch (exception: Exception) {

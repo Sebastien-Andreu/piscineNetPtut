@@ -5,13 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.home.HomeActivity
 
@@ -40,6 +41,8 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
 
             setContentView(listUserActivityMvcImpl.root)
 
+            CustomerSelected.reset()
+
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
             listUserActivityViewModel.customerCallBack.observe(this, Observer {
@@ -61,20 +64,18 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
     override fun onUserTouchUserPreview(id: Int) {
         try {
             this@ListCustomerActivity.finish()
-            var customer: Customer? = null
-            var pool: Pool? = null
 
             listCustomer.forEach{
                 if (it.ID!! == id) {
-                    customer = it
+                    CustomerSelected.customer = it
                 }
             }
             listPool.forEach{
                 if (it.ID_Customer!! == id) {
-                    pool = it
+                    CustomerSelected.pool = it
                 }
             }
-            CustomerDetailsActivity.start(this, customer!!, pool!!)
+            CustomerDetailsActivity.start(this)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
@@ -88,7 +89,7 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_setting -> {
-                Toast.makeText(applicationContext, "setting", Toast.LENGTH_LONG).show()
+                AccountSettingActivity.start(this)
                 true
             }
             else -> super.onOptionsItemSelected(item)

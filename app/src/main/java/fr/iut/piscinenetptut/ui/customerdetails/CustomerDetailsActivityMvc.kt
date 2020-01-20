@@ -2,7 +2,7 @@ package fr.iut.piscinenetptut.ui.customerdetails
 
 interface CustomerDetailsActivityMvc {
 
-    interface listeners {
+    interface Listeners {
         fun onUserWantStartWork()
         fun onUserWantToUpdateCustomer()
     }

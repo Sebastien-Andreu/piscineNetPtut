@@ -50,6 +50,6 @@ class ListOfVisitActivity: AppCompatActivity(), ListOfVisitActivityMvc.Listeners
 
     override fun onBackPressed() {
         this@ListOfVisitActivity.finish()
-        HomeActivity.start(this)
+//        HomeActivity.start(this)
     }
 }

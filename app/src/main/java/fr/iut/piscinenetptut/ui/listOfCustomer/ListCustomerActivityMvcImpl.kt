@@ -3,7 +3,6 @@ package fr.iut.piscinenetptut.ui.listOfCustomer
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
@@ -49,9 +48,9 @@ class ListCustomerActivityMvcImpl(
             exception.toTreatFor(TAG)
         }
     }
-
-    override fun getPictureOfCustomer(idCustomer: Int){
-        val requestHttp = httpRequest()
-        Fuel.get(requestHttp.url + "Pool")
-    }
+//
+//    override fun getPictureOfCustomer(idCustomer: Int){
+//        val requestHttp = httpRequest()
+//        Fuel.get(requestHttp.url + "Pool")
+//    }
 }

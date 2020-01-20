@@ -1,30 +1,31 @@
 package fr.iut.piscinenetptut.ui.customerdetails.swimmingpool
 
 import android.graphics.BitmapFactory
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Pool
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.setMargin
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import java.lang.Exception
-import java.util.zip.GZIPOutputStream
 
 class SwimmingPoolDetailFragmentViewModel {
 
     private val TAG: String = "SwimmingPoolDetailFragmentViewModel"
     private val requestHttp = httpRequest()
 
-    fun showDetailOfPool(root: View, pool: Pool){
+
+    fun showDetailOfPool(root: View){
         try {
+            val pool = CustomerSelected.pool
+
             Fuel.get(requestHttp.url+"Picture/${pool.picture}")
-                .response{ request, response, result ->
-                    val (bytes, error) = result
+                .response{ _, _, result ->
+                    val (bytes, _) = result
                     if (bytes != null) {
                         val bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.size)
                         root.findViewById<ImageView>(R.id.detailPoolPicture)?.setImageBitmap(bitmap)
