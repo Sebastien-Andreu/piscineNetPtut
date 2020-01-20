@@ -6,9 +6,9 @@ import fr.iut.piscinenetptut.entities.Pool
 interface ManagementCustomerActivityMvc {
     fun addCustomer(customer: Customer)
     fun addPool(pool: Pool)
-    fun updateCustomer(customer: Customer)
-    fun updatePool(pool: Pool)
-    interface listeners {
+    fun updateCustomer()
+    fun updatePool()
+    interface Listeners {
         fun onUserWantToAddNewCustomer()
         fun onUserWantToAddNewPool(id_Customer: Int?= null)
         fun onUserWantToUpdateCustomer()

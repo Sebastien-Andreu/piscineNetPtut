@@ -8,7 +8,6 @@ import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.adapter.ViewPagerAdapter
 import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
-import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivityMvc
 import fr.iut.piscinenetptut.ui.workingmethod.maintenancesheet.MaintenanceSheetFragment
 import fr.iut.piscinenetptut.ui.workingmethod.observation.ObservationFragment
 import fr.iut.piscinenetptut.ui.workingmethod.technicalsheet.TechnicalSheetFragment
@@ -25,8 +24,6 @@ class WorkingMethodActivityMvcImpl(
     init {
         try {
             root = View.inflate(context, R.layout.activity_working_method, null)
-
-//            workingMethodActivity.actionBar?.hide()
 
             val listFragmentForViewPager: ArrayList<Fragment> = arrayListOf(MaintenanceSheetFragment(), TechnicalSheetFragment(), ObservationFragment())
             val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Maintenance", "Technique", "Observation")

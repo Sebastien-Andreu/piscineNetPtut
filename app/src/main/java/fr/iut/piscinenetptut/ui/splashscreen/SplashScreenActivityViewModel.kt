@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.EditText
 import androidx.lifecycle.MutableLiveData
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.entities.Register
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
@@ -11,7 +12,7 @@ class SplashScreenActivityViewModel {
 
     val Tag: String = "SplashScreenActivityViewModel"
 
-    val registerCallBack: MutableLiveData<Register> = MutableLiveData()
+    val registerCallBack: MutableLiveData<Account> = MutableLiveData()
 
     fun onNeedToGetCustomerInformation(root: View) {
         try {
@@ -19,7 +20,8 @@ class SplashScreenActivityViewModel {
                 login = root.findViewById<EditText>(R.id.registerLogin).text.toString(),
                 password = root.findViewById<EditText>(R.id.registerPassword).text.toString()
             )
-            registerCallBack.postValue(register)
+            Account.register = register
+            registerCallBack.postValue(Account)
         } catch (exception: Exception){
             exception.toTreatFor(Tag)
         }

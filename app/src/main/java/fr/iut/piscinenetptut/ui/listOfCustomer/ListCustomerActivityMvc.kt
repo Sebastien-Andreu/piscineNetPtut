@@ -6,7 +6,6 @@ import fr.iut.piscinenetptut.entities.Pool
 interface ListCustomerActivityMvc {
 
     fun onUserListLoaded(customers: List<Customer>, pools: List<Pool>)
-    fun getPictureOfCustomer(idCustomer: Int)
 
     interface Listeners {
         fun onUserTouchUserPreview(id: Int)
