@@ -27,7 +27,6 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-
             workingMethodActivityMcvImpl = WorkingMethodActivityMvcImpl(this, this)
             setContentView(workingMethodActivityMcvImpl.root)
 

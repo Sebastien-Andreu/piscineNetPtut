@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 import fr.iut.piscinenetptut.R
 
-class SwimmingPoolDetailFragment : Fragment(){
+class SwimmingPoolDetailFragment : Fragment(), SwimmingPoolDetailFragmentMvc.Listener {
 
     lateinit var swimmingPoolDetailFragmentMvcImpl: SwimmingPoolDetailFragmentMvcImpl
 

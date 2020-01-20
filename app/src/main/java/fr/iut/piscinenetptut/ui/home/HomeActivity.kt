@@ -5,11 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfVisit.ListOfVisitActivity
@@ -23,6 +22,7 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
         fun start(context: Context) {
             try {
                 context.startActivity(Intent(context, HomeActivity::class.java))
+
             } catch (exception: Exception) {
                 exception.toTreatFor(TAG)
             }
@@ -34,9 +34,6 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-
-            CustomerSelected.reset()
-
             homeActivityMvcImpl = HomeActivtyMvcImpl(this, this)
             setContentView(homeActivityMvcImpl.root)
         } catch (exception: Exception) {
@@ -52,7 +49,7 @@ class HomeActivity: AppCompatActivity(), HomeActivtyMvc.listenners {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_setting -> {
-                AccountSettingActivity.start(this)
+                Toast.makeText(applicationContext, "setting", Toast.LENGTH_LONG).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)

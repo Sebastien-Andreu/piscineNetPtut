@@ -17,8 +17,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Customer
-import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.customView.RecursiveRadioGroup
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
@@ -112,7 +110,7 @@ class SwimmingPoolFragmentMvcImpl (
             }
 
             /*-----------------------UPDATE-----------------------*/
-            if (CustomerSelected.pool.ID != null) {
+            if ((swimmingPoolFragment.activity as ManagementCustomerActivity).pool != null) {
 
                 root!!.findViewById<LinearLayout>(R.id.updatePoolLayout)?.visibility = View.VISIBLE
                 root!!.findViewById<LinearLayout>(R.id.addPoolLayout)?.visibility = View.GONE
@@ -136,7 +134,7 @@ class SwimmingPoolFragmentMvcImpl (
     }
 
     override fun onUserWantToShowDetailPoolToUpdate() {
-        swimmingPoolFragmentViewModel.showInformationOfPoolWhenUserWantToUpdate(root!!)
+        swimmingPoolFragmentViewModel.showInformationOfPoolWhenUserWantToUpdate(root!!, (swimmingPoolFragment.activity as ManagementCustomerActivity).pool!!)
     }
 
     override fun verifyAllInput(): Boolean{
@@ -264,13 +262,11 @@ class SwimmingPoolFragmentMvcImpl (
         }
         return true
     }
-
-
     private fun displayNeverAskAgainDialog() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this.context)
         builder.setMessage(R.string.warning_permission_camera)
         builder.setCancelable(false)
-        builder.setPositiveButton(R.string.permiteManually) { dialog, _ ->
+        builder.setPositiveButton(R.string.permiteManually) { dialog, which ->
             dialog.dismiss()
             val intent = Intent()
             intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS

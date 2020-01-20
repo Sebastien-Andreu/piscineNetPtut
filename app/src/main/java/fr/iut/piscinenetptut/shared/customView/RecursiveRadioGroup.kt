@@ -77,16 +77,17 @@ class RecursiveRadioGroup : LinearLayout {
 
     private fun parseChild(child: View) {
         if (child is CompoundButton) {
-            if (child.isChecked) {
+            val checkable = child as CompoundButton
+            if (checkable.isChecked) {
                 mProtectFromCheckedChange = true
                 if (checkedItem != null) {
                     setCheckedStateForView(checkedItem, false)
                 }
                 mProtectFromCheckedChange = false
-                setCheckedView(child)
+                setCheckedView(checkable)
             }
         } else if (child is ViewGroup) {
-            parseChildren(child)
+            parseChildren(child as ViewGroup)
         }
     }
 
@@ -125,7 +126,7 @@ class RecursiveRadioGroup : LinearLayout {
 
     private fun setCheckedStateForView(checkedView: View?, checked: Boolean) {
         if (checkedView != null && checkedView is CompoundButton) {
-            (checkedView).isChecked = checked
+            (checkedView as CompoundButton).isChecked = checked
         }
     }
 
@@ -177,7 +178,7 @@ class RecursiveRadioGroup : LinearLayout {
                 setCheckedStateForView(checkedItem, false)
             }
             mProtectFromCheckedChange = false
-//            val id = view.id
+            val id = view.id
             setCheckedView(view)
         }
     }
@@ -195,13 +196,13 @@ class RecursiveRadioGroup : LinearLayout {
                         child.setId(View.generateViewId())
                     }
                 }
-                (child).setOnCheckedChangeListener(childOnCheckedChangeListener)
+                (child as CompoundButton).setOnCheckedChangeListener(childOnCheckedChangeListener)
                 mOnHierarchyChangeListener?.onChildViewAdded(parent, child)
             } else if (child is ViewGroup) { // View hierarchy seems to be constructed from the bottom up,
 // so all child views are already added. That's why we
 // manually call the listener for all children of ViewGroup.
-                for (i in 0 until (child).childCount) {
-                    onChildViewAdded(child, (child).getChildAt(i))
+                for (i in 0 until (child as ViewGroup).childCount) {
+                    onChildViewAdded(child, (child as ViewGroup).getChildAt(i))
                 }
             }
         }

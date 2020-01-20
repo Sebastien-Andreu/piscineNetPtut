@@ -10,11 +10,14 @@ import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
+import java.io.UTFDataFormatException
 
 
 class UserPreviewFactory {
     companion object {
-        private val TAG: String = "UserPreviewFactory"
+        val TAG: String = "UserPreviewFactory"
 
         fun createUserPreviewForUser(customer: Customer, picture: String, userPreviewClickListener: View.OnClickListener, context: Context): View {
             try {
@@ -30,8 +33,9 @@ class UserPreviewFactory {
 
 
                 Fuel.get(requestHttp.url+"Picture/$picture")
-                    .response{ _, _, result ->
-                        val (bytes, _) = result
+                    .response{ request, response, result ->
+                        val (bytes, error) = result
+                        println("--------------------------------------------$error")
                         if (bytes != null) {
                             val bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.size)
                             view.findViewById<ImageView>(R.id.pictureListCustomer)?.setImageBitmap(bitmap)
