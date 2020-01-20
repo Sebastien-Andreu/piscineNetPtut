@@ -108,7 +108,7 @@ class ManagementCustomerActivityMvcImpl(
                     .responseString { request, response, result ->
                         result.fold({ d ->
                             this@ManagementCustomerActivityMvcImpl.managementCustomerActivity.finish()
-                            HomeActivity.start(this@ManagementCustomerActivityMvcImpl.managementCustomerActivity)
+//                            HomeActivity.start(this@ManagementCustomerActivityMvcImpl.managementCustomerActivity)
                         }, { err ->
                             println(err.message)
                         })

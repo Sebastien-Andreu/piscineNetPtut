@@ -47,7 +47,7 @@ class SplashScreenActivityMvcImpl (
             .responseString { request, response, result ->
                 result.fold({ d ->
                     this@SplashScreenActivityMvcImpl.splashScreenActivity.finish()
-                    HomeActivity.start(this@SplashScreenActivityMvcImpl.splashScreenActivity)
+                    HomeActivity.start(this@SplashScreenActivityMvcImpl.splashScreenActivity, register)
                 }, { err ->
                     Toast.makeText(root?.context, "error with login or password", Toast.LENGTH_LONG).show()
                 })

@@ -7,3 +7,5 @@ data class Register (
     val login: String,
     val password: String
 )
+
+// il faudra l'id customer

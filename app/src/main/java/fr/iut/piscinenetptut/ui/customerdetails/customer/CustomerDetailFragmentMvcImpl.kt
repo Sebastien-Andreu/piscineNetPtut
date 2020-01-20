@@ -29,7 +29,7 @@ class CustomerDetailFragmentMvcImpl (
 
             root?.findViewById<Button>(R.id.detailCustomerMakeVisitButton)?.setOnClickListener {
                 this@CustomerDetailFragmentMvcImpl.customerDetailFragment.activity!!.finish()
-                this.context.let { WorkingMethodActivity.start(it) }
+                this.context.let { WorkingMethodActivity.start(it, (customerDetailFragment.activity as CustomerDetailsActivity).register) }
             }
 
             root?.findViewById<Button>(R.id.updateCustomer)?.setOnClickListener{

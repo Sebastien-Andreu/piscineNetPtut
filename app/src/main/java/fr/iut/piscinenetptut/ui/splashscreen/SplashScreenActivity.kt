@@ -1,13 +1,9 @@
 package fr.iut.piscinenetptut.ui.splashscreen
 
-import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
-import android.os.StrictMode
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.home.HomeActivity
 
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.listeners {

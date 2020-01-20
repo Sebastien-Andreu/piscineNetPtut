@@ -5,15 +5,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
+import fr.iut.piscinenetptut.entities.Register
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.home.HomeActivity
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 
 
 class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listeners {
@@ -21,8 +24,16 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
     companion object {
         val TAG: String = "ListUserActivity"
 
-        fun start(context: Context) {
-            context.startActivity(Intent(context, ListCustomerActivity::class.java))
+        private val EXTRA_REGISTER_DETAIL: String = "EXTRA_REGISTER_DETAIL"
+
+        val json = Json(JsonConfiguration.Stable)
+
+        fun start(
+            context: Context,
+            register: Register) {
+
+            context.startActivity(Intent(context, ListCustomerActivity::class.java)
+                .putExtra(EXTRA_REGISTER_DETAIL, json.stringify(Register.serializer(), register)))
         }
     }
 
@@ -31,12 +42,15 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
 
     lateinit var listCustomer : List<Customer>
     lateinit var listPool: List<Pool>
+    lateinit var register: Register
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
             listUserActivityMvcImpl = ListCustomerActivityMvcImpl(this, this)
             listUserActivityViewModel = ListCustomerActivityViewModel()
+
+            this.register = json.parse(Register.serializer(),intent.getStringExtra(EXTRA_REGISTER_DETAIL)!!)
 
             setContentView(listUserActivityMvcImpl.root)
 
@@ -74,7 +88,7 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
                     pool = it
                 }
             }
-            CustomerDetailsActivity.start(this, customer!!, pool!!)
+            CustomerDetailsActivity.start(this, customer!!, pool!!, register)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
@@ -88,7 +102,7 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_setting -> {
-                Toast.makeText(applicationContext, "setting", Toast.LENGTH_LONG).show()
+                AccountSettingActivity.start(this, register)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -102,6 +116,6 @@ class ListCustomerActivity: AppCompatActivity(), ListCustomerActivityMvc.Listene
 
     override fun onBackPressed() {
         this@ListCustomerActivity.finish()
-        HomeActivity.start(this)
+        HomeActivity.start(this, register)
     }
 }
