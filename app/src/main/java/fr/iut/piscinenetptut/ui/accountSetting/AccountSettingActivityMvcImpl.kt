@@ -5,9 +5,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 
 class AccountSettingActivityMvcImpl (
     val accountSettingActivity: AccountSettingActivity,
@@ -15,6 +19,10 @@ class AccountSettingActivityMvcImpl (
 ): AccountSettingActivityMvc {
 
     val TAG: String = "HomeActivtyMvcImpl"
+
+    private val json = Json(JsonConfiguration.Stable)
+    private val requestHttp = httpRequest()
+
     var root: View? = null
 
     init {
@@ -24,12 +32,12 @@ class AccountSettingActivityMvcImpl (
             if (null != root) {
                 root?.findViewById<Button>(R.id.accountSettingConfirmPass)?.setOnClickListener {
                     if (verifyDataOfPassword()){
-                        Toast.makeText(context, "ok pass", Toast.LENGTH_LONG).show()
+                        updatePassword()
                     }
                 }
                 root?.findViewById<Button>(R.id.accountSettingConfirmAddr)?.setOnClickListener {
                     if (verifyDataOfMail()){
-                        Toast.makeText(context, "ok mail", Toast.LENGTH_LONG).show()
+                        updateMail()
                     }
                 }
             }
@@ -83,10 +91,44 @@ class AccountSettingActivityMvcImpl (
     }
 
     override fun updatePassword() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        try {
+            Fuel.put(requestHttp.url+"User/" + Account.register.id + "/Password")
+                .body("password=" + root?.findViewById<EditText>(R.id.accountSettingNewPass)?.text.toString())
+                .header("Content-Type" to "application/x-www-form-urlencoded")
+                .responseString { _, _, result ->
+                    result.fold({
+                        Toast.makeText(accountSettingActivity, "Password Updated", Toast.LENGTH_LONG).show()
+                        root?.findViewById<EditText>(R.id.accountSettingOldPass)?.setText("")
+                        root?.findViewById<EditText>(R.id.accountSettingNewPassVerify)?.setText("")
+                        root?.findViewById<EditText>(R.id.accountSettingNewPass)?.setText("")
+                    }, { err ->
+                        Toast.makeText(accountSettingActivity, "Error", Toast.LENGTH_LONG).show()
+                        println(err.message)
+                    })
+                }
+        } catch (exception: Exception){
+            exception.toTreatFor(TAG)
+        }
+
     }
 
     override fun updateMail() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        try {
+            Fuel.put(requestHttp.url+"User/" + Account.register.id + "/Mail")
+                .body("mail=" + root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.text.toString())
+                .header("Content-Type" to "application/x-www-form-urlencoded")
+                .responseString { _, _, result ->
+                    result.fold({
+                        Toast.makeText(accountSettingActivity, "Mail Updated", Toast.LENGTH_LONG).show()
+                        root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.setText("")
+                        root?.findViewById<EditText>(R.id.accountSettingNewAddrVerify)?.setText("")
+                    }, { err ->
+                        Toast.makeText(accountSettingActivity, "Error", Toast.LENGTH_LONG).show()
+                        println(err.message)
+                    })
+                }
+        } catch (exception: Exception){
+            exception.toTreatFor(TAG)
+        }
     }
 }
