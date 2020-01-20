@@ -3,7 +3,9 @@ package fr.iut.piscinenetptut.ui.customerdetails.swimmingpool
 import android.content.Context
 import android.view.View
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import java.lang.Exception
 
 class SwimmingPoolDetailFragmentMvcImpl (
@@ -23,14 +25,14 @@ class SwimmingPoolDetailFragmentMvcImpl (
 
             swimmingPoolDetailFragmentViewModel = SwimmingPoolDetailFragmentViewModel()
 
-            onUserWantToShowDetailPool()
+            onUserWantToShowDetailPool((swimmingPoolDetailFragment.activity as CustomerDetailsActivity).pool)
         } catch (exception : Exception){
             exception.toTreatFor(TAG)
         }
     }
 
-    override fun onUserWantToShowDetailPool(){
-        swimmingPoolDetailFragmentViewModel.showDetailOfPool(root!!)
+    override fun onUserWantToShowDetailPool(pool: Pool){
+        swimmingPoolDetailFragmentViewModel.showDetailOfPool(root!!, pool)
     }
 
 }

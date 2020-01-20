@@ -11,7 +11,7 @@ import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
 
 class ListCustomerActivityViewModel {
-    private val TAG: String = "ListUserActivityViewModel"
+    val TAG: String = "ListUserActivityViewModel"
 
     val customerCallBack: MutableLiveData<List<Customer>> = MutableLiveData()
     val poolCallBack: MutableLiveData<List<Pool>> = MutableLiveData()
@@ -23,7 +23,7 @@ class ListCustomerActivityViewModel {
             val requestHttp = httpRequest()
 
             Fuel.get(requestHttp.url+"Customer")
-                .responseString { _, _, result ->
+                .responseString { request, response, result ->
                     result.fold({ d ->
                         val listCustomer: List<Customer> = json.parse(Customer.serializer().list,d)
                         customerCallBack.postValue(listCustomer)
@@ -42,7 +42,7 @@ class ListCustomerActivityViewModel {
             val requestHttp = httpRequest()
 
             Fuel.get(requestHttp.url+"Pool")
-                .responseString { _, _, result ->
+                .responseString { request, response, result ->
                     result.fold({ d ->
                         val listPool: List<Pool> = json.parse(Pool.serializer().list,d)
                         poolCallBack.postValue(listPool)

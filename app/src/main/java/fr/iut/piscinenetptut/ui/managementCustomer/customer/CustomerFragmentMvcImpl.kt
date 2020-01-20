@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.View
 import android.widget.*
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 
@@ -38,7 +37,7 @@ class CustomerFragmentMvcImpl (
             }
 
             /*-----------------------UPDATE-----------------------*/
-            if (CustomerSelected.customer.ID != null) {
+            if ((customerFragment.activity as ManagementCustomerActivity).customer != null) {
                 root!!.findViewById<LinearLayout>(R.id.updateCustomerLayout)?.visibility = View.VISIBLE
                 root!!.findViewById<Button>(R.id.updateCustomerButton)?.setOnClickListener{
                     if (verifyAllInput()){
@@ -58,8 +57,10 @@ class CustomerFragmentMvcImpl (
     }
 
     override fun onUserWantToShowDetailCustomerToUpdate() {
-        customerFragmentViewModel.showInformationOfCustomerWhenUserWantToUpdate(root!!)
+        customerFragmentViewModel.showInformationOfCustomerWhenUserWantToUpdate(root!!, (customerFragment.activity as ManagementCustomerActivity).customer!!)
     }
+
+
 
     override fun verifyAllInput(): Boolean {
         return (verifyIfAllInputTextAreNotEmpty() && verifyIfAllRadioGroupAreNotEmpty() && verifyIfGuardianIsSelectedAndNotEmpty())

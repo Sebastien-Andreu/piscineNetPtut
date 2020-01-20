@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class CustomerDetailFragment : Fragment() {
+class CustomerDetailFragment : Fragment(), CustomerDetailFragmentMvc.Listener {
 
     lateinit var customerDetailFragmentMvcImpl: CustomerDetailFragmentMvcImpl
 

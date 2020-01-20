@@ -65,9 +65,4 @@ dependencies {
     //serialization
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0" // JVM dependency
-
-    //token
-    implementation 'com.auth0.android:jwtdecode:1.4.0'
-
-
 }

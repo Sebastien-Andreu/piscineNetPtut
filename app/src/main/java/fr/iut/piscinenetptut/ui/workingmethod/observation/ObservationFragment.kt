@@ -21,7 +21,7 @@ class ObservationFragment : Fragment(){
 
         root.findViewById<Button>(R.id.finalizeVisitButton).setOnClickListener {
             this@ObservationFragment.activity!!.finish()
-//            this.context?.let { ListCustomerActivity.start(it ,(customerDetailFragment.activity as CustomerDetailsActivity).register)) }
+            this.context?.let { ListCustomerActivity.start(it) }
         }
 
         return root
