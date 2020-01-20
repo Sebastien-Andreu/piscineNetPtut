@@ -270,7 +270,7 @@ class SwimmingPoolFragmentMvcImpl (
         val builder: AlertDialog.Builder = AlertDialog.Builder(this.context)
         builder.setMessage(R.string.warning_permission_camera)
         builder.setCancelable(false)
-        builder.setPositiveButton(R.string.permiteManually) { dialog, which ->
+        builder.setPositiveButton(R.string.permiteManually) { dialog, _ ->
             dialog.dismiss()
             val intent = Intent()
             intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS

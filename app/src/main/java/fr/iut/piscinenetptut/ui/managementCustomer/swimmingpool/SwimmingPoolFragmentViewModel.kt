@@ -27,8 +27,8 @@ class SwimmingPoolFragmentViewModel {
             val pool = CustomerSelected.pool
 
             Fuel.get(requestHttp.url + "Picture/${pool.picture}")
-                .response { request, response, result ->
-                    val (bytes, error) = result
+                .response { _, _, result ->
+                    val (bytes, _) = result
                     if (bytes != null) {
                         val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
                         root.findViewById<ImageView>(R.id.addPoolPicture)?.let {
