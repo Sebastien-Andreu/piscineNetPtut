@@ -3,12 +3,11 @@ package fr.iut.piscinenetptut.ui.listOfCustomer
 import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
-import com.github.kittinunf.fuel.Fuel
+import android.widget.TextView
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import fr.iut.piscinenetptut.ui.listOfCustomer.item.UserPreviewFactory
 
 class ListCustomerActivityMvcImpl(
@@ -29,6 +28,8 @@ class ListCustomerActivityMvcImpl(
     init {
         try {
             root = View.inflate(context, R.layout.activity_user_list, null)
+            listUserActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "List of customer"
+
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }

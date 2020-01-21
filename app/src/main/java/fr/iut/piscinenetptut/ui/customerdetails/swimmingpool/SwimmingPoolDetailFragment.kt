@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import fr.iut.piscinenetptut.R
-
 class SwimmingPoolDetailFragment : Fragment(){
 
-    lateinit var swimmingPoolDetailFragmentMvcImpl: SwimmingPoolDetailFragmentMvcImpl
+    private lateinit var swimmingPoolDetailFragmentMvcImpl: SwimmingPoolDetailFragmentMvcImpl
 
 
     override fun onCreateView(
@@ -20,5 +18,10 @@ class SwimmingPoolDetailFragment : Fragment(){
     ): View? {
         swimmingPoolDetailFragmentMvcImpl = SwimmingPoolDetailFragmentMvcImpl(inflater.context, this)
         return swimmingPoolDetailFragmentMvcImpl.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        swimmingPoolDetailFragmentMvcImpl.onUserWantToShowDetailPool()
     }
 }

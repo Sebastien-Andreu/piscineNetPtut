@@ -69,5 +69,8 @@ dependencies {
     //token
     implementation 'com.auth0.android:jwtdecode:1.4.0'
 
+    //design
+    implementation 'com.google.android.material:material:1.0.0'
+
 
 }

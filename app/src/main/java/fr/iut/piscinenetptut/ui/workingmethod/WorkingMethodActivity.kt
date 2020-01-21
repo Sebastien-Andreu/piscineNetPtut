@@ -38,13 +38,13 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
 
     override fun onBackPressed() {
         this@WorkingMethodActivity.finish()
-        ListCustomerActivity.start(this)
+//        ListCustomerActivity.start(this)
     }
 
     override fun onUserFinishWorking() {
         try{
             this@WorkingMethodActivity.finish()
-            ListCustomerActivity.start(this)
+//            ListCustomerActivity.start(this)
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
         }

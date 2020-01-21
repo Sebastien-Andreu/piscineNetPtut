@@ -124,6 +124,10 @@
     <!--                                                                 -->
     <!--                            Setting                              -->
     <!--                                                                 -->
-    <string name="setting">Setting</string>
+    <string name="setting">Settings</string>
+    <string name="menuListOfCustomer">List of customer</string>
+    <string name="menuListOfVisit">List of visit</string>
+    <string name="menuSignOut">Sign Out</string>
+    <string name="menuAccountSetting">Account Settings</string>
 
 </resources>

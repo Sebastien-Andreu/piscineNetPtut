@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
@@ -20,7 +21,6 @@ class AccountSettingActivityMvcImpl (
 
     val TAG: String = "HomeActivtyMvcImpl"
 
-    private val json = Json(JsonConfiguration.Stable)
     private val requestHttp = httpRequest()
 
     var root: View? = null
@@ -28,6 +28,9 @@ class AccountSettingActivityMvcImpl (
     init {
         try {
             root = View.inflate(context, R.layout.layout_account_management, null)
+
+            accountSettingActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "Account Settings"
+
 
             if (null != root) {
                 root?.findViewById<Button>(R.id.accountSettingConfirmPass)?.setOnClickListener {
@@ -97,12 +100,12 @@ class AccountSettingActivityMvcImpl (
                 .header("Content-Type" to "application/x-www-form-urlencoded")
                 .responseString { _, _, result ->
                     result.fold({
-                        Toast.makeText(accountSettingActivity, "Password Updated", Toast.LENGTH_LONG).show()
+                        Toast.makeText(accountSettingActivity.context, "Password Updated", Toast.LENGTH_LONG).show()
                         root?.findViewById<EditText>(R.id.accountSettingOldPass)?.setText("")
                         root?.findViewById<EditText>(R.id.accountSettingNewPassVerify)?.setText("")
                         root?.findViewById<EditText>(R.id.accountSettingNewPass)?.setText("")
                     }, { err ->
-                        Toast.makeText(accountSettingActivity, "Error", Toast.LENGTH_LONG).show()
+                        Toast.makeText(accountSettingActivity.context, "Error", Toast.LENGTH_LONG).show()
                         println(err.message)
                     })
                 }
@@ -119,11 +122,11 @@ class AccountSettingActivityMvcImpl (
                 .header("Content-Type" to "application/x-www-form-urlencoded")
                 .responseString { _, _, result ->
                     result.fold({
-                        Toast.makeText(accountSettingActivity, "Mail Updated", Toast.LENGTH_LONG).show()
+                        Toast.makeText(accountSettingActivity.context, "Mail Updated", Toast.LENGTH_LONG).show()
                         root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.setText("")
                         root?.findViewById<EditText>(R.id.accountSettingNewAddrVerify)?.setText("")
                     }, { err ->
-                        Toast.makeText(accountSettingActivity, "Error", Toast.LENGTH_LONG).show()
+                        Toast.makeText(accountSettingActivity.context, "Error", Toast.LENGTH_LONG).show()
                         println(err.message)
                     })
                 }

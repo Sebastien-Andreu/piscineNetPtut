@@ -7,9 +7,6 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.home.HomeActivity
-import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
-
 
 class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivityMvc.Listeners {
 
@@ -73,11 +70,11 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
 
     override fun onBackPressed() {
         this@ManagementCustomerActivity.finish()
-        if (CustomerSelected.customer.ID != null){
-            ListCustomerActivity.start(this)
-        }else {
-            HomeActivity.start(this)
-        }
+//        if (CustomerSelected.customer.ID != null){
+////            ListCustomerActivity.start(this)
+//        }else {
+//            HomeActivity.start(this)
+//        }
     }
 
     override fun onUserWantToAddNewCustomer() {
