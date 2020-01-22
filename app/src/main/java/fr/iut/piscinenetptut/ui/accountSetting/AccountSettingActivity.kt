@@ -1,44 +1,23 @@
 package fr.iut.piscinenetptut.ui.accountSetting
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import fr.iut.piscinenetptut.library.extension.toTreatFor
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 
-class AccountSettingActivity : AppCompatActivity(), AccountSettingActivityMvc.Listenners {
+class AccountSettingActivity : Fragment(), AccountSettingActivityMvc.Listenners {
 
-    companion object {
-        private val TAG: String = "HomeActivity"
-
-
-        fun start(context: Context) {
-            try {
-                context.startActivity(Intent(context, AccountSettingActivity::class.java))
-            } catch (exception: Exception) {
-                exception.toTreatFor(TAG)
-            }
-        }
-    }
+    private val TAG: String = "HomeActivity"
 
     lateinit var accountSettingActivityMvcImpl: AccountSettingActivityMvcImpl
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        try {
-            super.onCreate(savedInstanceState)
-
-            supportActionBar?.title = "Account setting"
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-            accountSettingActivityMvcImpl = AccountSettingActivityMvcImpl(this, this)
-            setContentView(accountSettingActivityMvcImpl.root)
-        } catch (exception: Exception) {
-            exception.toTreatFor(TAG)
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        accountSettingActivityMvcImpl = AccountSettingActivityMvcImpl(this, inflater.context)
+        return accountSettingActivityMvcImpl.root
     }
 }

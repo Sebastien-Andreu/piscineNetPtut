@@ -9,7 +9,7 @@ import android.view.ViewGroup
 
 class CustomerDetailFragment : Fragment() {
 
-    lateinit var customerDetailFragmentMvcImpl: CustomerDetailFragmentMvcImpl
+    private lateinit var customerDetailFragmentMvcImpl: CustomerDetailFragmentMvcImpl
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,5 +18,10 @@ class CustomerDetailFragment : Fragment() {
     ): View? {
         customerDetailFragmentMvcImpl = CustomerDetailFragmentMvcImpl(inflater.context, this)
         return customerDetailFragmentMvcImpl.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        customerDetailFragmentMvcImpl.onUserWantToShowDetailCustomer()
     }
 }

@@ -41,6 +41,7 @@ class ManagementCustomerActivityViewModel {
             )
 
             if (id != null){
+                CustomerSelected.customer = customer
                 updateCustomerCallBack.postValue(customer)
             } else {
                 addCustomerCallBack.postValue(customer)
@@ -85,6 +86,7 @@ class ManagementCustomerActivityViewModel {
                  observation = getValue(root.findViewById<EditText>(R.id.addPoolObservation)?.text.toString())
             )
             if (CustomerSelected.pool.ID != null){
+                CustomerSelected.pool = pool
                 updatePoolCallBack.postValue(pool)
             } else {
                 addPoolCallBack.postValue(pool)

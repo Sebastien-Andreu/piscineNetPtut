@@ -20,20 +20,20 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-        <activity android:screenOrientation="portrait" android:name=".ui.splashscreen.SplashScreenActivity">
+        <activity android:screenOrientation="portrait" android:name=".ui.splashscreen.SplashScreenActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.listOfCustomer.ListCustomerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.listOfCustomer.ListCustomerActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name=".ui.home.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.customerdetails.CustomerDetailsActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.workingmethod.WorkingMethodActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.workingmethod.WorkingMethodActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.managementCustomer.ManagementCustomerActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.listOfVisit.ListOfVisitActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".ui.accountSetting.AccountSettingActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.listOfVisit.ListOfVisitActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.accountSetting.AccountSettingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 </manifest>

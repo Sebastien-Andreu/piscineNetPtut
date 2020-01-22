@@ -44,7 +44,7 @@ class ListOfVisitActivity: AppCompatActivity(), ListOfVisitActivityMvc.Listeners
         try {
 
         } catch (exception: Exception) {
-            exception.toTreatFor(ListCustomerActivity.TAG)
+            exception.toTreatFor(TAG)
         }
     }
 

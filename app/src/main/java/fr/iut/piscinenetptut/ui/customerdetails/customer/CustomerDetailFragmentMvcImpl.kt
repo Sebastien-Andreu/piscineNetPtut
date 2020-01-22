@@ -18,7 +18,7 @@ class CustomerDetailFragmentMvcImpl (
 
     var root: View? = null
 
-    lateinit var customerDetailFragmentViewModel: CustomerDetailFragmentViewModel
+    private lateinit var customerDetailFragmentViewModel: CustomerDetailFragmentViewModel
 
     init {
         try {
