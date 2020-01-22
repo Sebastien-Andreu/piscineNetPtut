@@ -22,7 +22,7 @@ class HomeActivity: AppCompatActivity() {
         }
     }
 
-    private lateinit var homeActivityMvcImpl: HomeActivtyMvcImpl
+    private lateinit var homeActivityMvcImpl: HomeActivityMvcImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
@@ -30,7 +30,7 @@ class HomeActivity: AppCompatActivity() {
 
             CustomerSelected.reset()
 
-            homeActivityMvcImpl = HomeActivtyMvcImpl(this, this)
+            homeActivityMvcImpl = HomeActivityMvcImpl(this, this)
             setContentView(homeActivityMvcImpl.root)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)

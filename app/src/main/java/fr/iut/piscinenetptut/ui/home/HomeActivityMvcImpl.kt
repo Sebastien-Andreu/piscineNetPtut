@@ -16,7 +16,7 @@ import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 
 
-class HomeActivtyMvcImpl(
+class HomeActivityMvcImpl(
     val homeActivity: HomeActivity,
     val context: Context
 ): HomeActivtyMvc, NavigationView.OnNavigationItemSelectedListener {
