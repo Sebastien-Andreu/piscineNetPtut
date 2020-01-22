@@ -4,11 +4,20 @@ import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.github.kittinunf.fuel.Fuel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
+import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.item.UserPreviewFactory
+import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
+import kotlinx.android.synthetic.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
+import kotlinx.serialization.list
 
 class ListCustomerActivityMvcImpl(
     val context: Context,
@@ -17,6 +26,8 @@ class ListCustomerActivityMvcImpl(
 
     private val TAG: String = "ListUserActivityMvcImpl"
 
+    private val requestHttp = httpRequest()
+
     private val userPreviewClickListener: View.OnClickListener = View.OnClickListener { v ->
         if (null != v) {
             listUserActivity.onUserTouchUserPreview(v.tag.toString().toInt())
@@ -24,11 +35,18 @@ class ListCustomerActivityMvcImpl(
     }
 
     var root: View? = null
+    var listIsLoad: Boolean = false
 
     init {
         try {
             root = View.inflate(context, R.layout.activity_user_list, null)
             listUserActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "List of customer"
+
+            if (root != null){
+                root!!.findViewById<FloatingActionButton>(R.id.floatingActionButtonAddCustomer)?.setOnClickListener {
+                    ManagementCustomerActivity.start(listUserActivity.layoutInflater.context)
+                }
+            }
 
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
@@ -44,14 +62,34 @@ class ListCustomerActivityMvcImpl(
 
                     root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.addView(view)
                 }
+                listIsLoad = true
             }
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
     }
-//
-//    override fun getPictureOfCustomer(idCustomer: Int){
-//        val requestHttp = httpRequest()
-//        Fuel.get(requestHttp.url + "Pool")
-//    }
+
+    override fun verifyIfUpdateDataBase() {
+        try {
+            if (listIsLoad){
+                Fuel.get(requestHttp.url+"ThereIsAnUpdate")
+                    .responseString { _, _, result ->
+                        result.fold({ d ->
+                            if (d == true.toString()){
+                                root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.removeAllViews()
+                                listUserActivity.listUserActivityViewModel.onNeedToGetUserList()
+                            }
+                        }, { err ->
+                            println(err.message)
+                        })
+                    }
+            } else {
+                listUserActivity.listUserActivityViewModel.onNeedToGetUserList()
+            }
+
+
+        }catch (exception: Exception){
+            exception.toTreatFor(TAG)
+        }
+    }
 }

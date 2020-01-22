@@ -8,9 +8,9 @@
         <item
             android:id="@+id/menuListOfVisit"
             android:title="@string/menuListOfVisit"/>
-<!--        <item-->
-<!--            android:id="@+id/nav_friends"-->
-<!--            android:title="Friends"/>-->
+        <item
+            android:id="@+id/menuListOfEmployee"
+            android:title="@string/menuListOfEmployee"/>
     </group>
 
 

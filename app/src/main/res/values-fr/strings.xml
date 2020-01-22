@@ -116,6 +116,7 @@
     <string name="setting">Paramètres</string>
     <string name="menuListOfCustomer">Liste des clients</string>
     <string name="menuListOfVisit">Liste des visites</string>
+    <string name="menuListOfEmployee">Liste des employés</string>
     <string name="menuSignOut">Déconnexion</string>
     <string name="menuAccountSetting">Paramètres du compte</string>
 </resources>

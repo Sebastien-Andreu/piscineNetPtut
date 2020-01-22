@@ -3,12 +3,14 @@ package fr.iut.piscinenetptut.ui.home
 import android.content.Context
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
@@ -42,6 +44,9 @@ class HomeActivtyMvcImpl(
                 drawerLayout.addDrawerListener(toggle)
                 toggle.syncState()
                 root!!.findViewById<NavigationView>(R.id.nav_view)?.setNavigationItemSelectedListener(this)
+
+                val headerView = root!!.findViewById<NavigationView>(R.id.nav_view)?.getHeaderView(0)
+                headerView!!.findViewById<TextView>(R.id.navBarTextName)?.text = "Login : " + Account.register.login
 
                 homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, ListCustomerActivity()).commit()
                 root!!.findViewById<NavigationView>(R.id.nav_view)?.setCheckedItem(R.id.menuListOfCustomer)

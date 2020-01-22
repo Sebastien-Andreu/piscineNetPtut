@@ -70,11 +70,6 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
 
     override fun onBackPressed() {
         this@ManagementCustomerActivity.finish()
-//        if (CustomerSelected.customer.ID != null){
-////            ListCustomerActivity.start(this)
-//        }else {
-//            HomeActivity.start(this)
-//        }
     }
 
     override fun onUserWantToAddNewCustomer() {

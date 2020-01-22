@@ -2,6 +2,7 @@ package fr.iut.piscinenetptut.ui.listOfCustomer
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.entities.Customer
@@ -29,7 +30,7 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
         listUserActivityMvcImpl = ListCustomerActivityMvcImpl(inflater.context, this)
         listUserActivityViewModel = ListCustomerActivityViewModel()
 
-        CustomerSelected.reset()
+        listUserActivityMvcImpl.listIsLoad = false
 
         listUserActivityViewModel.customerCallBack.observe(this, Observer {
             listCustomer = it
@@ -40,8 +41,6 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
             listPool = it
             listUserActivityMvcImpl.onUserListLoaded(listCustomer, listPool)
         })
-
-        listUserActivityViewModel.onNeedToGetUserList()
 
         return listUserActivityMvcImpl.root
     }
@@ -63,5 +62,11 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        CustomerSelected.reset()
+        listUserActivityMvcImpl.verifyIfUpdateDataBase()
     }
 }
