@@ -72,5 +72,6 @@ dependencies {
     //design
     implementation 'com.google.android.material:material:1.0.0'
 
-
+    //mail
+    implementation 'com.github.yesidlazaro:GmailBackground:1.2.0'
 }

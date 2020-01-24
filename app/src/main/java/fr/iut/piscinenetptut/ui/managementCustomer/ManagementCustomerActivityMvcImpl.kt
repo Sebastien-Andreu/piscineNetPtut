@@ -14,9 +14,9 @@ import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.adapter.ViewPagerAdapter
+import fr.iut.piscinenetptut.shared.mail.SendMail
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
-import fr.iut.piscinenetptut.ui.home.HomeActivity
 import fr.iut.piscinenetptut.ui.managementCustomer.customer.CustomerFragment
 import fr.iut.piscinenetptut.ui.managementCustomer.swimmingpool.SwimmingPoolFragment
 import kotlinx.serialization.json.Json
@@ -33,6 +33,8 @@ class ManagementCustomerActivityMvcImpl(
 
     private val json = Json(JsonConfiguration.Stable)
     private val requestHttp = httpRequest()
+
+    private var customer: Customer? = null
 
     var root: View? = null
 
@@ -73,6 +75,7 @@ class ManagementCustomerActivityMvcImpl(
     override fun addCustomer(customer: Customer) {
         try {
             if (null != root) {
+                this.customer = customer
                 Fuel.post(requestHttp.url+"Customer")
                     .body(requestHttp.convertData(json.stringify(Customer.serializer(), customer)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")
@@ -107,8 +110,8 @@ class ManagementCustomerActivityMvcImpl(
                     .header("Content-Type" to "application/x-www-form-urlencoded")
                     .responseString { _, _, result ->
                         result.fold({
-                            this@ManagementCustomerActivityMvcImpl.managementCustomerActivity.finish()
-                            HomeActivity.start(this@ManagementCustomerActivityMvcImpl.managementCustomerActivity)
+                            val mail = SendMail(customer!!)
+                            mail.send(managementCustomerActivity.layoutInflater, managementCustomerActivity)
                         }, { err ->
                             println(err.message)
                         })

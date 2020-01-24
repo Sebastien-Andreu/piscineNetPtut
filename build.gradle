@@ -25,6 +25,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" } // that's the one missing.
     }
 }
 

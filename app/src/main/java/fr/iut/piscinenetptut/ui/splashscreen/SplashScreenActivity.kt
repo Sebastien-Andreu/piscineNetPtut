@@ -23,6 +23,7 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listen
                 splashScreenActivityMvcImpl.onRegisterInformationIdLoaded()
             })
             setContentView(splashScreenActivityMvcImpl.root)
+
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
