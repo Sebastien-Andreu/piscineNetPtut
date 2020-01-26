@@ -24,6 +24,10 @@ fun String.toDebug(contextTag: String? = null) {
     }
 }
 
+fun String.isEmail() : Boolean {
+    return android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+}
+
 fun createUniqueIdV4(): String {
     // v4 of uuid -> https://kodejava.org/how-do-i-generate-uuid-guid-in-java/
     // https://www.ietf.org/rfc/rfc4122.txt

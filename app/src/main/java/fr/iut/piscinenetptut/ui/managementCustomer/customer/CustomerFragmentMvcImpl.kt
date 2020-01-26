@@ -1,10 +1,15 @@
 package fr.iut.piscinenetptut.ui.managementCustomer.customer
 
 import android.content.Context
+import android.graphics.Color
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import androidx.core.widget.addTextChangedListener
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.CustomerSelected
+import fr.iut.piscinenetptut.library.extension.isEmail
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 
@@ -34,8 +39,21 @@ class CustomerFragmentMvcImpl (
                 }
                 root!!.findViewById<TextView>(R.id.addCustomerInputGuardian)?.text = null
                 root!!.findViewById<LinearLayout>(R.id.layoutGuardian)?.visibility = View.GONE
-
             }
+
+            root?.findViewById<EditText>(R.id.addCustomerMail)?.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+
+                override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
+
+                override fun afterTextChanged(editable: Editable) {
+                    if (!root?.findViewById<EditText>(R.id.addCustomerMail)?.text.toString().isEmail()) {
+                        root?.findViewById<EditText>(R.id.addCustomerMail)?.setTextColor(Color.RED)
+                    } else {
+                        root?.findViewById<EditText>(R.id.addCustomerMail)?.setTextColor(Color.BLACK)
+                    }
+                }
+            })
 
             /*-----------------------UPDATE-----------------------*/
             if (CustomerSelected.customer.ID != null) {
@@ -69,6 +87,7 @@ class CustomerFragmentMvcImpl (
         return ( !root?.findViewById<TextView>(R.id.addCustomerSurname)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerName)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerMail)?.text.isNullOrEmpty() &&
+                  root?.findViewById<EditText>(R.id.addCustomerMail)?.text.toString().isEmail() &&
                  !root?.findViewById<TextView>(R.id.addCustomerAddr)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerTown)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addCustomerPostalCode)?.text.isNullOrEmpty() &&
