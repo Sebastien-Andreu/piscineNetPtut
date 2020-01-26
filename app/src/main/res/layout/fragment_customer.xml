@@ -258,6 +258,14 @@
             android:textAllCaps="false" />
 
         <Button
+            android:id="@+id/deleteCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/deleteCustomerButton"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/detailCustomerMakeVisitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
