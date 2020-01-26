@@ -1,13 +1,22 @@
 package fr.iut.piscinenetptut.ui.customerdetails.customer
 
 import android.content.Context
+import android.text.InputType
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.entities.Account
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.workingmethod.WorkingMethodActivity
-import java.lang.Exception
+
 
 class CustomerDetailFragmentMvcImpl (
     private val context: Context,
@@ -15,6 +24,8 @@ class CustomerDetailFragmentMvcImpl (
     ): CustomerDetailFragmentMvc {
 
     private val TAG: String = "CustomerDetailFragmentMvcImpl"
+
+    private val requestHttp = httpRequest()
 
     var root: View? = null
 
@@ -35,6 +46,32 @@ class CustomerDetailFragmentMvcImpl (
                 (customerDetailFragment.activity as CustomerDetailsActivity).onUserWantToUpdateCustomer()
             }
 
+            root?.findViewById<Button>(R.id.deleteCustomer)?.setOnClickListener{
+                val builder = customerDetailFragment.context?.let { it1 -> AlertDialog.Builder(it1) }
+
+                builder?.setTitle("Delete customer !")
+                builder?.setMessage("Enter the administrator password :")
+                val input = EditText(customerDetailFragment.context)
+                val lp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
+
+                input.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                input.layoutParams = lp
+                builder?.setView(input)
+
+                builder?.setPositiveButton("YES"){_, _ ->
+                    if (input.text.toString() == Account.register.password.toString()){
+                        onUserWantToRemoveCustomer()
+                    } else {
+                        Toast.makeText(customerDetailFragment.context,"Wrong password !",Toast.LENGTH_SHORT).show()
+                    }
+                }
+                builder?.setNegativeButton("No"){_,_ -> }
+                builder?.setNeutralButton("Cancel"){_,_ -> }
+
+                val dialog: AlertDialog? = builder?.create()
+                dialog?.show()
+            }
+
             onUserWantToShowDetailCustomer()
         } catch (exception : Exception){
             exception.toTreatFor(TAG)
@@ -43,5 +80,19 @@ class CustomerDetailFragmentMvcImpl (
 
     override fun onUserWantToShowDetailCustomer(){
         customerDetailFragmentViewModel.showDetailOfCustomer(root!!)
+    }
+
+    override fun onUserWantToRemoveCustomer() {
+        Fuel.post(requestHttp.url+"Customer/Remove/" + CustomerSelected.customer.ID)
+            .body("picture=" +CustomerSelected.pool.picture)
+            .header("Content-Type" to "application/x-www-form-urlencoded")
+            .responseString { _, _, result ->
+                result.fold({d->
+                    Toast.makeText(customerDetailFragment.context,"Deleted !",Toast.LENGTH_SHORT).show()
+                    (customerDetailFragment.activity as CustomerDetailsActivity).onBackPressed()
+                }, { err ->
+                    println(err.message)
+                })
+            }
     }
 }

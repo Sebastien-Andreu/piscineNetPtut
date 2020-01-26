@@ -29,6 +29,7 @@
     <string name="addPool">Ajouter un nouveau pool pour cet utilisateur</string>
 
     <string name="updateCustomerButton">Mettre à jour le client</string>
+    <string name="deleteCustomerButton">Supprimer le client</string>
 
 
     <!--                                                                 -->
