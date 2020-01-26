@@ -12,16 +12,19 @@ import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.entities.Pool
+import fr.iut.piscinenetptut.entities.Register
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.adapter.ViewPagerAdapter
-import fr.iut.piscinenetptut.shared.mail.SendMail
+import fr.iut.piscinenetptut.shared.mail.SendMailCreateNewCustomer
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import fr.iut.piscinenetptut.shared.view.SwipeDisabledViewPager.SwipeDisabledViewPager
 import fr.iut.piscinenetptut.ui.managementCustomer.customer.CustomerFragment
 import fr.iut.piscinenetptut.ui.managementCustomer.swimmingpool.SwimmingPoolFragment
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
+import kotlinx.serialization.list
 import java.io.File
+import kotlin.math.floor
 
 
 class ManagementCustomerActivityMvcImpl(
@@ -35,6 +38,7 @@ class ManagementCustomerActivityMvcImpl(
     private val requestHttp = httpRequest()
 
     private var customer: Customer? = null
+
 
     var root: View? = null
 
@@ -75,13 +79,13 @@ class ManagementCustomerActivityMvcImpl(
     override fun addCustomer(customer: Customer) {
         try {
             if (null != root) {
-                this.customer = customer
                 Fuel.post(requestHttp.url+"Customer")
                     .body(requestHttp.convertData(json.stringify(Customer.serializer(), customer)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")
                     .responseString { _, _, result ->
                         result.fold({ d ->
-                            managementCustomerActivity.onUserWantToAddNewPool(json.parse(Customer.serializer(), d).ID)
+                            this.customer = json.parse(Customer.serializer(), d)
+                            managementCustomerActivity.onUserWantToAddNewPool(this.customer!!.ID)
                         }, { err ->
                             println(err.message)
                         })
@@ -110,8 +114,7 @@ class ManagementCustomerActivityMvcImpl(
                     .header("Content-Type" to "application/x-www-form-urlencoded")
                     .responseString { _, _, result ->
                         result.fold({
-                            val mail = SendMail(customer!!)
-                            mail.send(managementCustomerActivity.layoutInflater, managementCustomerActivity)
+                            createLoginForCustomer((customer!!.surname.toString()[0]) + "." + customer!!.name)
                         }, { err ->
                             println(err.message)
                         })
@@ -169,5 +172,47 @@ class ManagementCustomerActivityMvcImpl(
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun createLoginForCustomer(login: String) {
+        Fuel.get(requestHttp.url+"Register")
+            .responseString { _, _, result ->
+                result.fold({ d ->
+                    verifyValidifyOfLogin(json.parse(Register.serializer().list,d), login)
+                }, { err ->
+                    println(err.message)
+                })
+            }
+    }
+
+    private fun verifyValidifyOfLogin(listRegister: List<Register>, login: String){
+        var validityOfLogin = true
+
+        listRegister.forEach {
+            if (it.login == login){
+                validityOfLogin = false
+            }
+        }
+        if (validityOfLogin){
+            val register = Register (
+                login = login,
+                mail = customer!!.mail,
+                ID_Customer = customer!!.ID,
+                role = "customer"
+            )
+            val mail = SendMailCreateNewCustomer(register)
+            mail.send(managementCustomerActivity.layoutInflater, managementCustomerActivity)
+        } else {
+            verifyValidifyOfLogin(listRegister, login + getAleaNumber())
+        }
+    }
+
+    private fun getAleaNumber(): String{
+        val chars = "0123456789"
+        var passWord = ""
+        for (i in 0..2) {
+            passWord += chars[floor(Math.random() * chars.length).toInt()]
+        }
+        return passWord
     }
 }

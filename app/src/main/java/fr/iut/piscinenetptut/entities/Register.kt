@@ -4,10 +4,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Register (
-    var id: Int? = null,
-    var role: String? = null,
+    var ID: Int? = null,
     var login: String,
-    var password: String
+    var password: String?= null,
+    var mail: String? = null,
+    var role: String? = null,
+    var ID_Customer: Int? = null
 )
-
-// il faudra l'id customer

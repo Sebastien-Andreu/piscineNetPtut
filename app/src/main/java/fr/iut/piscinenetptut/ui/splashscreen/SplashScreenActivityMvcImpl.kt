@@ -51,7 +51,7 @@ class SplashScreenActivityMvcImpl (
             .responseString { _, _, result ->
                 result.fold({d ->
                     val token = JWT(d)
-                    Account.register.id = token.subject.toString().toInt()
+                    Account.register.ID = token.subject.toString().toInt()
                     Account.register.role = token.getClaim("role").asString()
                     this@SplashScreenActivityMvcImpl.splashScreenActivity.finish()
                     HomeActivity.start(this@SplashScreenActivityMvcImpl.splashScreenActivity)
