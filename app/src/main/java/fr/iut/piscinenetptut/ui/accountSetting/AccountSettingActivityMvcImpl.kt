@@ -95,7 +95,7 @@ class AccountSettingActivityMvcImpl (
 
     override fun updatePassword() {
         try {
-            Fuel.put(requestHttp.url+"User/" + Account.register.id + "/Password")
+            Fuel.put(requestHttp.url+"User/" + Account.register.ID + "/Password")
                 .body("password=" + root?.findViewById<EditText>(R.id.accountSettingNewPass)?.text.toString())
                 .header("Content-Type" to "application/x-www-form-urlencoded")
                 .responseString { _, _, result ->
@@ -117,7 +117,7 @@ class AccountSettingActivityMvcImpl (
 
     override fun updateMail() {
         try {
-            Fuel.put(requestHttp.url+"User/" + Account.register.id + "/Mail")
+            Fuel.put(requestHttp.url+"User/" + Account.register.ID + "/Mail")
                 .body("mail=" + root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.text.toString())
                 .header("Content-Type" to "application/x-www-form-urlencoded")
                 .responseString { _, _, result ->

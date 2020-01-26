@@ -32,10 +32,10 @@
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:foregroundGravity="center"
-        app:backgroundTint="#CBAB55"
+        app:backgroundTint="@color/colorSecondaryDark"
         app:layout_anchorGravity="center"
         app:maxImageSize="50dp"
-        app:rippleColor="#9E7500"
+        app:rippleColor="@color/colorSecondaryDark"
         app:srcCompat="@drawable/ic_add_black_24dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

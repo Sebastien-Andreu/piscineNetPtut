@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Modifier le mot de passe"
+                android:textColor="@color/colorSecondaryDark"
                 android:textSize="18sp" />
 
             <LinearLayout
@@ -122,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Changer l'adresse mail"
+                android:textColor="@color/colorSecondaryDark"
                 android:textSize="18sp" />
 
             <LinearLayout

@@ -8,6 +8,7 @@ interface ManagementCustomerActivityMvc {
     fun addPool(pool: Pool)
     fun updateCustomer()
     fun updatePool()
+    fun createLoginForCustomer(login: String)
     interface Listeners {
         fun onUserWantToAddNewCustomer()
         fun onUserWantToAddNewPool(id_Customer: Int?= null)

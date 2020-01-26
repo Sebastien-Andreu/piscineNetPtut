@@ -8,16 +8,12 @@ import com.github.kittinunf.fuel.Fuel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Customer
+import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.entities.Pool
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
-import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.item.UserPreviewFactory
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
-import kotlinx.android.synthetic.*
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
-import kotlinx.serialization.list
 
 class ListCustomerActivityMvcImpl(
     val context: Context,
@@ -44,6 +40,7 @@ class ListCustomerActivityMvcImpl(
 
             if (root != null){
                 root!!.findViewById<FloatingActionButton>(R.id.floatingActionButtonAddCustomer)?.setOnClickListener {
+                    CustomerSelected.reset()
                     ManagementCustomerActivity.start(listUserActivity.layoutInflater.context)
                 }
             }

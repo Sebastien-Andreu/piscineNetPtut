@@ -20,6 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Contact"
+                android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -201,6 +202,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Contrat annuelle d'entretien"
+                android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
