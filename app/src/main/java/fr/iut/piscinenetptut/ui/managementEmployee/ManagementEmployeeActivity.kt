@@ -39,8 +39,8 @@ class ManagementEmployeeActivity: AppCompatActivity(), ManagementEmployeeMvc.Lis
                 supportActionBar?.title = "Update information"
             }
 
-            managementEmployeeMvcImpl = ManagementEmployeeMvcImpl(this, this)
             managementEmployeeViewModel = ManagementEmployeeViewModel()
+            managementEmployeeMvcImpl = ManagementEmployeeMvcImpl(this, this)
 
             managementEmployeeViewModel.addEmployeeCallBack.observe(this, Observer {
                 managementEmployeeMvcImpl.addEmployee(it)
@@ -69,7 +69,7 @@ class ManagementEmployeeActivity: AppCompatActivity(), ManagementEmployeeMvc.Lis
         managementEmployeeViewModel.onNeedToGetEmployeeInformation(managementEmployeeMvcImpl.root!!, null)
     }
 
-    override fun OnUserWantToModifyEmployeeInformation(){
+    override fun onUserWantToModifyEmployeeInformation(){
         managementEmployeeViewModel.onNeedToGetEmployeeInformation(managementEmployeeMvcImpl.root!!)
     }
 }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.entities.*
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.employeeDetails.EmployeeDetailsActivity
 
 
 class ListEmployeeActivity: Fragment(), ListEmployeeActivityMvc.Listeners {
@@ -43,7 +44,7 @@ class ListEmployeeActivity: Fragment(), ListEmployeeActivityMvc.Listeners {
                     EmployeeSelected.employee = it
                 }
             }
-//            CustomerDetailsActivity.start(layoutInflater.context)
+            EmployeeDetailsActivity.start(layoutInflater.context)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
@@ -51,7 +52,7 @@ class ListEmployeeActivity: Fragment(), ListEmployeeActivityMvc.Listeners {
 
     override fun onResume() {
         super.onResume()
-        CustomerSelected.reset()
+        EmployeeSelected.reset()
         listEmployeeActivityMvcImpl.verifyIfUpdateDataBase()
     }
 }

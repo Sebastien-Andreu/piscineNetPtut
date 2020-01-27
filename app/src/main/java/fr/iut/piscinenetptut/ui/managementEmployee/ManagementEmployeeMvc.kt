@@ -6,10 +6,12 @@ interface ManagementEmployeeMvc {
     fun addEmployee(employee: Employee)
     fun updateEmployee()
 
+    fun onUserWantToShowDetailEmployeeToUpdate()
     fun createLoginForEmployee(login: String)
 
     interface Listeners {
         fun onUserWantToAddEmployee()
-        fun OnUserWantToModifyEmployeeInformation()
+        fun onUserWantToModifyEmployeeInformation()
+
     }
 }

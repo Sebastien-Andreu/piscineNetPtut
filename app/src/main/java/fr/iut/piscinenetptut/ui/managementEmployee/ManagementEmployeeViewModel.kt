@@ -35,4 +35,19 @@ class ManagementEmployeeViewModel {
             exception.toTreatFor(TAG)
         }
     }
+
+    fun showInformationOfEmployeeWhenUserWantToUpdate(root: View) {
+        try {
+            val employee = EmployeeSelected.employee
+            println(EmployeeSelected.employee)
+
+            root.findViewById<EditText>(R.id.addEmployeeName)?.setText(employee.name)
+            root.findViewById<EditText>(R.id.addEmployeeSurname)?.setText(employee.surname)
+            root.findViewById<EditText>(R.id.addEmployeeMail)?.setText(employee.mail)
+            root.findViewById<EditText>(R.id.addEmployeeAddr)?.setText(employee.address)
+            root.findViewById<EditText>(R.id.addEmployeeTelPhoneNumber)?.setText(employee.telPhoneNumber.toString())
+        } catch (exception: Exception) {
+            exception.toTreatFor(TAG)
+        }
+    }
 }

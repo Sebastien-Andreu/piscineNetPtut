@@ -197,7 +197,7 @@ class ManagementCustomerActivityMvcImpl(
             val register = Register (
                 login = login,
                 mail = customer!!.mail,
-                ID_Customer = customer!!.ID,
+                ID_Customer = customer!!.ID.toString(),
                 role = "customer"
             )
             val mail = SendMailCreateNewCustomer(register)

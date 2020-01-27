@@ -71,6 +71,7 @@ class ListEmployeeActivityMvcImpl(
                 Fuel.get(requestHttp.url+"ThereIsAnUpdateForEmployee")
                     .responseString { _, _, result ->
                         result.fold({ d ->
+
                             if (d == true.toString()){
                                 root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.removeAllViews()
                                 listEmployeeActivity.listEmployeeActivityViewModel.onNeedToGetEmployeeList()

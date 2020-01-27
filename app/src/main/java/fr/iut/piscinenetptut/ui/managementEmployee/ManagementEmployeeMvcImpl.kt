@@ -5,10 +5,7 @@ import android.graphics.Color
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Employee
@@ -61,10 +58,33 @@ class ManagementEmployeeMvcImpl (
                         }
                     }
                 })
+
+
+                /*-----------------------UPDATE-----------------------*/
+                if (EmployeeSelected.employee.ID != null) {
+                    root!!.findViewById<Button>(R.id.addEmployeeButton)?.visibility = View.GONE
+
+                    root!!.findViewById<LinearLayout>(R.id.updateEmployeeLayout)?.visibility = View.VISIBLE
+                    root!!.findViewById<Button>(R.id.updateEmployeeButton)?.setOnClickListener{
+                        if (verifyIfAllInputTextAreNotEmpty()){
+                            managementEmployeeActivity.onUserWantToModifyEmployeeInformation()
+                        }
+                    }
+                    root!!.findViewById<Button>(R.id.updateEmployeeButtonCancel)?.setOnClickListener{
+                        managementEmployeeActivity.onBackPressed()
+                    }
+
+                    onUserWantToShowDetailEmployeeToUpdate()
+                }
+                /*-----------------------UPDATE-----------------------*/
             }
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun onUserWantToShowDetailEmployeeToUpdate() {
+        managementEmployeeActivity.managementEmployeeViewModel.showInformationOfEmployeeWhenUserWantToUpdate(root!!)
     }
 
     private fun verifyIfAllInputTextAreNotEmpty(): Boolean{
@@ -84,7 +104,7 @@ class ManagementEmployeeMvcImpl (
                     .body(requestHttp.convertData(json.stringify(Employee.serializer(), employee)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")
                     .responseString { _, _, result ->
-                        result.fold({ d ->
+                        result.fold({
                             createLoginForEmployee((employee.surname.toString()[0]) + "." + employee.name)
                         }, { err ->
                             println(err.message)
