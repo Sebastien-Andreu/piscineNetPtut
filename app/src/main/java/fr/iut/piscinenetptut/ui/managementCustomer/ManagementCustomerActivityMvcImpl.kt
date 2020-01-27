@@ -197,11 +197,11 @@ class ManagementCustomerActivityMvcImpl(
             val register = Register (
                 login = login,
                 mail = customer!!.mail,
-                ID_Customer = customer!!.ID,
+                ID_Customer = customer!!.ID.toString(),
                 role = "customer"
             )
             val mail = SendMailCreateNewCustomer(register)
-            mail.send(managementCustomerActivity.layoutInflater, managementCustomerActivity)
+            mail.send(managementCustomerActivity)
         } else {
             verifyValidifyOfLogin(listRegister, login + getAleaNumber())
         }

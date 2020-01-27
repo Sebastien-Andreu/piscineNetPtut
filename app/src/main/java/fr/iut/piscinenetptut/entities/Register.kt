@@ -9,5 +9,5 @@ data class Register (
     var password: String?= null,
     var mail: String? = null,
     var role: String? = null,
-    var ID_Customer: Int? = null
+    var ID_Customer: String? = null
 )

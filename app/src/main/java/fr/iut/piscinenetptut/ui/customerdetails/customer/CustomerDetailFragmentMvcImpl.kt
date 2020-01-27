@@ -87,7 +87,7 @@ class CustomerDetailFragmentMvcImpl (
             .body("picture=" +CustomerSelected.pool.picture)
             .header("Content-Type" to "application/x-www-form-urlencoded")
             .responseString { _, _, result ->
-                result.fold({d->
+                result.fold({
                     Toast.makeText(customerDetailFragment.context,"Deleted !",Toast.LENGTH_SHORT).show()
                     (customerDetailFragment.activity as CustomerDetailsActivity).onBackPressed()
                 }, { err ->

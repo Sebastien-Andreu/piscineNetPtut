@@ -1,12 +1,10 @@
 package fr.iut.piscinenetptut.shared.mail
 
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.creativityapps.gmailbackgroundlibrary.BackgroundMail
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.entities.Register
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
-import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlin.math.floor
@@ -14,8 +12,8 @@ import kotlin.math.floor
 class SendMailCreateNewCustomer(val register: Register) {
 
 
-    fun send(activity: LayoutInflater, appCompatActivity: AppCompatActivity){
-        BackgroundMail.newBuilder(activity.context)
+    fun send(appCompatActivity: AppCompatActivity){
+        BackgroundMail.newBuilder(appCompatActivity.layoutInflater.context)
             .withUsername("piscineNetPtut@gmail.com")
             .withPassword("piscineNetPtut]]")
             .withMailto(this.register.mail.toString())
@@ -23,7 +21,6 @@ class SendMailCreateNewCustomer(val register: Register) {
             .withSubject("Identifiant PiscineNet")
             .withBody(getBodyOfMail())
             .withOnSuccessCallback {
-                (appCompatActivity as ManagementCustomerActivity).onUserWantToAddNewCustomer()
                 createNewRegisterOfConnection(appCompatActivity)
             }
             .send()

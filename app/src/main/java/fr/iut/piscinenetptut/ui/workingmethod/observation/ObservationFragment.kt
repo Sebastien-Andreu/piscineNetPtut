@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 
 class ObservationFragment : Fragment(){
 

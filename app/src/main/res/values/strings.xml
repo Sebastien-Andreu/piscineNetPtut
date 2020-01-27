@@ -132,4 +132,11 @@
     <string name="menuSignOut">Sign Out</string>
     <string name="menuAccountSetting">Account Settings</string>
 
+
+    <!--                                                                 -->
+    <!--                            add Employee                         -->
+    <!--                                                                 -->
+    <string name="updateEmployeeButton">Update the employee</string>
+    <string name="deleteEmployeeButton">Delete the employee</string>
+
 </resources>

@@ -35,6 +35,8 @@
         <activity android:name=".ui.managementCustomer.ManagementCustomerActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.listOfVisit.ListOfVisitActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.accountSetting.AccountSettingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.managementEmployee.ManagementEmployeeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.employeeDetails.EmployeeDetailsActivity" android:screenOrientation="portrait"/>
 
     </application>
 </manifest>

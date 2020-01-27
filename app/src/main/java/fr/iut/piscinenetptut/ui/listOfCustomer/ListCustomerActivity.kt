@@ -2,7 +2,6 @@ package fr.iut.piscinenetptut.ui.listOfCustomer
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.entities.Customer

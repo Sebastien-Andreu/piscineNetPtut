@@ -7,7 +7,6 @@ import android.widget.RadioGroup
 import android.widget.Switch
 import androidx.core.view.forEach
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
