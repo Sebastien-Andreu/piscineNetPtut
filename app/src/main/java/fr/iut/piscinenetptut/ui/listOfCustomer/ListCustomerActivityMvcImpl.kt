@@ -69,7 +69,7 @@ class ListCustomerActivityMvcImpl(
     override fun verifyIfUpdateDataBase() {
         try {
             if (listIsLoad){
-                Fuel.get(requestHttp.url+"ThereIsAnUpdate")
+                Fuel.get(requestHttp.url+"ThereIsAnUpdateForCustomer")
                     .responseString { _, _, result ->
                         result.fold({ d ->
                             if (d == true.toString()){

@@ -6,8 +6,6 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.home.HomeActivity
-import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 
 class ListOfVisitActivity: AppCompatActivity(), ListOfVisitActivityMvc.Listeners {
 

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import java.lang.Exception
 
 class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.listeners {

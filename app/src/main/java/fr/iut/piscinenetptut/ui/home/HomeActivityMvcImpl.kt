@@ -14,6 +14,8 @@ import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
+import fr.iut.piscinenetptut.ui.listOfEmployee.ListEmployeeActivity
+import fr.iut.piscinenetptut.ui.splashscreen.SplashScreenActivity
 
 
 class HomeActivityMvcImpl(
@@ -64,11 +66,16 @@ class HomeActivityMvcImpl(
             R.id.menuListOfVisit -> {
 //                homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, CustomerDetailsActivity()).commit()
             }
+            R.id.menuListOfEmployee -> {
+                homeActivity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, ListEmployeeActivity()).commit()
+            }
             R.id.menuSetting -> {
                 homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, AccountSettingActivity()).commit()
             }
             R.id.menuSignOut -> {
-                Toast.makeText(homeActivity, "Sign Out", Toast.LENGTH_SHORT).show()
+                Account.reset()
+                this.homeActivity.finish()
+                SplashScreenActivity.start(this.context)
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)

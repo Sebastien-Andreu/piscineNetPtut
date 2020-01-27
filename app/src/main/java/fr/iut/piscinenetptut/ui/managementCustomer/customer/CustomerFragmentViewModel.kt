@@ -7,7 +7,6 @@ import android.widget.RadioGroup
 import android.widget.Switch
 import androidx.core.view.forEach
 import fr.iut.piscinenetptut.R
-import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
@@ -20,7 +19,7 @@ class CustomerFragmentViewModel {
         try {
             val customer = CustomerSelected.customer
 
-            root.findViewById<EditText>(R.id.addCustomerName)?.setText(customer.name)
+            root.findViewById<EditText>(R.id.addEmployeeName)?.setText(customer.name)
             root.findViewById<EditText>(R.id.addCustomerSurname)?.setText(customer.surname)
             root.findViewById<EditText>(R.id.addCustomerMail)?.setText(customer.mail)
             root.findViewById<EditText>(R.id.addCustomerAddr)?.setText(customer.address)
