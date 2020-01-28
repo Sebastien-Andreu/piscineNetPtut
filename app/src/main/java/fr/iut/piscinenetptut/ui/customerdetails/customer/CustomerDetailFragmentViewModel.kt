@@ -19,7 +19,10 @@ class CustomerDetailFragmentViewModel {
     private val json = Json(JsonConfiguration.Stable)
     private val requestHttp = httpRequest()
 
-
+    /**
+    *   Show customer details in the view 
+    *   @param View The view to show the details in
+    **/
     fun showDetailOfCustomer(root: View){
         try {
 

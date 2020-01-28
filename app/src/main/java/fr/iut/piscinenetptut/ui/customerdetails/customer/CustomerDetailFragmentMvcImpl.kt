@@ -78,10 +78,16 @@ class CustomerDetailFragmentMvcImpl (
         }
     }
 
+    /**
+    *   Called when customer details need to be shown
+    **/
     override fun onUserWantToShowDetailCustomer(){
         customerDetailFragmentViewModel.showDetailOfCustomer(root!!)
     }
 
+    /**
+    *   Called when customer need to be deleted
+    **/
     override fun onUserWantToRemoveCustomer() {
         Fuel.post(requestHttp.url+"Customer/Remove/" + CustomerSelected.customer.ID)
             .body("picture=" +CustomerSelected.pool.picture)
