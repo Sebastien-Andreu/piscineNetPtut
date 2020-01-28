@@ -49,17 +49,29 @@ class AccountSettingActivityMvcImpl (
         }
     }
 
+    /**
+    *   Check old password field, new password field and password verify field not to be empty
+    *   @return true if one or more fields is empty
+    **/
     override fun verifyIfAllInputPassIsNotEmpty(): Boolean {
         return ( !root?.findViewById<EditText>(R.id.accountSettingOldPass)?.text.isNullOrEmpty() &&
                  !root?.findViewById<EditText>(R.id.accountSettingNewPassVerify)?.text.isNullOrEmpty() &&
                  !root?.findViewById<EditText>(R.id.accountSettingNewPass)?.text.isNullOrEmpty())
     }
 
+    /**
+    *   Check mail field and mail verify field not to be empty
+    *   @return true if one or more fields is empty, else return false
+    **/
     override fun verifyIfAllInputMailIsNotEmpty(): Boolean {
         return (!root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.text.isNullOrEmpty() &&
                 !root?.findViewById<EditText>(R.id.accountSettingNewAddrVerify)?.text.isNullOrEmpty())
     }
 
+    /**
+    *   Check password field and password verify field to be identical
+    *   @return true if they are identical, else return false
+    **/
     override fun verifyDataOfPassword(): Boolean {
         return if (verifyIfAllInputPassIsNotEmpty()){
             if (root?.findViewById<EditText>(R.id.accountSettingOldPass)?.text.toString() == Account.register.password){
@@ -79,6 +91,10 @@ class AccountSettingActivityMvcImpl (
         }
     }
 
+    /**
+    *   Check mail field and mail verify field to be identical
+    *   @return true if they are identical, else return false
+    **/
     override fun verifyDataOfMail(): Boolean {
         return if (verifyIfAllInputMailIsNotEmpty()){
             if (root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.text.toString() == root?.findViewById<EditText>(R.id.accountSettingNewAddrVerify)?.text.toString()){
@@ -93,6 +109,9 @@ class AccountSettingActivityMvcImpl (
         }
     }
 
+    /**
+    *   Change user password from the fields
+    **/
     override fun updatePassword() {
         try {
             Fuel.put(requestHttp.url+"User/" + Account.register.ID + "/Password")
@@ -115,6 +134,9 @@ class AccountSettingActivityMvcImpl (
 
     }
 
+    /**
+    *   Change user mail from the fields
+    **/
     override fun updateMail() {
         try {
             Fuel.put(requestHttp.url+"User/" + Account.register.ID + "/Mail")
