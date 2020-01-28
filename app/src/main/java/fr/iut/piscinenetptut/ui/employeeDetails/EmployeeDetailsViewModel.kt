@@ -18,7 +18,10 @@ class EmployeeDetailsViewModel {
     private val json = Json(JsonConfiguration.Stable)
     private val requestHttp = httpRequest()
 
-
+    /**
+    *   Show employee details in the view
+    *   @param View The view to show the details in
+    **/
     fun showDetailOfEmployee(root: View){
         try {
 

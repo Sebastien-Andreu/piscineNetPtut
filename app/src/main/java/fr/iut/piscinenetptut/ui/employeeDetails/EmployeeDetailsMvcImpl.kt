@@ -70,10 +70,16 @@ class EmployeeDetailsMvcImpl (
         }
     }
 
+    /**
+    *   Called when employee details need to be shown
+    **/
     override fun onUserWantToShowDetailEmployee(){
         employeeDetailsViewModel.showDetailOfEmployee(root!!)
     }
 
+    /**
+    * Called when employee need to be removed
+    **/
     override fun onUserWantToRemoveEmployee() {
         Fuel.post(requestHttp.url+"Employee/Remove/" + EmployeeSelected.employee.ID)
             .header("Content-Type" to "application/x-www-form-urlencoded")

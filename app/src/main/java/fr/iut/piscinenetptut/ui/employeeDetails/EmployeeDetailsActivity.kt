@@ -40,6 +40,9 @@ class EmployeeDetailsActivity: AppCompatActivity(), EmployeeDetailsMvc.Listeners
         }
     }
 
+    /**
+    *   Called when an employee need to be updated
+    **/
     override fun onUserWantToUpdateEmployee() {
         try {
             ManagementEmployeeActivity.start(this)
@@ -48,15 +51,23 @@ class EmployeeDetailsActivity: AppCompatActivity(), EmployeeDetailsMvc.Listeners
         }
     }
 
+
+    /**
+    *   Called when the user press the back button
+    **/
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }
 
+    /**
+    *   Close the view
+    **/
     override fun onBackPressed() {
         this@EmployeeDetailsActivity.finish()
     }
 
+    
     override fun onResume() {
         super.onResume()
         employeeDetailsMvcImpl.onUserWantToShowDetailEmployee()
