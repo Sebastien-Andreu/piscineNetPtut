@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -185,15 +186,40 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/addEmployeeButtonAddPicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Prendre une photo"
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondary_text_default_material_light"
+                    android:textStyle="normal" />
+
+                <ImageView
+                    android:id="@+id/addEmployePicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    tools:srcCompat="@tools:sample/avatars[0]" />
+            </LinearLayout>
+
             <Button
                 android:id="@+id/addEmployeeButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="35dp"
                 android:layout_weight="1"
                 android:text="Create new employee"
                 android:textAllCaps="false"
+                android:textColor="@color/secondary_text_default_material_light"
                 android:visibility="visible" />
 
             <LinearLayout
@@ -221,6 +247,7 @@
                     android:text="@string/updateText"
                     android:textAllCaps="false"
                     android:visibility="visible" />
+
             </LinearLayout>
 
         </LinearLayout>

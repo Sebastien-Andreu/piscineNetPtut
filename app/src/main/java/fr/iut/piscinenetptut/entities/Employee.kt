@@ -9,5 +9,6 @@ data class Employee (
     val surname: String?,
     val mail: String?,
     val address: String?,
-    val telPhoneNumber: String?
+    val telPhoneNumber: String?,
+    val picture: String? = null
 )

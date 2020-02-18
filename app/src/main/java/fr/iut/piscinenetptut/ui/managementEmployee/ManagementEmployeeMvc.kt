@@ -1,5 +1,6 @@
 package fr.iut.piscinenetptut.ui.managementEmployee
 
+import android.content.Intent
 import fr.iut.piscinenetptut.entities.Employee
 
 interface ManagementEmployeeMvc {
@@ -8,6 +9,7 @@ interface ManagementEmployeeMvc {
 
     fun onUserWantToShowDetailEmployeeToUpdate()
     fun createLoginForEmployee(login: String)
+    fun showPicture(data: Intent?)
 
     interface Listeners {
         fun onUserWantToAddEmployee()

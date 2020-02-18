@@ -1,12 +1,25 @@
 package fr.iut.piscinenetptut.ui.managementEmployee
 
+import android.Manifest
+import android.app.AlertDialog
 import android.content.Context
+import android.content.ContextWrapper
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.graphics.Color
+import android.net.Uri
+import android.os.Build
+import android.provider.MediaStore
+import android.provider.Settings
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.MutableLiveData
 import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.core.FileDataPart
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Employee
 import fr.iut.piscinenetptut.entities.EmployeeSelected
@@ -18,6 +31,11 @@ import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.util.*
 import kotlin.math.floor
 
 class ManagementEmployeeMvcImpl (
@@ -34,15 +52,31 @@ class ManagementEmployeeMvcImpl (
 
     lateinit var employee: Employee
 
+    val filePicture: MutableLiveData<Uri> = MutableLiveData()
+
+
     init {
         try {
             root = View.inflate(context, R.layout.activity_add_employee, null)
 
             if (null != root) {
 
+                root?.findViewById<Button>(R.id.addEmployeeButtonAddPicture)?.setOnClickListener {
+                    if (verifyPermissionCamera() || this.managementEmployeeActivity.permissionResult){
+                        try {
+                            val i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                            managementEmployeeActivity.startActivityForResult(i, 1463)
+                        }catch (exception: Exception) {
+                            exception.toTreatFor("Camera")
+                        }
+                    }
+                }
+
                 root?.findViewById<Button>(R.id.addEmployeeButton)?.setOnClickListener {
                     if (verifyIfAllInputTextAreNotEmpty()){
                         managementEmployeeActivity.onUserWantToAddEmployee()
+                    } else {
+                        Toast.makeText(managementEmployeeActivity, "Input missing", Toast.LENGTH_LONG).show()
                     }
                 }
                 root?.findViewById<EditText>(R.id.addEmployeeMail)?.addTextChangedListener(object : TextWatcher {
@@ -93,13 +127,24 @@ class ManagementEmployeeMvcImpl (
                  !root?.findViewById<TextView>(R.id.addEmployeeAddr)?.text.isNullOrEmpty() &&
                  !root?.findViewById<TextView>(R.id.addEmployeeMail)?.text.isNullOrEmpty() &&
                   root?.findViewById<EditText>(R.id.addEmployeeMail)?.text.toString().isEmail() &&
-                 !root?.findViewById<TextView>(R.id.addEmployeeTelPhoneNumber)?.text.isNullOrEmpty())
+                 !root?.findViewById<TextView>(R.id.addEmployeeTelPhoneNumber)?.text.isNullOrEmpty() &&
+                  managementEmployeeActivity.uriPicture != null)
     }
 
     override fun addEmployee(employee: Employee) {
         try {
             if (null != root) {
                 this.employee = employee
+
+                val file : String? = managementEmployeeActivity.uriPicture
+
+                if (file != null){
+                    Fuel.upload(requestHttp.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename=employee.picture) }
+                        .response { result ->
+                            println(result)
+                        }
+                }
+
                 Fuel.post(requestHttp.url+"Employee")
                     .body(requestHttp.convertData(json.stringify(Employee.serializer(), employee)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")
@@ -176,4 +221,67 @@ class ManagementEmployeeMvcImpl (
         }
         return passWord
     }
+
+    /* PICTURE */
+    override fun showPicture(data: Intent?){
+        val picture = data?.extras?.get("data") as Bitmap
+        val imageView: ImageView = root?.findViewById(R.id.addEmployePicture) as ImageView
+        imageView.setImageBitmap(picture)
+        imageView.visibility = View.VISIBLE
+
+        bitmapToFile(picture)
+    }
+
+    private fun bitmapToFile(bitmap: Bitmap) {
+        val wrapper = ContextWrapper(context)
+
+        var file = wrapper.getDir("Images", Context.MODE_PRIVATE)
+        file = File(file,"${UUID.randomUUID()}.jpg")
+
+        try{
+            val stream: OutputStream = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream)
+            stream.flush()
+            stream.close()
+        }catch (e: IOException){
+            e.printStackTrace()
+        }
+
+        filePicture.postValue(Uri.parse(file.absolutePath))
+    }
+    /* END PICTURE */
+
+
+
+    /* PERMISSION */
+    private fun verifyPermissionCamera(): Boolean{
+        if (ContextCompat.checkSelfPermission(this.context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (this.managementEmployeeActivity.permissionCamera.neverAskAgainSelected(this.managementEmployeeActivity, Manifest.permission.CAMERA)) {
+                    displayNeverAskAgainDialog()
+                } else {
+                    this.managementEmployeeActivity.requestPermissions(arrayOf(Manifest.permission.CAMERA), 1)
+                }
+            }
+        }
+        return true
+    }
+
+
+    private fun displayNeverAskAgainDialog() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this.context)
+        builder.setMessage(R.string.warning_permission_camera)
+        builder.setCancelable(false)
+        builder.setPositiveButton(R.string.permiteManually) { dialog, _ ->
+            dialog.dismiss()
+            val intent = Intent()
+            intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            val uri = Uri.fromParts("package", this.context.packageName, null)
+            intent.data = uri
+            ContextCompat.startActivity(this.context, intent, null)
+        }
+        builder.setNegativeButton(R.string.cancelPermission, null)
+        builder.show()
+    }
+    /* PERMISSION */
 }
