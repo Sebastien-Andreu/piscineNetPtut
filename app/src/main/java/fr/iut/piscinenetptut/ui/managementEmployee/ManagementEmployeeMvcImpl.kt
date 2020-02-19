@@ -164,6 +164,16 @@ class ManagementEmployeeMvcImpl (
     override fun updateEmployee() {
         try {
             if (null != root) {
+
+                val file : String? = managementEmployeeActivity.uriPicture
+
+                if (file != null){
+                    Fuel.upload(requestHttp.url + "Picture").add{ FileDataPart(File(file), name = "picture", filename= EmployeeSelected.employee.picture) }
+                        .response { result ->
+                            println(result)
+                        }
+                }
+
                 Fuel.put(requestHttp.url+"Employee/" + EmployeeSelected.employee.ID)
                     .body(requestHttp.convertData(json.stringify(Employee.serializer(), EmployeeSelected.employee)))
                     .header("Content-Type" to "application/x-www-form-urlencoded")

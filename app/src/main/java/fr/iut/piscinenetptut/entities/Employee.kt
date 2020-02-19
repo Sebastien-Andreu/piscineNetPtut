@@ -10,5 +10,5 @@ data class Employee (
     val mail: String?,
     val address: String?,
     val telPhoneNumber: String?,
-    val picture: String? = null
+    val picture: String?
 )

@@ -108,6 +108,6 @@ class ManagementEmployeeActivity: AppCompatActivity(), ManagementEmployeeMvc.Lis
     }
 
     override fun onUserWantToModifyEmployeeInformation(){
-        managementEmployeeViewModel.onNeedToGetEmployeeInformation(managementEmployeeMvcImpl.root!!)
+        managementEmployeeViewModel.onNeedToGetEmployeeInformation(managementEmployeeMvcImpl.root!!, picture = EmployeeSelected.employee.picture)
     }
 }

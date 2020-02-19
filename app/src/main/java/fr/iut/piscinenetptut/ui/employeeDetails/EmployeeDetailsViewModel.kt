@@ -1,6 +1,8 @@
 package fr.iut.piscinenetptut.ui.employeeDetails
 
+import android.graphics.BitmapFactory
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
@@ -21,6 +23,20 @@ class EmployeeDetailsViewModel {
 
     fun showDetailOfEmployee(root: View){
         try {
+
+            println(EmployeeSelected.employee)
+
+            Fuel.get(requestHttp.url + "Picture/${EmployeeSelected.employee.picture}")
+                .response { _, _, result ->
+                    val (bytes, _) = result
+                    if (bytes != null) {
+                        val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+                        root.findViewById<ImageView>(R.id.detailEmployeePicture)?.let {
+                            it.setImageBitmap(bitmap)
+                            it.visibility = View.VISIBLE
+                        }
+                    }
+                }
 
             Fuel.get(requestHttp.url+"Employee/" + EmployeeSelected.employee.ID)
                 .responseString { _, _, result ->

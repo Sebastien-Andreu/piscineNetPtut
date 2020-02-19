@@ -47,7 +47,6 @@ class ManagementEmployeeViewModel {
     fun showInformationOfEmployeeWhenUserWantToUpdate(root: View) {
         try {
             val employee = EmployeeSelected.employee
-            println(EmployeeSelected.employee)
 
             root.findViewById<EditText>(R.id.addEmployeeName)?.setText(employee.name)
             root.findViewById<EditText>(R.id.addEmployeeSurname)?.setText(employee.surname)
@@ -55,12 +54,12 @@ class ManagementEmployeeViewModel {
             root.findViewById<EditText>(R.id.addEmployeeAddr)?.setText(employee.address)
             root.findViewById<EditText>(R.id.addEmployeeTelPhoneNumber)?.setText(employee.telPhoneNumber.toString())
 
-            Fuel.get(requestHttp.url + "Employee/${employee.picture}")
+            Fuel.get(requestHttp.url + "Picture/${employee.picture}")
                 .response { _, _, result ->
                     val (bytes, _) = result
                     if (bytes != null) {
                         val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-                        root.findViewById<ImageView>(R.id.detailEmployeePicture)?.let {
+                        root.findViewById<ImageView>(R.id.addEmployePicture)?.let {
                             it.setImageBitmap(bitmap)
                             it.visibility = View.VISIBLE
                         }
