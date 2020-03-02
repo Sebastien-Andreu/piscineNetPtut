@@ -28,11 +28,11 @@ class ListOfVisitActivity: AppCompatActivity(), ListOfVisitActivityMvc.Listeners
 
             setContentView(listOfVisitActivityMvcImpl.root)
 
-            listOfVisitActivityViewModel.visitCallBack.observe(this, Observer {
-                listOfVisitActivityMvcImpl.onVisitListLoaded(it)
-            })
-
-            listOfVisitActivityViewModel.onNeedToGetVisitList()
+//            listOfVisitActivityViewModel.visitCallBack.observe(this, Observer {
+////                listOfVisitActivityMvcImpl.onVisitListLoaded(it)
+//            })
+//
+//            listOfVisitActivityViewModel.onNeedToGetVisitList()
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }

@@ -8,13 +8,16 @@ import android.view.ViewGroup
 
 import fr.iut.piscinenetptut.R
 
-class MaintenanceSheetFragment : Fragment(){
+class MaintenanceSheetFragment : Fragment(), MaintenanceSheetFragmentMvc.Listener{
+
+    lateinit var maintenanceSheetFragmentMvcImpl: MaintenanceSheetFragmentMvcImpl
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maintenance_sheet, container, false)
+        maintenanceSheetFragmentMvcImpl = MaintenanceSheetFragmentMvcImpl(inflater.context, this)
+        return maintenanceSheetFragmentMvcImpl.root
     }
 }

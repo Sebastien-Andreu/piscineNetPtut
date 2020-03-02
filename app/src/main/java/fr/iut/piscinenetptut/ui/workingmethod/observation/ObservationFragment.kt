@@ -8,21 +8,16 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import fr.iut.piscinenetptut.R
 
-class ObservationFragment : Fragment(){
+class ObservationFragment : Fragment(), ObservationFragmentMvc.Listener{
+
+    lateinit var observationFragmentMvcImpl: ObservationFragmentMvcImpl
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val root:View = inflater.inflate(R.layout.fragment_observation, container, false)
-
-        root.findViewById<Button>(R.id.finalizeVisitButton).setOnClickListener {
-            this@ObservationFragment.activity!!.finish()
-//            this.context?.let { ListCustomerActivity.start(it ,(customerDetailFragment.activity as CustomerDetailsActivity).register)) }
-        }
-
-        return root
+        observationFragmentMvcImpl = ObservationFragmentMvcImpl(inflater.context, this)
+        return observationFragmentMvcImpl.root
     }
 }

@@ -51,21 +51,21 @@
                     android:textSize="18sp" />
 
                 <RadioGroup
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:layout_width="90dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
                         android:text="Complete" />
 
                     <RadioButton
-                        android:layout_width="90dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
@@ -73,7 +73,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButton"
-                        android:layout_width="90dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Maintenance" />
@@ -106,60 +106,61 @@
                     android:orientation="vertical">
 
                     <CheckBox
-                        android:id="@+id/checkBox10"
+                        android:id="@+id/CPAnalyse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Analyse" />
 
                     <CheckBox
-                        android:id="@+id/checkBox9"
+                        android:id="@+id/CPCurtain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Curtain cleaning" />
 
                     <CheckBox
-                        android:id="@+id/checkBox8"
+                        android:id="@+id/CPCleaning"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cleaning skimmer " />
 
                     <CheckBox
-                        android:id="@+id/checkBox7"
+                        android:id="@+id/CPEmptySkimmer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Empty skimmer baskets " />
 
                     <CheckBox
-                        android:id="@+id/checkBox6"
+                        android:id="@+id/CPCleanedSkimmer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cleaned skimmer frames " />
 
                     <CheckBox
-                        android:id="@+id/checkBox5"
+                        android:id="@+id/CPLoopholes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Loopholes in cleaned skimmers " />
 
                     <CheckBox
-                        android:id="@+id/checkBox4"
+                        android:id="@+id/CPEmptyRobotBag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Empty pool robot bag " />
 
                     <CheckBox
-                        android:id="@+id/checkBox3"
+                        android:id="@+id/CPEmptyWaterLine"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cleaned water line" />
 
                     <CheckBox
-                        android:id="@+id/checkBox2"
+                        android:id="@+id/CPVaccum"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Vacuuming" />
 
                     <CheckBox
+                        android:id="@+id/CPCleanningBeam"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cleaning of the curtain beam" />
@@ -181,7 +182,7 @@
                             android:textSize="16sp" />
 
                         <CheckBox
-                            android:id="@+id/checkBox11"
+                            android:id="@+id/CPCleanningAlarm"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -190,7 +191,7 @@
                             android:text="Cleaning up" />
 
                         <CheckBox
-                            android:id="@+id/checkBox12"
+                            android:id="@+id/CPProper"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -199,14 +200,14 @@
                     </LinearLayout>
 
                     <CheckBox
-                        android:id="@+id/checkBox13"
+                        android:id="@+id/CPPassageLandingSurface"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Passage of the landing net on the surface" />
 
                     <CheckBox
-                        android:id="@+id/checkBox14"
+                        android:id="@+id/CPPassageLandingDepth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Passage of the landing net in depth" />
@@ -226,6 +227,7 @@
                             android:textSize="16sp" />
 
                         <CheckBox
+                            android:id="@+id/CPGoodFloat"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -234,6 +236,7 @@
                             android:text="Good float height" />
 
                         <CheckBox
+                            android:id="@+id/CPFloatNotBlocked"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -256,6 +259,7 @@
                             android:textSize="16sp" />
 
                         <RadioGroup
+                            android:id="@+id/CPBottomDrain"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="30dp"
@@ -295,6 +299,7 @@
                             android:textSize="16sp" />
 
                         <RadioGroup
+                            android:id="@+id/CPVacuumCleaner"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="30dp"
@@ -345,13 +350,13 @@
                     android:orientation="vertical" >
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/TLFilterWashing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Filter washing " />
 
                     <CheckBox
-                        android:id="@+id/checkBox15"
+                        android:id="@+id/TLCleanningPreFilter"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cleaning pre-filter" />
@@ -371,7 +376,7 @@
                             android:text="Chlorine canister level " />
 
                         <EditText
-                            android:id="@+id/addPoolLo"
+                            android:id="@+id/TLChlorine"
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -403,6 +408,7 @@
                             android:text="level of the PH canister" />
 
                         <EditText
+                            android:id="@+id/TLPH"
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -433,6 +439,7 @@
                             android:text="Water meter reading" />
 
                         <EditText
+                            android:id="@+id/TLWaterMeter"
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
@@ -442,7 +449,7 @@
                     </LinearLayout>
 
                     <CheckBox
-                        android:id="@+id/checkBox16"
+                        android:id="@+id/TLClockSetting"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Clock setting for filtration time" />
@@ -462,6 +469,7 @@
                             android:textSize="16sp" />
 
                         <RadioGroup
+                            android:id="@+id/TLFiltrationMode"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="30dp"
@@ -499,6 +507,7 @@
                             android:textSize="16sp" />
 
                         <RadioGroup
+                            android:id="@+id/TLRobotMode"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="30dp"
@@ -536,6 +545,7 @@
                             android:textSize="16sp" />
 
                         <RadioGroup
+                            android:id="@+id/TLProjectorMode"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginStart="30dp"
@@ -571,6 +581,7 @@
                                 android:text="Water meter reading :" />
 
                             <EditText
+                                android:id="@+id/TLProjectorMeterReading"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0"
@@ -596,6 +607,7 @@
                             android:textColor="@android:color/holo_red_light" />
 
                         <CheckBox
+                            android:id="@+id/TLCleaningRoom"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -615,6 +627,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -647,6 +660,7 @@
                             android:textSize="16sp" />
 
                         <CheckBox
+                            android:id="@+id/PFEDRas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -655,6 +669,7 @@
                             android:text="RAS" />
 
                         <CheckBox
+                            android:id="@+id/PFEDCellProblem"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -676,7 +691,7 @@
                                 android:textColor="@android:color/holo_red_light" />
 
                             <CheckBox
-                                android:id="@+id/checkBox17"
+                                android:id="@+id/PFEDDescaling"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="30dp"
@@ -706,7 +721,7 @@
                             android:visibility="visible">
 
                             <EditText
-                                android:id="@+id/addPoolObservation"
+                                android:id="@+id/PFEDOtherObservation"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -745,6 +760,7 @@
                             android:textSize="16sp" />
 
                         <CheckBox
+                            android:id="@+id/FPEDChloraRas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -753,6 +769,7 @@
                             android:text="RAS" />
 
                         <CheckBox
+                            android:id="@+id/PFEDChloraFaulty"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -785,6 +802,7 @@
                             android:textSize="16sp" />
 
                         <CheckBox
+                            android:id="@+id/PFEDPHRas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -793,6 +811,7 @@
                             android:text="RAS" />
 
                         <CheckBox
+                            android:id="@+id/PFEDPHFaulty"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -825,6 +844,7 @@
                             android:textSize="16sp" />
 
                         <CheckBox
+                            android:id="@+id/PFEDUVRas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -833,6 +853,7 @@
                             android:text="RAS" />
 
                         <CheckBox
+                            android:id="@+id/PFEDUVCell"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -858,6 +879,7 @@
                             android:visibility="visible">
 
                             <EditText
+                                android:id="@+id/PFEDUVOtherProblem"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -905,10 +927,11 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Water temperature"
-                                android:layout_marginRight="15dp" />
+                                android:layout_marginRight="15dp"
+                                android:text="Water temperature" />
 
                             <EditText
+                                android:id="@+id/PFEDPHWatherTemp"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0"
@@ -926,6 +949,7 @@
                         </LinearLayout>
 
                         <CheckBox
+                            android:id="@+id/PFEDPH2Ras"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -933,6 +957,7 @@
                             android:text="RAS" />
 
                         <CheckBox
+                            android:id="@+id/PFEDPH2Faulty"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"

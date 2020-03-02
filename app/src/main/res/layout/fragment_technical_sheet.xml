@@ -65,7 +65,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
-                        android:id="@+id/addPoolLo"
+                        android:id="@+id/AnalyseChlore"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -82,7 +82,7 @@
                         android:text="PH" />
 
                     <EditText
-                        android:id="@+id/addPoolLa"
+                        android:id="@+id/AnalysePh"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -121,6 +121,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
+                        android:id="@+id/AnalyseStab"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -144,6 +145,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
+                        android:id="@+id/AnalyseTAC"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -167,6 +169,7 @@
                         android:layout_marginRight="15dp" />
 
                     <EditText
+                        android:id="@+id/AnalyseSel"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -183,6 +186,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -202,10 +206,11 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="Chlore"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="Chlore" />
 
                     <EditText
+                        android:id="@+id/ProductChlore"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -225,10 +230,11 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="PH"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="PH" />
 
                     <EditText
+                        android:id="@+id/ProductPH"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -248,10 +254,11 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="Galets"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="Galets" />
 
                     <EditText
+                        android:id="@+id/ProductGalet"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -271,10 +278,11 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="SEL"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="SEL" />
 
                     <EditText
+                        android:id="@+id/ProductSel"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -294,10 +302,11 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="Floculents"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="Floculents" />
 
                     <EditText
+                        android:id="@+id/ProductFloc"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
@@ -317,10 +326,11 @@
                     <TextView
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
-                        android:text="Autres"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="Autres" />
 
                     <EditText
+                        android:id="@+id/ProductOther"
                         android:layout_width="75dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0"
