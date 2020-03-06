@@ -92,7 +92,7 @@
                     android:textSize="16sp" />
 
                 <RadioGroup
-                    android:id="@+id/ObservationWails"
+                    android:id="@+id/ObservationWalls"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="30dp"
@@ -192,10 +192,11 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/finalizeVisitButton"
+                android:id="@+id/workingButtonFinalize"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"
                 android:gravity="center"
                 android:text="Finalize the visit"
                 android:textAllCaps="false" />
