@@ -9,12 +9,20 @@ interface WorkingMethodActivityMvc {
     fun storeMaintenance(maintenance: Maintenance)
     fun storeTechnical(technical: Technical)
     fun storeObservation(observation: Observation)
+    fun storeVisit()
 
-    fun showMaintenanceSheet()
-    fun showTechnicalSheet()
-    fun showObservationSheet()
+    fun saveMaintenance()
+    fun saveTechnical()
+    fun saveObservation()
+    fun saveVisit()
 
     interface listeners {
         fun onUserWantToStoreVisit()
+        fun onUserWantToStoreMaintenance()
+        fun onUserWantToStoreTechnical()
+        fun onUserWantToStoreObservation()
+
+        fun onUserWantToFinishVisit()
+
     }
 }

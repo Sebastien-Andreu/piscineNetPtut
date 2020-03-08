@@ -4,6 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Technical (
+    var ID: Int? = null,
     var Chlore: String?,
     var PH: String?,
     var stabilisant: String?,

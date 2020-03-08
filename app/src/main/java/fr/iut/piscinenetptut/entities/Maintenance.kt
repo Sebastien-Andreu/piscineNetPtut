@@ -4,9 +4,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Maintenance (
+    var ID: Int? = null,
     var typeOfVisit: String?,
     var analyse: String?,
-    var curtain: String,
+    var curtain: String?,
     var cleaningSkimmer: String?,
     var emptySkimmer: String?,
     var cleaningSkimmerFrame: String?,

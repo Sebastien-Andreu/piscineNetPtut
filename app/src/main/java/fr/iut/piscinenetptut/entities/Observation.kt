@@ -4,8 +4,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Observation (
+    var ID: Int? = null,
     var visualObservation: String?,
     var algeaOnWall: String?,
-    var brossagte: String?,
+    var brossage: String?,
     var otherObservation: String?
 )

@@ -58,17 +58,24 @@ class WorkingMethodActivity : AppCompatActivity(), WorkingMethodActivityMvc.list
         this@WorkingMethodActivity.finish()
     }
 
-//    override fun onUserWantToStoreMaintenance() {
-//        workingMethodActivityViewModel.onNeedToGetMaintenanceInformation(workingMethodActivityMcvImpl.root!!)
-//    }
-//
-//    override fun onUserWantToStoreTechnical() {
-//        workingMethodActivityViewModel.onNeedToGetTechnicalInformation(workingMethodActivityMcvImpl.root!!)
-//    }
-
     override fun onUserWantToStoreVisit() {
-        workingMethodActivityMcvImpl.showMaintenanceSheet()
-        workingMethodActivityMcvImpl.showTechnicalSheet()
-        workingMethodActivityMcvImpl.showObservationSheet()
+        workingMethodActivityMcvImpl.storeVisit()
+    }
+
+    override fun onUserWantToStoreMaintenance() {
+        workingMethodActivityViewModel.onNeedToGetMaintenanceInformation(workingMethodActivityMcvImpl.root!!)
+    }
+
+    override fun onUserWantToStoreTechnical() {
+        workingMethodActivityViewModel.onNeedToGetTechnicalInformation(workingMethodActivityMcvImpl.root!!)
+    }
+
+    override fun onUserWantToStoreObservation() {
+        workingMethodActivityViewModel.onNeedToGetObservationInformation(workingMethodActivityMcvImpl.root!!)
+    }
+
+    override fun onUserWantToFinishVisit() {
+        onUserWantToStoreObservation()
+        workingMethodActivityMcvImpl.saveMaintenance()
     }
 }

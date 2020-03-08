@@ -34,8 +34,8 @@ class WorkingMethodActivityViewModel {
                 typeOfVisit = root.findViewById<RadioButton>(idTypeVisit!!)?.text.toString(),
                 analyse = root.findViewById<CheckBox>(R.id.CPAnalyse)?.isChecked.toString(),
                 curtain = root.findViewById<CheckBox>(R.id.CPCurtain)?.isChecked.toString(),
-                cleaningSkimmer = root.findViewById<CheckBox>(R.id.CPCleanedSkimmer)?.isChecked.toString(),
-                emptySkimmer = root.findViewById<CheckBox>(R.id.CPCleaning)?.isChecked.toString(),
+                cleaningSkimmer = root.findViewById<CheckBox>(R.id.CPCleaning)?.isChecked.toString(),
+                emptySkimmer = root.findViewById<CheckBox>(R.id.CPEmptySkimmer)?.isChecked.toString(),
                 cleaningSkimmerFrame = root.findViewById<CheckBox>(R.id.CPCleanedSkimmer)?.isChecked.toString(),
                 loopholes = root.findViewById<CheckBox>(R.id.CPLoopholes)?.isChecked.toString(),
                 emptyPoolRobotBag = root.findViewById<CheckBox>(R.id.CPEmptyRobotBag)?.isChecked.toString(),
@@ -121,7 +121,7 @@ class WorkingMethodActivityViewModel {
             val observation = Observation (
                 visualObservation = root.findViewById<RadioButton>(idObservationVisual!!)?.text.toString(),
                 algeaOnWall = root.findViewById<RadioButton>(idObservationAlgae!!)?.text.toString(),
-                brossagte = root.findViewById<RadioButton>(idObservationBrossage!!)?.text.toString(),
+                brossage = root.findViewById<RadioButton>(idObservationBrossage!!)?.text.toString(),
                 otherObservation = root.findViewById<EditText>(R.id.ObservationProblem)?.text.toString()
             )
             observationCallBack.postValue(observation)

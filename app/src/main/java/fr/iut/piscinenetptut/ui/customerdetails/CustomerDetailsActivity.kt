@@ -41,15 +41,6 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
         }
     }
 
-//    override fun onUserWantStartWork() {
-//        try {
-//            this@CustomerDetailsActivity.finish()
-//            WorkingMethodActivity.start(this)
-//        } catch (exception: Exception) {
-//            exception.toTreatFor(TAG)
-//        }
-//    }
-
     override fun onUserWantToUpdateCustomer() {
         try {
             ManagementCustomerActivity.start(this)
@@ -64,6 +55,6 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
     }
 
     override fun onBackPressed() {
-        this@CustomerDetailsActivity.finish() // il faudra ne pas fermer les details mais mettre à jour depuis la base de données les infos
+        this@CustomerDetailsActivity.finish()
     }
 }
