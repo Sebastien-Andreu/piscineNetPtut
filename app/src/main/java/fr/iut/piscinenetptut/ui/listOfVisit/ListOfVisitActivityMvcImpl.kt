@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.size
 import com.github.kittinunf.fuel.Fuel
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.*
@@ -33,7 +34,6 @@ class ListOfVisitActivityMvcImpl(
         }
 
     var root: View? = null
-    var listIsLoad: Boolean = false
 
     init {
         try {
@@ -46,13 +46,12 @@ class ListOfVisitActivityMvcImpl(
 
     override fun onVisitListLoaded(visits: List<Visit>) {
         try {
-            if (null != root) {
+            if (null != root && root!!.findViewById<LinearLayout>(R.id.listVisitWrapper)?.size == 0) {
                 for (visit in visits) {
                     val view = VisitPreviewFactory.createVisitPreviewForUser(visitPreviewClickListener = visitPreviewClickListener, visit = visit, context = context)
 
                     root!!.findViewById<LinearLayout>(R.id.listVisitWrapper)?.addView(view)
                 }
-                listIsLoad = true
             }
         } catch (exception: Exception) {
                 exception.toTreatFor(TAG)
@@ -61,22 +60,20 @@ class ListOfVisitActivityMvcImpl(
 
     override fun verifyIfUpdateDataBase() {
         try {
-            if (listIsLoad){
-                Fuel.get(requestHttp.url+"ThereIsAnUpdateForVisit")
-                    .responseString { _, _, result ->
-                        result.fold({ d ->
-                            if( Version.versionVisit < d.toInt()){
-                                Version.versionVisit = d.toInt()
-                                root!!.findViewById<LinearLayout>(R.id.listVisitWrapper)?.removeAllViews()
-                                listOfVisitActivity.listOfVisitActivityViewModel.onNeedToGetVisitList()
-                            }
-                        }, { err ->
-                            println(err.message)
-                        })
-                    }
-            } else {
-                listOfVisitActivity.listOfVisitActivityViewModel.onNeedToGetVisitList()
-            }
+            Fuel.get(requestHttp.url+"ThereIsAnUpdateForVisit")
+                .responseString { _, _, result ->
+                    result.fold({ d ->
+                        if( Version.versionVisit < d.toInt()){
+                            Version.versionVisit = d.toInt()
+                            root!!.findViewById<LinearLayout>(R.id.listVisitWrapper)?.removeAllViews()
+                            listOfVisitActivity.listOfVisitActivityViewModel.onNeedToGetVisitList()
+                        } else if ( root!!.findViewById<LinearLayout>(R.id.listVisitWrapper)?.size == 0){
+                            listOfVisitActivity.listOfVisitActivityViewModel.onNeedToGetVisitList()
+                        }
+                    }, { err ->
+                        println(err.message)
+                    })
+                }
 
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
@@ -126,7 +123,6 @@ class ListOfVisitActivityMvcImpl(
                     .responseString { _, _, result ->
                         result.fold({ d ->
                             VisitSelected.observation = json.parse(Observation.serializer(), d)
-                            println("----------------------------------------------------------------------------------------------------------------------------------")
                             VisitDetailsActivity.start(listOfVisitActivity.layoutInflater.context)
                         }, { err ->
                             println(err.message)

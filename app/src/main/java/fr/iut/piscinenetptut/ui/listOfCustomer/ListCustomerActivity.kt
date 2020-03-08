@@ -29,8 +29,6 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
         listUserActivityMvcImpl = ListCustomerActivityMvcImpl(inflater.context, this)
         listUserActivityViewModel = ListCustomerActivityViewModel()
 
-        listUserActivityMvcImpl.listIsLoad = false
-
         listUserActivityViewModel.customerCallBack.observe(this, Observer {
             listCustomer = it
             listUserActivityViewModel.onNeedToGetPoolList()
@@ -40,6 +38,8 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
             listPool = it
             listUserActivityMvcImpl.onUserListLoaded(listCustomer, listPool)
         })
+
+        listUserActivityMvcImpl.verifyIfUpdateDataBase()
 
         return listUserActivityMvcImpl.root
     }

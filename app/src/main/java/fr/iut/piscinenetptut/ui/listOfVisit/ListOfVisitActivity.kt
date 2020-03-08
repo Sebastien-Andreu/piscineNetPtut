@@ -27,8 +27,6 @@ class ListOfVisitActivity: Fragment(), ListOfVisitActivityMvc.Listeners {
         listOfVisitActivityMvcImpl = ListOfVisitActivityMvcImpl(inflater.context, this)
         listOfVisitActivityViewModel = ListOfVisitActivityViewModel()
 
-        listOfVisitActivityMvcImpl.listIsLoad = false
-
         listOfVisitActivityViewModel.visitCallBack.observe(this, Observer {
             listVisit = it
             listOfVisitActivityMvcImpl.onVisitListLoaded(listVisit)

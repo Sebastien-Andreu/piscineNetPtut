@@ -4,11 +4,13 @@ import android.content.Context
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.size
 import com.github.kittinunf.fuel.Fuel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Employee
 import fr.iut.piscinenetptut.entities.EmployeeSelected
+import fr.iut.piscinenetptut.entities.Version
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.requestHttp.httpRequest
 import fr.iut.piscinenetptut.ui.listOfEmployee.item.EmployeePreviewFactory
@@ -30,7 +32,6 @@ class ListEmployeeActivityMvcImpl(
     }
 
     var root: View? = null
-    var listIsLoad: Boolean = false
 
     init {
         try {
@@ -51,14 +52,13 @@ class ListEmployeeActivityMvcImpl(
 
     override fun onEmployeeListLoaded(employees: List<Employee>) {
         try {
-            if (null != root) {
+            if (null != root && root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.size == 0) {
                 employees.forEach {
                     val view = EmployeePreviewFactory.createEmployeePreviewForUser(
                         userPreviewClickListener = userPreviewClickListener, employee = it, context = context)
 
                     root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.addView(view)
                 }
-                listIsLoad = true
             }
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
@@ -67,22 +67,20 @@ class ListEmployeeActivityMvcImpl(
 
     override fun verifyIfUpdateDataBase() {
         try {
-            if (listIsLoad){
-                Fuel.get(requestHttp.url+"ThereIsAnUpdateForEmployee")
-                    .responseString { _, _, result ->
-                        result.fold({ d ->
-
-                            if (d == true.toString()){
-                                root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.removeAllViews()
-                                listEmployeeActivity.listEmployeeActivityViewModel.onNeedToGetEmployeeList()
-                            }
-                        }, { err ->
-                            println(err.message)
-                        })
-                    }
-            } else {
-                listEmployeeActivity.listEmployeeActivityViewModel.onNeedToGetEmployeeList()
-            }
+            Fuel.get(requestHttp.url+"ThereIsAnUpdateForEmployee")
+                .responseString { _, _, result ->
+                    result.fold({ d ->
+                        if( Version.versionEmployee < d.toInt()){
+                            Version.versionEmployee = d.toInt()
+                            root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.removeAllViews()
+                            listEmployeeActivity.listEmployeeActivityViewModel.onNeedToGetEmployeeList()
+                        } else if ( root!!.findViewById<LinearLayout>(R.id.listUserWrapper)?.size == 0){
+                            listEmployeeActivity.listEmployeeActivityViewModel.onNeedToGetEmployeeList()
+                        }
+                    }, { err ->
+                        println(err.message)
+                    })
+                }
         }catch (exception: Exception){
             exception.toTreatFor(TAG)
         }
