@@ -13,7 +13,7 @@ import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 
 class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
 
-    val TAG: String = "ListUserActivity"
+    val TAG: String = "ListCustomerActivity"
 
     lateinit var listUserActivityMvcImpl: ListCustomerActivityMvcImpl
     var listUserActivityViewModel = ListCustomerActivityViewModel()

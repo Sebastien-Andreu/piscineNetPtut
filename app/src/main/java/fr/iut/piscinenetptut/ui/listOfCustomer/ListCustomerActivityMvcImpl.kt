@@ -20,7 +20,7 @@ class ListCustomerActivityMvcImpl(
     val listUserActivity: ListCustomerActivity
 ): ListCustomerActivityMvc {
 
-    private val TAG: String = "ListUserActivityMvcImpl"
+    private val TAG: String = "ListCustomerActivityMvcImpl"
 
     private val requestHttp = httpRequest()
 

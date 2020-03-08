@@ -122,7 +122,7 @@ class WorkingMethodActivityMvcImpl(
     override fun storeVisit() {
         if (maintenance != null && technical != null){
             visit = Visit(
-                NameCustomer = CustomerSelected.customer.name,
+                NameCustomer = (CustomerSelected.customer.surname + " " + CustomerSelected.customer.name),
                 NameEmployee = Account.register.login, // request get name with ID Register
                 ID_Maintenance = this.maintenance!!.ID.toString(), // last id maintenance
                 ID_Observation = this.observation!!.ID.toString(), // last id observation
