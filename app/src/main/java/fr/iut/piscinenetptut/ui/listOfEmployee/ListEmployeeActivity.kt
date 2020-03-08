@@ -26,8 +26,6 @@ class ListEmployeeActivity: Fragment(), ListEmployeeActivityMvc.Listeners {
         listEmployeeActivityMvcImpl = ListEmployeeActivityMvcImpl(inflater.context, this)
         listEmployeeActivityViewModel = ListEmployeeActivityViewModel()
 
-        listEmployeeActivityMvcImpl.listIsLoad = false
-
         listEmployeeActivityViewModel.employeeCallBack.observe(this, Observer {
             listEmployee = it
             listEmployeeActivityMvcImpl.onEmployeeListLoaded(it)

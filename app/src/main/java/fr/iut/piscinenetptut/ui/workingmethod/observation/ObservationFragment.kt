@@ -4,25 +4,27 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.ui.workingmethod.WorkingMethodActivity
 
-class ObservationFragment : Fragment(){
+class ObservationFragment : Fragment(), ObservationFragmentMvc.Listener{
+
+    lateinit var observationFragmentMvcImpl: ObservationFragmentMvcImpl
+    lateinit var observationFragmentViewModel: ObservationFragmentViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        observationFragmentMvcImpl = ObservationFragmentMvcImpl(inflater.context, this)
+        observationFragmentViewModel = ObservationFragmentViewModel()
 
-        val root:View = inflater.inflate(R.layout.fragment_observation, container, false)
-
-        root.findViewById<Button>(R.id.finalizeVisitButton).setOnClickListener {
-            this@ObservationFragment.activity!!.finish()
-//            this.context?.let { ListCustomerActivity.start(it ,(customerDetailFragment.activity as CustomerDetailsActivity).register)) }
+        if ((this.activity as WorkingMethodActivity).workingMethodActivityMcvImpl.observation != null){
+            observationFragmentViewModel.showDetailObservation(observationFragmentMvcImpl.root!!, (this.activity as WorkingMethodActivity).workingMethodActivityMcvImpl.observation!!)
         }
 
-        return root
+        return observationFragmentMvcImpl.root
     }
 }

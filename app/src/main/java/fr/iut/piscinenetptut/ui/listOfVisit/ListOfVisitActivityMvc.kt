@@ -4,9 +4,14 @@ import fr.iut.piscinenetptut.entities.Visit
 
 interface ListOfVisitActivityMvc {
 
-    fun onVisitListLoaded(visits: ArrayList<Visit>)
+    fun onVisitListLoaded(visits: List<Visit>)
+    fun verifyIfUpdateDataBase()
+
+    fun getMaintenanceWhenSelectVisit()
+    fun getTechnicalWhenSelectVisit()
+    fun getObservationWhenSelectVisit()
 
     interface Listeners{
-        fun onUserTouchVisitPreview(visitID: String)
+        fun onUserTouchVisitPreview(id: Int)
     }
 }

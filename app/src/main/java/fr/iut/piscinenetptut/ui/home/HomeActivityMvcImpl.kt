@@ -15,6 +15,7 @@ import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfEmployee.ListEmployeeActivity
+import fr.iut.piscinenetptut.ui.listOfVisit.ListOfVisitActivity
 import fr.iut.piscinenetptut.ui.splashscreen.SplashScreenActivity
 
 
@@ -64,7 +65,7 @@ class HomeActivityMvcImpl(
                 homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, ListCustomerActivity()).commit()
             }
             R.id.menuListOfVisit -> {
-//                homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, CustomerDetailsActivity()).commit()
+                homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, ListOfVisitActivity()).commit()
             }
             R.id.menuListOfEmployee -> {
                 homeActivity.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, ListEmployeeActivity()).commit()

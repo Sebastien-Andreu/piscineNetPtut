@@ -13,7 +13,7 @@ import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 
 class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
 
-    val TAG: String = "ListUserActivity"
+    val TAG: String = "ListCustomerActivity"
 
     lateinit var listUserActivityMvcImpl: ListCustomerActivityMvcImpl
     var listUserActivityViewModel = ListCustomerActivityViewModel()
@@ -29,8 +29,6 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
         listUserActivityMvcImpl = ListCustomerActivityMvcImpl(inflater.context, this)
         listUserActivityViewModel = ListCustomerActivityViewModel()
 
-        listUserActivityMvcImpl.listIsLoad = false
-
         listUserActivityViewModel.customerCallBack.observe(this, Observer {
             listCustomer = it
             listUserActivityViewModel.onNeedToGetPoolList()
@@ -40,6 +38,8 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
             listPool = it
             listUserActivityMvcImpl.onUserListLoaded(listCustomer, listPool)
         })
+
+        listUserActivityMvcImpl.verifyIfUpdateDataBase()
 
         return listUserActivityMvcImpl.root
     }

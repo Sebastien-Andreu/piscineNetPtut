@@ -17,16 +17,12 @@ class VisitPreviewFactory {
             try {
                 val view: View = View.inflate(context, R.layout.visit_list_preview, null)
 
-                view.tag = visit.visitID
+                view.tag = visit.ID
                 view.setOnClickListener(visitPreviewClickListener)
 
 
-                view.findViewById<TextView>(R.id.visitFirstnameTextView)?.text = visit.firstnameCustomer
-                view.findViewById<TextView>(R.id.visitSurnameTextView)?.text = visit.surnameCustomer
-
-                if (visit.isWarnings) {
-                    view.findViewById<RelativeLayout>(R.id.visitWarningWrapper)?.visibility = View.VISIBLE
-                }
+                view.findViewById<TextView>(R.id.visitNameCustomer)?.text = visit.NameCustomer
+                view.findViewById<TextView>(R.id.visitListTextEmployee)?.text = visit.NameEmployee
 
                 return view
             } catch (exception: Exception) {

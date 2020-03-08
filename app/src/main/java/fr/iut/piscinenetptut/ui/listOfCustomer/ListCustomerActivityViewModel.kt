@@ -11,7 +11,7 @@ import kotlinx.serialization.json.JsonConfiguration
 import kotlinx.serialization.list
 
 class ListCustomerActivityViewModel {
-    private val TAG: String = "ListUserActivityViewModel"
+    private val TAG: String = "ListCustomerActivityViewModel"
 
     val customerCallBack: MutableLiveData<List<Customer>> = MutableLiveData()
     val poolCallBack: MutableLiveData<List<Pool>> = MutableLiveData()

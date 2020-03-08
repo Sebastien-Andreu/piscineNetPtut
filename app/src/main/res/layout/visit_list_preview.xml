@@ -6,55 +6,53 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="25dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="75dp"
             android:background="@drawable/user_preview_background"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:weightSum="3">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_weight="2"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/visitFirstnameTextView"
+                    android:id="@+id/visitNameCustomer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
                     tools:text="Théo" />
 
-                <TextView
-                    android:id="@+id/visitSurnameTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Bouteiller" />
-
-                <RelativeLayout
-                    android:id="@+id/visitWarningWrapper"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/holo_orange_light"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/user_preview_warning" />
-                </RelativeLayout>
             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5sp"
+                android:layout_marginRight="25dp"
+                android:background="#F3BC46"
+                android:gravity="center"
+                android:padding="5dp"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/visitListTextEmployee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_preview_warning" />
+            </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
 
