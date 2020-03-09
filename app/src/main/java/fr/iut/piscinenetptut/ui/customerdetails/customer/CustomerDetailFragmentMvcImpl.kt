@@ -37,6 +37,14 @@ class CustomerDetailFragmentMvcImpl (
 
             customerDetailFragmentViewModel = CustomerDetailFragmentViewModel()
 
+            if( Account.register.role == "employee" || Account.register.role == "customer"){
+                root?.findViewById<Button>(R.id.updateCustomer)?.visibility = View.GONE
+                root?.findViewById<Button>(R.id.deleteCustomer)?.visibility = View.GONE
+            }
+            if (Account.register.role == "customer"){
+                root?.findViewById<Button>(R.id.detailCustomerMakeVisitButton)?.visibility = View.GONE
+            }
+
             root?.findViewById<Button>(R.id.detailCustomerMakeVisitButton)?.setOnClickListener {
                 this@CustomerDetailFragmentMvcImpl.customerDetailFragment.activity!!.finish()
                 this.context.let { WorkingMethodActivity.start(it)}

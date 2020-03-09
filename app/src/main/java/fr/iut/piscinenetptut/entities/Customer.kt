@@ -4,7 +4,7 @@ import kotlinx.serialization.*
 
 @Serializable
 data class Customer (
-    val ID: Int? = null,
+    var ID: Int? = null,
     val name: String?,
     val surname: String?,
     val mail: String?,
