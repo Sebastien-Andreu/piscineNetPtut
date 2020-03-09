@@ -291,5 +291,6 @@
     <string name="SaveWork">Please save the progress</string>
     <string name="changer_la_langue">Changing the language</string>
     <string name="NameLanguage">Français</string>
+    <string name="NotAvailable">Not available yet</string>
 
 </resources>

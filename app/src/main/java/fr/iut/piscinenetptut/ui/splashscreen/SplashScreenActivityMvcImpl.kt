@@ -3,6 +3,7 @@ package fr.iut.piscinenetptut.ui.splashscreen
 import android.content.Context
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.auth0.android.jwt.JWT
 import com.github.kittinunf.fuel.Fuel
@@ -32,6 +33,10 @@ class SplashScreenActivityMvcImpl (
             if (null != root) {
                 root!!.findViewById<Button>(R.id.buttonLogin)?.setOnClickListener {
                     splashScreenActivity.onUserWantToLogin()
+                }
+
+                root!!.findViewById<TextView>(R.id.forgetPassword)?.setOnClickListener{
+                    Toast.makeText(splashScreenActivity, context.getString(R.string.NotAvailable), Toast.LENGTH_LONG).show()
                 }
             }
         } catch (exception: Exception) {

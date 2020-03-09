@@ -272,5 +272,6 @@
     <string name="Observation">Observation</string>
     <string name="SaveWork">Veuillez enregistrer les avancements</string>
     <string name="changer_la_langue">Changer la langue</string>
+    <string name="NotAvailable">Pas encore disponible</string>
 
 </resources>
