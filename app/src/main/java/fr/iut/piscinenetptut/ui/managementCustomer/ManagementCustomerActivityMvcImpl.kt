@@ -49,7 +49,7 @@ class ManagementCustomerActivityMvcImpl(
             root = View.inflate(context, R.layout.activity_add_customer, null)
 
             listFragmentForViewPager = arrayListOf(CustomerFragment(), SwimmingPoolFragment())
-            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Client", "Piscine")
+            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf(context.getString(R.string.Client), context.getString(R.string.Piscine))
 
             if (null != root) {
                 root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.let {viewPager ->
@@ -61,7 +61,7 @@ class ManagementCustomerActivityMvcImpl(
                     override fun onPageSelected(position: Int) {
                         if (1 == position){
                             if (!(listFragmentForViewPager[0] as CustomerFragment).onUserWantToVerifyAlInput()){
-                                Toast.makeText(listFragmentForViewPager[0].activity, "Some information is missing to access the pool addition", Toast.LENGTH_LONG).show()
+                                Toast.makeText(listFragmentForViewPager[0].activity, context.getString(R.string.InfoMissingaddPool), Toast.LENGTH_LONG).show()
                                 root!!.findViewById<SwipeDisabledViewPager>(R.id.addCustomerViewPager)?.currentItem = 0
                                 root!!.findViewById<TabLayout>(R.id.addCustomerTabLayout)?.setScrollPosition(0,0f,true)
                             }

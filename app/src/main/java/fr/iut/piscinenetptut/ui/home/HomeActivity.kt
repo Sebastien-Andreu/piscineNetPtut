@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import fr.iut.piscinenetptut.entities.CustomerSelected
+import fr.iut.piscinenetptut.library.extension.setAppLocale
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
 
@@ -27,7 +28,6 @@ class HomeActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-
             CustomerSelected.reset()
 
             homeActivityMvcImpl = HomeActivityMvcImpl(this, this)

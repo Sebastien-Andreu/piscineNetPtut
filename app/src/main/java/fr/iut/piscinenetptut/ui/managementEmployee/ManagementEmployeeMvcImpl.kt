@@ -76,7 +76,7 @@ class ManagementEmployeeMvcImpl (
                     if (verifyIfAllInputTextAreNotEmpty()){
                         managementEmployeeActivity.onUserWantToAddEmployee()
                     } else {
-                        Toast.makeText(managementEmployeeActivity, "Input missing", Toast.LENGTH_LONG).show()
+                        Toast.makeText(managementEmployeeActivity, context.getString(R.string.InputMissingAddEmloyee), Toast.LENGTH_LONG).show()
                     }
                 }
                 root?.findViewById<EditText>(R.id.addEmployeeMail)?.addTextChangedListener(object : TextWatcher {

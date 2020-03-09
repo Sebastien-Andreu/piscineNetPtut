@@ -38,7 +38,7 @@ class ListOfVisitActivityMvcImpl(
     init {
         try {
             root = View.inflate(context, R.layout.activity_visit_list, null)
-            listOfVisitActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "List of visit"
+            listOfVisitActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = context.getString(R.string.ListVisit)
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }

@@ -21,7 +21,7 @@
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contact"
+                android:text="@string/contact"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -47,7 +47,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nom : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/nom" />
 
                     <TextView
                         android:id="@+id/detailEmployeeName"
@@ -65,7 +66,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Prénom : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/pr_nom" />
 
                     <TextView
                         android:id="@+id/detailEmployeeSurname"
@@ -82,7 +84,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adresse : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/adresse" />
 
                     <TextView
                         android:id="@+id/detailEmployeeAddr"
@@ -99,7 +102,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Téléphone portable : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/t_l_phone_portable" />
 
                     <TextView
                         android:id="@+id/detailEmployeeTel"
@@ -116,7 +120,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adresse mail : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/adresse_mail" />
 
                     <TextView
                         android:id="@+id/detailEmployeeMail"

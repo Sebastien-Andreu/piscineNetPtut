@@ -29,7 +29,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Name of customer"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="25sp"
                     android:textStyle="normal" />
@@ -46,7 +45,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Analyse :"
+                    android:text="@string/analyse"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -59,10 +58,10 @@
 
                     <TextView
                         android:id="@+id/textView3"
-                        android:layout_width="50dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Chlore"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="@string/chlora" />
 
                     <EditText
                         android:id="@+id/AnalyseChlore"
@@ -79,7 +78,7 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginEnd="15dp"
                         android:layout_weight="0"
-                        android:text="PH" />
+                        android:text="@string/ph" />
 
                     <EditText
                         android:id="@+id/AnalysePh"
@@ -103,7 +102,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Other analyse :"
+                    android:text="@string/other_analyse"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -115,10 +114,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="stabilisant"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="@string/stabilisant" />
 
                     <EditText
                         android:id="@+id/AnalyseStab"
@@ -139,10 +138,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TAC"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="@string/tac" />
 
                     <EditText
                         android:id="@+id/AnalyseTAC"
@@ -163,10 +162,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SEL"
-                        android:layout_marginRight="15dp" />
+                        android:layout_marginRight="15dp"
+                        android:text="@string/sel" />
 
                     <EditText
                         android:id="@+id/AnalyseSel"
@@ -192,7 +191,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Products brought in :"
+                    android:text="@string/products_brought_in"
                     android:textSize="20sp" />
 
                 <LinearLayout
@@ -204,10 +203,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Chlore" />
+                        android:text="@string/chlora" />
 
                     <EditText
                         android:id="@+id/ProductChlore"
@@ -228,10 +227,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="PH" />
+                        android:text="@string/ph" />
 
                     <EditText
                         android:id="@+id/ProductPH"
@@ -252,10 +251,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Galets" />
+                        android:text="@string/galets" />
 
                     <EditText
                         android:id="@+id/ProductGalet"
@@ -276,10 +275,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="SEL" />
+                        android:text="@string/sel" />
 
                     <EditText
                         android:id="@+id/ProductSel"
@@ -300,10 +299,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Floculents" />
+                        android:text="@string/floculents" />
 
                     <EditText
                         android:id="@+id/ProductFloc"
@@ -324,10 +323,10 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="75dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="15dp"
-                        android:text="Autres" />
+                        android:text="@string/autres" />
 
                     <EditText
                         android:id="@+id/ProductOther"

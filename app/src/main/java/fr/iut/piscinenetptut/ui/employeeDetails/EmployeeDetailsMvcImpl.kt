@@ -41,8 +41,8 @@ class EmployeeDetailsMvcImpl (
             root?.findViewById<Button>(R.id.deleteEmployee)?.setOnClickListener{
                 val builder = employeeDetailsActivity.let { it1 -> AlertDialog.Builder(it1) }
 
-                builder.setTitle("Delete customer !")
-                builder.setMessage("Enter the administrator password :")
+                builder.setTitle(context.getString(R.string.DeleteCustomer))
+                builder.setMessage(context.getString(R.string.EnterAdminPass))
                 val input = EditText(employeeDetailsActivity)
                 val lp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
 
@@ -50,15 +50,15 @@ class EmployeeDetailsMvcImpl (
                 input.layoutParams = lp
                 builder.setView(input)
 
-                builder.setPositiveButton("YES"){_, _ ->
+                builder.setPositiveButton(context.getString(R.string.yes)){_, _ ->
                     if (input.text.toString() == Account.register.password.toString()){
                         onUserWantToRemoveEmployee()
                     } else {
-                        Toast.makeText(employeeDetailsActivity,"Wrong password !",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(employeeDetailsActivity,context.getString(R.string.MauvaisMdp),Toast.LENGTH_SHORT).show()
                     }
                 }
-                builder.setNegativeButton("No"){_,_ -> }
-                builder.setNeutralButton("Cancel"){_,_ -> }
+                builder.setNegativeButton(context.getString(R.string.no)){_,_ -> }
+                builder.setNeutralButton(context.getString(R.string.Cancel)){_,_ -> }
 
                 val dialog: AlertDialog? = builder.create()
                 dialog?.show()

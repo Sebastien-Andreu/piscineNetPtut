@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 
@@ -29,12 +30,12 @@ class ManagementCustomerActivity : AppCompatActivity(), ManagementCustomerActivi
         try {
             super.onCreate(savedInstanceState)
 
-            supportActionBar?.title = "Add new customer"
+            supportActionBar?.title = getString(R.string.AddCustomer)
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
 
             if (CustomerSelected.customer.ID != null){
-                supportActionBar?.title = "Update information"
+                supportActionBar?.title = getString(R.string.UpdateCustomer)
             }
 
             managementCustomerActivityMvcImpl = ManagementCustomerActivityMvcImpl(this, this)

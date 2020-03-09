@@ -28,7 +28,7 @@ class VisitDetailsMvcImpl(
 
 
             val listFragmentForViewPager: ArrayList<Fragment> = arrayListOf(MaintenanceSheetFragment(), TechnicalSheetFragment(), ObservationFragment())
-            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Maintenance", "Technique", "Observation")
+            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf(context.getString(R.string.Maintenance), context.getString(R.string.Technique),context.getString(R.string.Observation))
 
             if (null != root) {
                 root!!.findViewById<SwipeDisabledViewPager>(R.id.workingMethodViewPager)

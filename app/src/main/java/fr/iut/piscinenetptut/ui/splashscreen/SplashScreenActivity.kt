@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.library.extension.setAppLocale
 
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listeners {
@@ -29,6 +30,7 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listen
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
+
             splashScreenActivityMvcImpl = SplashScreenActivityMvcImpl(this, this)
             splashScreenActivityViewModel = SplashScreenActivityViewModel()
 
