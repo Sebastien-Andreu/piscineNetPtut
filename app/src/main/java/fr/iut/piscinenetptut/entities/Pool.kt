@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Pool(
     val ID: Int? = null,
-    val ID_Customer: Int?,
+    var ID_Customer: Int?,
     val picture: String?,
     val sizeLo: String?,
     val sizeLa: String?,

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/menuListOfVisit"
+            android:title="@string/menuListOfVisit"/>
+        <item
+            android:id="@+id/menuListOfCustomer"
+            android:title="@string/menuListOfCustomer"/>
+    </group>
+
+
+    <item android:title="@string/menuAccountSetting">
+        <menu>
+            <item
+                android:id="@+id/menuSetting"
+                android:title="@string/setting"/>
+            <item
+                android:id="@+id/menuSignOut"
+                android:title="@string/menuSignOut"/>
+        </menu>
+    </item>
+</menu>

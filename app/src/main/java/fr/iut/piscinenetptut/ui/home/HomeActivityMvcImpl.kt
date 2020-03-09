@@ -13,10 +13,12 @@ import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Account
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
+import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 import fr.iut.piscinenetptut.ui.listOfCustomer.ListCustomerActivity
 import fr.iut.piscinenetptut.ui.listOfEmployee.ListEmployeeActivity
 import fr.iut.piscinenetptut.ui.listOfVisit.ListOfVisitActivity
 import fr.iut.piscinenetptut.ui.splashscreen.SplashScreenActivity
+import fr.iut.piscinenetptut.ui.welcomeCustomer.WelcomeCustomerActivity
 
 
 class HomeActivityMvcImpl(
@@ -49,10 +51,24 @@ class HomeActivityMvcImpl(
                 root!!.findViewById<NavigationView>(R.id.nav_view)?.setNavigationItemSelectedListener(this)
 
                 val headerView = root!!.findViewById<NavigationView>(R.id.nav_view)?.getHeaderView(0)
-                headerView!!.findViewById<TextView>(R.id.navBarTextName)?.text = "Login : " + Account.register.login
+                headerView!!.findViewById<TextView>(R.id.navBarTextName)?.text = ("Login : " + Account.register.login)
 
-                homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, ListCustomerActivity()).commit()
-                root!!.findViewById<NavigationView>(R.id.nav_view)?.setCheckedItem(R.id.menuListOfCustomer)
+                when (Account.register.role) {
+                    "admin" -> {
+                        root!!.findViewById<NavigationView>(R.id.nav_view)?.inflateMenu(R.menu.nav_menu)
+                        homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, ListCustomerActivity()).commit()
+                        root!!.findViewById<NavigationView>(R.id.nav_view)?.setCheckedItem(R.id.menuListOfCustomer)
+                    }
+                    "employee" -> {
+                        root!!.findViewById<NavigationView>(R.id.nav_view)?.inflateMenu(R.menu.nac_menu_employee)
+                        homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, ListCustomerActivity()).commit()
+                        root!!.findViewById<NavigationView>(R.id.nav_view)?.setCheckedItem(R.id.menuListOfCustomer)
+                    }
+                    "customer" -> {
+                        root!!.findViewById<NavigationView>(R.id.nav_view)?.inflateMenu(R.menu.nav_menu_customer)
+                        homeActivity.supportFragmentManager.beginTransaction().replace( R.id.fragment_container, WelcomeCustomerActivity()).commit()
+                    }
+                }
             }
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
@@ -77,6 +93,9 @@ class HomeActivityMvcImpl(
                 Account.reset()
                 this.homeActivity.finish()
                 SplashScreenActivity.start(this.context)
+            }
+            R.id.menuDetailsPoolCustomer -> {
+                CustomerDetailsActivity.start(this.context)
             }
         }
         drawerLayout.closeDrawer(GravityCompat.START)

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name" translatable="false">piscineNetPtut</string>
+
+
+    <string name="app_name" translatable="false">piscineNet</string>
 
     <string name="loginButton">login</string>
     <string name="imageoflogoapp">this picture represent logo of app</string>
@@ -138,5 +140,6 @@
     <!--                                                                 -->
     <string name="updateEmployeeButton">Update the employee</string>
     <string name="deleteEmployeeButton">Delete the employee</string>
+    <string name="menuDetailsPoolCustomer">My pool</string>
 
 </resources>

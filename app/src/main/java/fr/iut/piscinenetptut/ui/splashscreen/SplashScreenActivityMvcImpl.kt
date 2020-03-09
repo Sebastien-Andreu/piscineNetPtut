@@ -51,6 +51,7 @@ class SplashScreenActivityMvcImpl (
                     val token = JWT(d)
                     Account.register.ID = token.subject.toString().toInt()
                     Account.register.role = token.getClaim("role").asString()
+                    Account.register.ID_Customer = token.getClaim("ID_Customer").asString()
                     this@SplashScreenActivityMvcImpl.splashScreenActivity.finish()
                     HomeActivity.start(this@SplashScreenActivityMvcImpl.splashScreenActivity)
                 }, { err ->
