@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.entities.Customer
 import fr.iut.piscinenetptut.entities.CustomerSelected
 import fr.iut.piscinenetptut.entities.Pool
+import fr.iut.piscinenetptut.library.extension.setAppLocale
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
 
@@ -26,6 +27,8 @@ class ListCustomerActivity: Fragment(), ListCustomerActivityMvc.Listeners {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setAppLocale(resources)
+
         listUserActivityMvcImpl = ListCustomerActivityMvcImpl(inflater.context, this)
         listUserActivityViewModel = ListCustomerActivityViewModel()
 

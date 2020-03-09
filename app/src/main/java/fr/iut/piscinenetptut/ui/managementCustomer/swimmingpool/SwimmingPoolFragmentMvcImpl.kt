@@ -144,7 +144,7 @@ class SwimmingPoolFragmentMvcImpl (
             && verifyIfOtherParametersAreSelected() && verifyIfFilterIsNotEmpty()){
             true
         } else {
-            Toast.makeText(root?.context, "Some information is missing to add", Toast.LENGTH_LONG).show()
+            Toast.makeText(root?.context, context.getString(R.string.InfoMissingAdd), Toast.LENGTH_LONG).show()
             false
         }
     }

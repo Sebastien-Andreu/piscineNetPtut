@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Modifier le mot de passe"
+                android:text="@string/modifier_le_mot_de_passe"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="18sp" />
 
@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="Ancien mot de passe :"
+                    android:text="@string/ancien_mot_de_passe"
                     android:textSize="15sp" />
 
                 <EditText
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="Nouveau mot de passe :"
+                    android:text="@string/nouveau_mot_de_passe"
                     android:textSize="15sp" />
 
                 <EditText
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="Vérifier mot de passe :"
+                    android:text="@string/v_rifier_mot_de_passe"
                     android:textSize="15sp" />
 
                 <EditText
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_weight="0"
-                android:text="Confirmer"
+                android:text="@string/confirmer"
                 android:textAllCaps="false" />
 
         </LinearLayout>
@@ -122,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Changer l'adresse mail"
+                android:text="@string/changer_l_adresse_mail"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="18sp" />
 
@@ -139,7 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="Nouvelle adresse :"
+                    android:text="@string/nouvelle_adresse"
                     android:textSize="15sp" />
 
                 <EditText
@@ -163,7 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="20dp"
-                    android:text="Verifier adresse :"
+                    android:text="@string/verifier_adresse"
                     android:textSize="15sp" />
 
                 <EditText
@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_weight="0"
-                android:text="Confirmer"
+                android:text="@string/confirmer"
                 android:textAllCaps="false" />
 
         </LinearLayout>

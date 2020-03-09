@@ -29,7 +29,7 @@ class AccountSettingActivityMvcImpl (
         try {
             root = View.inflate(context, R.layout.layout_account_management, null)
 
-            accountSettingActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "Account Settings"
+            accountSettingActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = context.getString(R.string.AccountSetting)
 
 
             if (null != root) {
@@ -66,15 +66,15 @@ class AccountSettingActivityMvcImpl (
                 return if (root?.findViewById<EditText>(R.id.accountSettingNewPass)?.text.toString() == root?.findViewById<EditText>(R.id.accountSettingNewPassVerify)?.text.toString()){
                     true
                 } else {
-                    Toast.makeText(context, "Les mots de passe ne correspondent pas", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, context.getString(R.string.mdpCorrespondPas), Toast.LENGTH_LONG).show()
                     false
                 }
             } else {
-                Toast.makeText(context, "Le mot de passe n'est pas bon", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, context.getString(R.string.mdpPasBon), Toast.LENGTH_LONG).show()
                 false
             }
         } else {
-            Toast.makeText(context, "pas bon", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, context.getString(R.string.ErrorMdp), Toast.LENGTH_LONG).show()
             false
         }
     }
@@ -84,11 +84,11 @@ class AccountSettingActivityMvcImpl (
             if (root?.findViewById<EditText>(R.id.accountSettingNewAddr)?.text.toString() == root?.findViewById<EditText>(R.id.accountSettingNewAddrVerify)?.text.toString()){
                 return true
             } else {
-                Toast.makeText(context, "Les addresses mail ne correspondent pas", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, context.getString(R.string.addrMailCorrespondPas), Toast.LENGTH_LONG).show()
                 false
             }
         } else {
-            Toast.makeText(context, "pas bon", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, context.getString(R.string.ErrorMdp), Toast.LENGTH_LONG).show()
             false
         }
     }

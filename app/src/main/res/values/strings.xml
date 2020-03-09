@@ -20,7 +20,7 @@
 
 
     <string name="town">Town *</string>
-    <string name="postalCode">Postal code *</string>
+    <string name="postalCode">Postcode *</string>
 
     <string name="telFix">Landline number</string>
     <string name="telMob">Phone number *</string>
@@ -103,13 +103,6 @@
     <string name="finishAddCustomer">Add new customer</string>
     <string name="updateText">Update</string>
 
-
-
-    <!--                                                                 -->
-    <!--                          ListUserActivity                       -->
-    <!--                                                                 -->
-    <string name="list_user_activity_search">Search...</string>
-
     <!--                                                                 -->
     <!--                      UserPreviewFactory                         -->
     <!--                                                                 -->
@@ -141,5 +134,162 @@
     <string name="updateEmployeeButton">Update the employee</string>
     <string name="deleteEmployeeButton">Delete the employee</string>
     <string name="menuDetailsPoolCustomer">My pool</string>
+    <string name="create_new_employee">Create new employee</string>
+    <string name="bienvenue_sur_l_application_de_piscinenet">Welcome to the PiscineNet application</string>
+    <string name="contact">Contact</string>
+    <string name="nom">Surname : </string>
+    <string name="pr_nom">Name : </string>
+    <string name="adresse">Address : </string>
+
+    <string name="t_l_phone_portable">Mobile phone : </string>
+    <string name="adresse_mail">E-mail address : </string>
+    <string name="device_date">Device date : </string>
+    <string name="code_postal">Postcode : </string>
+    <string name="t_l_phone_fix">Landline number : </string>
+    <string name="il_y_a_un_gardien">There\'s a guard</string>
+    <string name="num_ro_du_gardien">Warden\'s number : </string>
+    <string name="contrat_annuelle_d_entretien">Annual maintenance contract</string>
+    <string name="type_de_visite">Type of visit : </string>
+    <string name="contrat_produit">Product contract : </string>
+    <string name="faire_une_visite">Make a visit</string>
+
+
+    <string name="visit">Visit :</string>
+    <string name="complete">Complete</string>
+    <string name="control">Control</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="cleaning_process">Cleaning process : </string>
+    <string name="analyse">Analyse</string>
+    <string name="curtain_cleaning">Curtain cleaning</string>
+    <string name="cleaning_skimmer">Cleaning skimmer</string>
+    <string name="empty_skimmer_baskets">Empty skimmer baskets</string>
+    <string name="cleaned_skimmer_frames">Cleaned skimmer frames</string>
+    <string name="loopholes_in_cleaned_skimmers">Loopholes in cleaned skimmers</string>
+    <string name="empty_pool_robot_bag">Empty pool robot bag</string>
+    <string name="cleaned_water_line">Cleaned water line</string>
+    <string name="vacuuming">Vacuuming</string>
+    <string name="cleaning_of_the_curtain_beam">Cleaning of the curtain beam</string>
+    <string name="the_pool_has_an_alarm_system">The pool has an alarm system</string>
+    <string name="cleaning_up">Cleaning up</string>
+    <string name="proper_functioning_of_the_system">Proper functioning of the system</string>
+    <string name="passage_of_the_landing_net_on_the_surface">Passage of the landing net on the surface</string>
+    <string name="passage_of_the_landing_net_in_depth">Passage of the landing net in depth</string>
+    <string name="verification_automatic_filling">Verification automatic filling : </string>
+    <string name="good_float_height">Good float height</string>
+    <string name="float_not_blocked">Float not blocked</string>
+    <string name="bottom_drain_ras">Bottom drain RAS : </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="vacuum_cleaner_passage_in_the_roller_shutter_box">Vacuum cleaner passage in the roller shutter box : </string>
+    <string name="technique_locale">Technique locale :</string>
+    <string name="filter_washing">Filter washing</string>
+    <string name="cleaning_pre_filter">Cleaning pre-filter</string>
+    <string name="chlorine_canister_level">Chlorine canister level</string>
+    <string name="ph">PH</string>
+    <string name="level_of_the_ph_canister">level of the PH canister</string>
+    <string name="water_meter_reading">Water meter reading</string>
+    <string name="clock_setting_for_filtration_time">Clock setting for filtration time</string>
+    <string name="filtration_mode">Filtration mode :</string>
+    <string name="automatic">Automatic</string>
+    <string name="manuel">Manuel</string>
+    <string name="robot_mode">Robot mode : </string>
+    <string name="projector_mode">Projector mode : </string>
+    <string name="the_cleaning_of_the_room_must_be_done">The cleaning of the room must be done</string>
+    <string name="cleaning_of_the_room">Cleaning of the room</string>
+    <string name="proper_functioning_of_electronic_devices">Proper functioning of electronic devices</string>
+    <string name="salt_apparatus">Salt apparatus : </string>
+    <string name="cell_problem">Cell problem</string>
+    <string name="descaling_of_the_cell_must_be_done">Descaling of the cell must be done</string>
+    <string name="descaling_of_the_cell">Descaling of the cell</string>
+    <string name="other_problem">Other problem : </string>
+    <string name="chlora">CHLORA</string>
+    <string name="faulty_device">Faulty device</string>
+    <string name="uv">UV</string>
+    <string name="water_temperature">Water temperature</string>
+    <string name="ras">RAS</string>
+
+
+    <string name="visual_observations">Visual observations : </string>
+    <string name="clear_water">Clear water</string>
+    <string name="cloudy_water">Cloudy water</string>
+    <string name="algae_on_walls">Algae on walls : </string>
+    <string name="brossage">Brushing :</string>
+    <string name="finalize_the_visit">Finalize the visit</string>
+    <string name="cv">CV : </string>
+
+    <string name="appareil_ph">PH device</string>
+    <string name="caract_ristique_de_la_piscine">Characteristics of the pool</string>
+    <string name="taille_du_bassin">Pool size : </string>
+    <string name="profondeur">Depth : </string>
+    <string name="forme">Shape : </string>
+    <string name="environnement">Environment :</string>
+    <string name="tat_g_n_ral_du_bassin">General state of the basin : </string>
+    <string name="type_de_rev_tement">Type of coating :</string>
+    <string name="distance_du_si_ge">Distance from company\'s seat : </string>
+    <string name="acc_s">Access :</string>
+    <string name="il_y_a_un_syst_me_d_alarme">There\'s an alarm system</string>
+    <string name="il_y_a_une_bache_d_hivernage">There\'s a winterization cover</string>
+    <string name="filtre_sable_chang_le">Sand filter changed on</string>
+    <string name="marque_du_filtre_sable">Brand of sand filter : </string>
+    <string name="marque">Brand :</string>
+    <string name="date_de_l_appareil">Date of the device:</string>
+    <string name="appareil_lectronique">Electronic device</string>
+    <string name="type_d_appareil">Type of device : </string>
+    <string name="pompe_chaleur">Heat pump</string>
+    <string name="remplissage_automatique">Automatic filling</string>
+
+
+    <string name="other_analyse">Other analyse : </string>
+    <string name="stabilisant">stabilizer</string>
+    <string name="tac">TAC</string>
+    <string name="products_brought_in">Products brought in : </string>
+    <string name="galets">Pebbles</string>
+    <string name="sel">SEL</string>
+    <string name="floculents">Flocculents</string>
+    <string name="autres">Other</string>
+
+
+    <string name="modifier_le_mot_de_passe">Change Password</string>
+    <string name="ancien_mot_de_passe">Old password : </string>
+    <string name="nouveau_mot_de_passe">New password : </string>
+    <string name="v_rifier_mot_de_passe">Check password : </string>
+    <string name="confirmer">Confirm</string>
+    <string name="changer_l_adresse_mail">Change email address</string>
+    <string name="nouvelle_adresse">New address : </string>
+    <string name="verifier_adresse">Check address : </string>
+
+    <string name="mdpCorrespondPas">Passwords do not match</string>
+    <string name="mdpPasBon">The password\'s no good.</string>
+    <string name="ErrorMdp">Wrong password</string>
+    <string name="addrMailCorrespondPas">The email addresses do not match</string>
+
+    <string name="AccountSetting">Account Setting</string>
+    <string name="DeleteCustomer">Delete customer !</string>
+    <string name="EnterAdminPass">Enter the administrator password :</string>
+    <string name="MauvaisMdp">Wrong password !</string>
+    <string name="Cancel">Cancel</string>
+    <string name="CustomerDetails">Customer details</string>
+    <string name="EmployeeDetails">Employee details</string>
+    <string name="LabelLogin">Login :</string>
+    <string name="ListCustomer">List of customer</string>
+    <string name="ListEmployee">List of employee</string>
+    <string name="ListVisit">List of visit</string>
+    <string name="InfoMissingAdd">Some information is missing to add</string>
+    <string name="AddCustomer">Add new customer</string>
+    <string name="UpdateCustomer">Update information</string>
+    <string name="Client">Customer</string>
+    <string name="Piscine">Pool</string>
+
+    <string name="InfoMissingaddPool">Some information is missing to access the pool addition</string>
+    <string name="AddEmployee">Add new employee</string>
+    <string name="UpdateEmployee">Update information</string>
+    <string name="InputMissingAddEmloyee">Input missing</string>
+    <string name="VisitDetails">Visit details</string>
+    <string name="Maintenance">Maintenance</string>
+    <string name="Technique">Technique</string>
+    <string name="Observation">Observation</string>
+    <string name="SaveWork">Please save the progress</string>
+    <string name="changer_la_langue">Changing the language</string>
+    <string name="NameLanguage">Français</string>
 
 </resources>

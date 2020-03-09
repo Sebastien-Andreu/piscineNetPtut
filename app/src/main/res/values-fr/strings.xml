@@ -98,11 +98,6 @@
     <string name="updateText">Mettre à jour</string>
 
     <!--                                                                 -->
-    <!--                          ListUserActivity                       -->
-    <!--                                                                 -->
-    <string name="list_user_activity_search">Recherche...</string>
-
-    <!--                                                                 -->
     <!--                             UserPreviewFactory                         -->
     <!--                                                                 -->
     <string name="user_preview_warning">Attention</string>
@@ -127,4 +122,155 @@
     <string name="updateEmployeeButton">Modifier l\'employé</string>
     <string name="deleteEmployeeButton">Supprimer l\'employé</string>
     <string name="menuDetailsPoolCustomer">Ma piscine</string>
+    <string name="create_new_employee">Créer un nouvel employé</string>
+    <string name="bienvenue_sur_l_application_de_piscinenet">Bienvenue sur l\'application de PiscineNet</string>
+    <string name="contact">Contact</string>
+    <string name="nom">Nom : </string>
+    <string name="pr_nom">Prénom : </string>
+    <string name="adresse">Adresse : </string>
+    <string name="t_l_phone_portable">Téléphone portable : </string>
+    <string name="adresse_mail">Adresse mail : </string>
+    <string name="device_date">Date de l\'appareil : </string>
+    <string name="code_postal">Code postal : </string>
+    <string name="t_l_phone_fix">Téléphone fix : </string>
+    <string name="il_y_a_un_gardien">Il y a un gardien</string>
+    <string name="num_ro_du_gardien">Numéro du gardien : </string>
+    <string name="contrat_annuelle_d_entretien">Contrat annuelle d\'entretien</string>
+    <string name="type_de_visite">Type de visite : </string>
+    <string name="contrat_produit">Contrat produit : </string>
+    <string name="faire_une_visite">Faire une visite</string>
+
+    <string name="visit">Visite :</string>
+    <string name="complete">Complète</string>
+    <string name="control">Contrôle</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="cleaning_process">Processus de nettoyage : </string>
+    <string name="analyse">Analyse</string>
+    <string name="curtain_cleaning">Nettoyage des rideaux</string>
+    <string name="cleaning_skimmer">Nettoyage de l\'écumoire</string>
+    <string name="empty_skimmer_baskets">Empty skimmer baskets</string>
+    <string name="cleaned_skimmer_frames">Paniers d\'écumoire vides</string>
+    <string name="loopholes_in_cleaned_skimmers">Lacunes dans les écumoires nettoyées</string>
+    <string name="empty_pool_robot_bag">Sac vide pour robot de piscine</string>
+    <string name="cleaned_water_line">Ligne d\'eau nettoyée</string>
+    <string name="vacuuming">aspiration passé</string>
+    <string name="cleaning_of_the_curtain_beam">Nettoyage de la poutre du rideau</string>
+    <string name="the_pool_has_an_alarm_system">La piscine est équipée d\'un système d\'alarme</string>
+    <string name="cleaning_up">Nettoyage</string>
+    <string name="proper_functioning_of_the_system">Bon fonctionnement du système</string>
+    <string name="passage_of_the_landing_net_on_the_surface">Passage de l\'épuisette à la surface</string>
+    <string name="passage_of_the_landing_net_in_depth">Passage de l\'épuisette en profondeur</string>
+    <string name="verification_automatic_filling">Vérification du remplissage automatique : </string>
+    <string name="good_float_height">Bonne hauteur de flottaison</string>
+    <string name="float_not_blocked">Flotteur non bloqué</string>
+    <string name="bottom_drain_ras">Drain de fond RAS : </string>
+    <string name="vacuum_cleaner_passage_in_the_roller_shutter_box">Passage de l\'aspirateur dans le coffre du volet roulant :</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="technique_locale">Locale technique:</string>
+    <string name="filter_washing">Lavage des filtres</string>
+    <string name="cleaning_pre_filter">Nettoyage du pré-filtre</string>
+    <string name="chlorine_canister_level">Niveau des bidons de chlore</string>
+    <string name="ph">PH</string>
+    <string name="level_of_the_ph_canister">niveau de la cartouche de PH</string>
+    <string name="water_meter_reading">Lecture du compteur d\'eau</string>
+    <string name="clock_setting_for_filtration_time">Réglage de l\'horloge pour le temps de filtration</string>
+    <string name="filtration_mode">Mode de filtrage : </string>
+    <string name="automatic">Automatique</string>
+    <string name="manuel">Manuel</string>
+    <string name="robot_mode">Mode du robot : </string>
+    <string name="projector_mode">Mode du projecteur : </string>
+    <string name="the_cleaning_of_the_room_must_be_done">Le nettoyage de la salle doit être fait</string>
+    <string name="cleaning_of_the_room">Nettoyage de la salle</string>
+    <string name="proper_functioning_of_electronic_devices">Le bon fonctionnement des appareils électroniques</string>
+    <string name="salt_apparatus">Appareil à sel : </string>
+    <string name="ras">RAS</string>
+    <string name="cell_problem">Problème des cellules</string>
+    <string name="descaling_of_the_cell_must_be_done">Le détartrage de la cellule doit être effectué</string>
+    <string name="descaling_of_the_cell">Détartrage de la cellule</string>
+    <string name="other_problem">Autres problèmes :</string>
+    <string name="chlora">Chlore</string>
+    <string name="faulty_device">Appareil défectueux</string>
+    <string name="uv">UV</string>
+    <string name="water_temperature">Température de l\'eau</string>
+
+    <string name="visual_observations">Observations visuelles : </string>
+    <string name="clear_water">Eau claire</string>
+    <string name="cloudy_water">Eau trouble</string>
+    <string name="algae_on_walls">Algues sur les murs : </string>
+    <string name="brossage">Le brossage :</string>
+    <string name="finalize_the_visit">Finaliser la visite</string>
+
+    <string name="appareil_ph">Appareil PH</string>
+    <string name="caract_ristique_de_la_piscine">Caractéristique de la piscine</string>
+    <string name="taille_du_bassin">Taille du bassin : </string>
+    <string name="profondeur">Profondeur : </string>
+    <string name="forme">Forme : </string>
+    <string name="environnement">Environnement : </string>
+    <string name="tat_g_n_ral_du_bassin">État général du bassin : </string>
+    <string name="type_de_rev_tement">Type de revêtement : </string>
+    <string name="distance_du_si_ge">Distance du siège : </string>
+    <string name="acc_s">Accès : </string>
+    <string name="il_y_a_un_syst_me_d_alarme">Il y a un système d\'alarme</string>
+    <string name="il_y_a_une_bache_d_hivernage">Il y a une bache d\'hivernage</string>
+    <string name="filtre_sable_chang_le">Filtre à sable changé le</string>
+    <string name="marque_du_filtre_sable">Marque du filtre à sable : </string>
+    <string name="marque">Marque : </string>
+    <string name="cv">CV : </string>
+    <string name="date_de_l_appareil">Date de l\'appareil : </string>
+    <string name="appareil_lectronique">Appareil électronique</string>
+    <string name="type_d_appareil">Type d\'appareil : </string>
+    <string name="pompe_chaleur">Pompe à chaleur</string>
+    <string name="remplissage_automatique">Remplissage automatique</string>
+
+    <string name="other_analyse">Autre analyse : </string>
+    <string name="stabilisant">stabilisant</string>
+    <string name="tac">TAC</string>
+    <string name="products_brought_in">Produits introduits : </string>
+    <string name="galets">Galets</string>
+    <string name="sel">Sel</string>
+    <string name="floculents">Floculents</string>
+    <string name="autres">Autres</string>
+
+    <string name="modifier_le_mot_de_passe">Modifier le mot de passe</string>
+    <string name="ancien_mot_de_passe">Ancien mot de passe : </string>
+    <string name="nouveau_mot_de_passe">Nouveau mot de passe : </string>
+    <string name="v_rifier_mot_de_passe">Vérifier mot de passe : </string>
+    <string name="confirmer">Confirmer</string>
+    <string name="changer_l_adresse_mail">Changer l\'adresse mail</string>
+    <string name="nouvelle_adresse">Nouvelle adresse : </string>
+    <string name="verifier_adresse">Verifier adresse : </string>
+    <string name="mdpCorrespondPas">Les mots de passe ne correspondent pas</string>
+    <string name="mdpPasBon">Le mot de passe n\'est pas bon</string>
+    <string name="ErrorMdp">Erreur</string>
+    <string name="addrMailCorrespondPas">Les addresses mail ne correspondent pas</string>
+    <string name="Client">Client</string>
+    <string name="Piscine">Piscine</string>
+
+    <string name="AccountSetting">Paramétrage du compte</string>
+    <string name="DeleteCustomer">Client supprimé !</string>
+    <string name="EnterAdminPass">Entrez le mot de passe administrateur : </string>
+    <string name="MauvaisMdp">Mauvais mot de passe !</string>
+    <string name="Cancel">Annuler</string>
+    <string name="CustomerDetails">Informations sur le client</string>
+    <string name="EmployeeDetails">Informations sur l\'employés</string>
+    <string name="LabelLogin">Connexion : </string>
+    <string name="ListCustomer">Liste des clients</string>
+    <string name="ListEmployee">Liste des employées</string>
+    <string name="ListVisit">Liste des visites</string>
+    <string name="InfoMissingAdd">Il manque certaines informations à ajouter</string>
+    <string name="AddCustomer">Ajouter un nouveau client</string>
+    <string name="UpdateCustomer">Mise à jour des informations</string>
+
+    <string name="InfoMissingaddPool">Certaines informations manquent pour l\'ajout</string>
+    <string name="AddEmployee">Ajouter un nouvel employé(e)</string>
+    <string name="UpdateEmployee">Mise à jour des informations</string>
+    <string name="InputMissingAddEmloyee">Il manque certaines informations à ajouter</string>
+    <string name="VisitDetails">Détails sur la visite</string>
+    <string name="Maintenance">Maintenance</string>
+    <string name="Technique">Technique</string>
+    <string name="Observation">Observation</string>
+    <string name="SaveWork">Veuillez enregistrer les avancements</string>
+    <string name="changer_la_langue">Changer la langue</string>
+
 </resources>

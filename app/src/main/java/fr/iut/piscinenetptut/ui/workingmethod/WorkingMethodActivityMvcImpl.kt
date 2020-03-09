@@ -44,7 +44,7 @@ class WorkingMethodActivityMvcImpl(
 
 
             val listFragmentForViewPager: ArrayList<Fragment> = arrayListOf(MaintenanceSheetFragment(), TechnicalSheetFragment(), ObservationFragment())
-            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Maintenance", "Technique", "Observation")
+            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf(context.getString(R.string.Maintenance), context.getString(R.string.Technique),context.getString(R.string.Observation))
 
             if (null != root) {
                 root!!.findViewById<SwipeDisabledViewPager>(R.id.workingMethodViewPager)?.let { viewPager ->
@@ -72,8 +72,8 @@ class WorkingMethodActivityMvcImpl(
     private fun saveWork(position: Int){
         val builder = workingMethodActivity.let { it1 -> AlertDialog.Builder(it1) }
 
-        builder.setTitle("Save !")
-        builder.setPositiveButton("YES"){_, _ ->
+        builder.setTitle(context.getString(R.string.SaveWork))
+        builder.setPositiveButton(context.getString(R.string.yes)){_, _ ->
             when (this.idSave) {
                 0 -> {
                     workingMethodActivity.onUserWantToStoreMaintenance()
@@ -95,7 +95,7 @@ class WorkingMethodActivityMvcImpl(
                 }
             }
         }
-        builder.setNegativeButton("No"){_, _ ->
+        builder.setNegativeButton(context.getString(R.string.no)){_, _ ->
             root!!.findViewById<SwipeDisabledViewPager>(R.id.workingMethodViewPager)?.currentItem = this.idSave
             root!!.findViewById<TabLayout>(R.id.workingMethodTabLayout)?.setScrollPosition(this.idSave,0f,true)
         }

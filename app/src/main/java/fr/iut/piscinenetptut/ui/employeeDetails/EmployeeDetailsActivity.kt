@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.managementEmployee.ManagementEmployeeActivity
 
@@ -28,7 +29,7 @@ class EmployeeDetailsActivity: AppCompatActivity(), EmployeeDetailsMvc.Listeners
         try {
             super.onCreate(savedInstanceState)
 
-            supportActionBar?.title = "Employee details"
+            supportActionBar?.title = getString(R.string.EmployeeDetails)
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 

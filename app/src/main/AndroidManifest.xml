@@ -38,5 +38,6 @@
         <activity android:name=".ui.managementEmployee.ManagementEmployeeActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.employeeDetails.EmployeeDetailsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.visitDetails.VisitDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".shared.language.BaseActivity" android:screenOrientation="portrait" />
     </application>
 </manifest>

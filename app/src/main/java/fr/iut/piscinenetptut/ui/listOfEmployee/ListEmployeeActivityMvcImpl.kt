@@ -36,7 +36,8 @@ class ListEmployeeActivityMvcImpl(
     init {
         try {
             root = View.inflate(context, R.layout.activity_user_list, null)
-            listEmployeeActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "List of employee"
+            listEmployeeActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = context.getString(
+                            R.string.ListEmployee)
 
             if (root != null){
                 root!!.findViewById<FloatingActionButton>(R.id.floatingActionButtonAddCustomer)?.setOnClickListener {

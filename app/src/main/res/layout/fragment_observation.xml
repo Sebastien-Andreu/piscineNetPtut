@@ -32,7 +32,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Name of customer"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="25sp"
                     android:textStyle="normal" />
@@ -50,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text="Visual observations : "
+                    android:text="@string/visual_observations"
                     android:textSize="16sp" />
 
                 <RadioGroup
@@ -66,13 +65,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Clear water" />
+                        android:text="@string/clear_water" />
 
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Cloudy water" />
+                        android:text="@string/cloudy_water" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -88,7 +87,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Algae on walls :"
+                    android:text="@string/algae_on_walls"
                     android:textSize="16sp" />
 
                 <RadioGroup
@@ -104,13 +103,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Yes" />
+                        android:text="@string/yes" />
 
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="No" />
+                        android:text="@string/no" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -126,7 +125,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Borssage :"
+                    android:text="@string/brossage"
                     android:textSize="16sp" />
 
                 <RadioGroup
@@ -142,13 +141,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Yes" />
+                        android:text="@string/yes" />
 
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="No" />
+                        android:text="@string/no" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -164,7 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="Other problem :"
+                    android:text="@string/other_problem"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="16sp" />
 
@@ -198,7 +197,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="25dp"
                 android:gravity="center"
-                android:text="Finalize the visit"
+                android:text="@string/finalize_the_visit"
                 android:textAllCaps="false" />
 
 

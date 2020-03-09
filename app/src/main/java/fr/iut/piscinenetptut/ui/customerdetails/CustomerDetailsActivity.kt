@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fr.iut.piscinenetptut.R
+import fr.iut.piscinenetptut.library.extension.setAppLocale
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.home.HomeActivity
 import fr.iut.piscinenetptut.ui.managementCustomer.ManagementCustomerActivity
@@ -29,7 +31,7 @@ class CustomerDetailsActivity : AppCompatActivity(), CustomerDetailsActivityMvc.
         try {
             super.onCreate(savedInstanceState)
 
-            supportActionBar?.title = "Customer details"
+            supportActionBar?.title = getString(R.string.CustomerDetails)
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 

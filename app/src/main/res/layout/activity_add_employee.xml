@@ -217,7 +217,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="35dp"
                 android:layout_weight="1"
-                android:text="Create new employee"
+                android:text="@string/create_new_employee"
                 android:textAllCaps="false"
                 android:textColor="@color/secondary_text_default_material_light"
                 android:visibility="visible" />

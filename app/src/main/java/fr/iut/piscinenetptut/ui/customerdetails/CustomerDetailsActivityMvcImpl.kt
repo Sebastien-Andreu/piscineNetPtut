@@ -36,7 +36,7 @@ class CustomerDetailsActivityMvcImpl(
             }
 
             listFragmentForViewPager = arrayListOf(CustomerDetailFragment(), SwimmingPoolDetailFragment())
-            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf("Client", "Piscine")
+            val listFragmentTitleForViewPager: ArrayList<String> = arrayListOf(context.getString(R.string.Client), context.getString(R.string.Piscine))
 
             if (null != root) {
                 root!!.findViewById<SwipeDisabledViewPager>(R.id.customerDetailsViewPager)?.let {viewPager ->
