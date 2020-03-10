@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.EmployeeSelected
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.shared.permission.PermissionCamera
@@ -39,14 +40,14 @@ class ManagementEmployeeActivity: AppCompatActivity(), ManagementEmployeeMvc.Lis
         try {
             super.onCreate(savedInstanceState)
 
-            supportActionBar?.title = "Add new employee"
+            supportActionBar?.title = getString(R.string.AddEmployee)
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
             permissionCamera = PermissionCamera()
 
 
             if (EmployeeSelected.employee.ID != null){
-                supportActionBar?.title = "Update information"
+                supportActionBar?.title = getString(R.string.UpdateEmployee)
             }
 
             managementEmployeeViewModel = ManagementEmployeeViewModel()

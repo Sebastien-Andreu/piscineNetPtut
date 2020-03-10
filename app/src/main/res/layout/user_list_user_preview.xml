@@ -43,14 +43,12 @@
                 <TextView
                     android:id="@+id/firstNameTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Théo" />
+                    android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/surNameTextView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:text="Bouteiller" />
+                    android:layout_height="wrap_content"/>
 
                 <RelativeLayout
                     android:id="@+id/warningWrapper"

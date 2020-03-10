@@ -19,7 +19,7 @@
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contact"
+                android:text="@string/contact"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -38,7 +38,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nom : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/nom" />
 
                     <TextView
                         android:id="@+id/detailCustomerName"
@@ -56,7 +57,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Prénom : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/pr_nom" />
 
                     <TextView
                         android:id="@+id/detailCustomerSurname"
@@ -73,7 +75,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adresse : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/adresse" />
 
                     <TextView
                         android:id="@+id/detailCustomerAddr"
@@ -90,7 +93,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Code postal : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/code_postal" />
 
                     <TextView
                         android:id="@+id/detailCustomerPostalCode"
@@ -107,7 +111,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Téléphone portable : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/t_l_phone_portable" />
 
                     <TextView
                         android:id="@+id/detailCustomerPhoneNumber"
@@ -126,7 +131,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Téléphone fix : "
+                        android:text="@string/t_l_phone_fix"
                         android:visibility="gone" />
 
                     <TextView
@@ -144,7 +149,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Adresse mail : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/adresse_mail" />
 
                     <TextView
                         android:id="@+id/detailCustomerMail"
@@ -166,7 +172,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Il y a un gardien" />
+                    android:text="@string/il_y_a_un_gardien" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -178,7 +184,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Numéro du gardien : " />
+                        android:text="@string/num_ro_du_gardien" />
 
                     <TextView
                         android:id="@+id/detailCustomerGuardianNumber"
@@ -201,7 +207,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contrat annuelle d'entretien"
+                android:text="@string/contrat_annuelle_d_entretien"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -220,7 +226,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Type de visite : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/type_de_visite" />
 
                     <TextView
                         android:id="@+id/detailCustomerTypeOfVisit"
@@ -237,7 +244,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Contrat produit : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/contrat_produit" />
 
                     <TextView
                         android:id="@+id/detailCustomerContractOfProduct"
@@ -271,7 +279,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="35dp"
-            android:text="Faire une visite"
+            android:text="@string/faire_une_visite"
             android:textAllCaps="false" />
 
 

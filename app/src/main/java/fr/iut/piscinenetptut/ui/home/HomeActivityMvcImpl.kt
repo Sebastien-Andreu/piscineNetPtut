@@ -1,6 +1,7 @@
 package fr.iut.piscinenetptut.ui.home
 
 import android.content.Context
+import android.content.res.Resources
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
@@ -8,9 +9,12 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.github.kittinunf.fuel.gson.gsonDeserializerOf
 import com.google.android.material.navigation.NavigationView
 import fr.iut.piscinenetptut.R
 import fr.iut.piscinenetptut.entities.Account
+import fr.iut.piscinenetptut.entities.Language
+import fr.iut.piscinenetptut.library.extension.setAppLocale
 import fr.iut.piscinenetptut.library.extension.toTreatFor
 import fr.iut.piscinenetptut.ui.accountSetting.AccountSettingActivity
 import fr.iut.piscinenetptut.ui.customerdetails.CustomerDetailsActivity
@@ -51,7 +55,7 @@ class HomeActivityMvcImpl(
                 root!!.findViewById<NavigationView>(R.id.nav_view)?.setNavigationItemSelectedListener(this)
 
                 val headerView = root!!.findViewById<NavigationView>(R.id.nav_view)?.getHeaderView(0)
-                headerView!!.findViewById<TextView>(R.id.navBarTextName)?.text = ("Login : " + Account.register.login)
+                headerView!!.findViewById<TextView>(R.id.navBarTextName)?.text = (context.getString(R.string.LabelLogin)  + " "+ Account.register.login)
 
                 when (Account.register.role) {
                     "admin" -> {
@@ -97,8 +101,22 @@ class HomeActivityMvcImpl(
             R.id.menuDetailsPoolCustomer -> {
                 CustomerDetailsActivity.start(this.context)
             }
+            R.id.language -> {
+
+                if (Language.language == "en-us"){
+                    Language.language = "fr"
+                } else {
+                    Language.language = "en-us"
+                }
+                setAppLocale(homeActivity.resources)
+                homeActivity.finish()
+                HomeActivity.start(homeActivity)
+            }
         }
-        drawerLayout.closeDrawer(GravityCompat.START)
+
+        if (item.itemId != R.id.language){
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }
         return true
     }
 }

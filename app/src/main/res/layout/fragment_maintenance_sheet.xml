@@ -30,7 +30,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Name of customer"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textSize="25sp"
                     android:textStyle="normal" />
@@ -47,7 +46,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Visit :"
+                    android:text="@string/visit"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="18sp" />
 
@@ -64,21 +63,21 @@
                         android:layout_height="match_parent"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
-                        android:text="Complete" />
+                        android:text="@string/complete" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
-                        android:text="Control" />
+                        android:text="@string/control" />
 
                     <RadioButton
                         android:id="@+id/radioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Maintenance" />
+                        android:text="@string/maintenance" />
 
                 </RadioGroup>
 
@@ -95,7 +94,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cleaning process :"
+                    android:text="@string/cleaning_process"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="18sp" />
 
@@ -111,61 +110,61 @@
                         android:id="@+id/CPAnalyse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Analyse" />
+                        android:text="@string/analyse" />
 
                     <CheckBox
                         android:id="@+id/CPCurtain"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Curtain cleaning" />
+                        android:text="@string/curtain_cleaning" />
 
                     <CheckBox
                         android:id="@+id/CPCleaning"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cleaning skimmer " />
+                        android:text="@string/cleaning_skimmer" />
 
                     <CheckBox
                         android:id="@+id/CPEmptySkimmer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Empty skimmer baskets " />
+                        android:text="@string/empty_skimmer_baskets" />
 
                     <CheckBox
                         android:id="@+id/CPCleanedSkimmer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cleaned skimmer frames " />
+                        android:text="@string/cleaned_skimmer_frames" />
 
                     <CheckBox
                         android:id="@+id/CPLoopholes"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Loopholes in cleaned skimmers " />
+                        android:text="@string/loopholes_in_cleaned_skimmers" />
 
                     <CheckBox
                         android:id="@+id/CPEmptyRobotBag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Empty pool robot bag " />
+                        android:text="@string/empty_pool_robot_bag" />
 
                     <CheckBox
                         android:id="@+id/CPEmptyWaterLine"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cleaned water line" />
+                        android:text="@string/cleaned_water_line" />
 
                     <CheckBox
                         android:id="@+id/CPVaccum"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Vacuuming" />
+                        android:text="@string/vacuuming" />
 
                     <CheckBox
                         android:id="@+id/CPCleanningBeam"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cleaning of the curtain beam" />
+                        android:text="@string/cleaning_of_the_curtain_beam" />
 
                     <LinearLayout
                         android:id="@+id/layoutAlarmSystem"
@@ -180,7 +179,7 @@
                             android:id="@+id/textView9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="The pool has an alarm system"
+                            android:text="@string/the_pool_has_an_alarm_system"
                             android:textSize="16sp" />
 
                         <CheckBox
@@ -190,7 +189,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Cleaning up" />
+                            android:text="@string/cleaning_up" />
 
                         <CheckBox
                             android:id="@+id/CPProper"
@@ -198,7 +197,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Proper functioning of the system " />
+                            android:text="@string/proper_functioning_of_the_system" />
                     </LinearLayout>
 
                     <CheckBox
@@ -206,13 +205,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Passage of the landing net on the surface" />
+                        android:text="@string/passage_of_the_landing_net_on_the_surface" />
 
                     <CheckBox
                         android:id="@+id/CPPassageLandingDepth"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Passage of the landing net in depth" />
+                        android:text="@string/passage_of_the_landing_net_in_depth" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -225,7 +224,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Verification automatic filling :"
+                            android:text="@string/verification_automatic_filling"
                             android:textSize="16sp" />
 
                         <CheckBox
@@ -235,7 +234,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Good float height" />
+                            android:text="@string/good_float_height" />
 
                         <CheckBox
                             android:id="@+id/CPFloatNotBlocked"
@@ -243,7 +242,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Float not blocked" />
+                            android:text="@string/float_not_blocked" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -257,7 +256,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Bottom drain RAS :"
+                            android:text="@string/bottom_drain_ras"
                             android:textSize="16sp" />
 
                         <RadioGroup
@@ -274,14 +273,14 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Yes" />
+                                android:text="@string/yes" />
 
                             <RadioButton
                                 android:id="@+id/radioButton2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="No" />
+                                android:text="@string/no" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -297,7 +296,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Vacuum cleaner passage in the roller shutter box :"
+                            android:text="@string/vacuum_cleaner_passage_in_the_roller_shutter_box"
                             android:textSize="16sp" />
 
                         <RadioGroup
@@ -313,13 +312,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Yes" />
+                                android:text="@string/yes" />
 
                             <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="No" />
+                                android:text="@string/no" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -339,7 +338,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Technique locale :"
+                    android:text="@string/technique_locale"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="18sp" />
 
@@ -355,13 +354,13 @@
                         android:id="@+id/TLFilterWashing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Filter washing " />
+                        android:text="@string/filter_washing" />
 
                     <CheckBox
                         android:id="@+id/TLCleanningPreFilter"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cleaning pre-filter" />
+                        android:text="@string/cleaning_pre_filter" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -375,7 +374,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="15dp"
-                            android:text="Chlorine canister level " />
+                            android:text="@string/chlorine_canister_level" />
 
                         <EditText
                             android:id="@+id/TLChlorine"
@@ -391,7 +390,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
                             android:gravity="center"
-                            android:text="PH" />
+                            android:text="@string/ph" />
 
                     </LinearLayout>
 
@@ -406,7 +405,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="15dp"
-                            android:text="level of the PH canister" />
+                            android:text="@string/level_of_the_ph_canister" />
 
                         <EditText
                             android:id="@+id/TLPH"
@@ -421,7 +420,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
                             android:gravity="center"
-                            android:text="PH" />
+                            android:text="@string/ph" />
 
                     </LinearLayout>
 
@@ -436,7 +435,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="15dp"
-                            android:text="Water meter reading" />
+                            android:text="@string/water_meter_reading" />
 
                         <EditText
                             android:id="@+id/TLWaterMeter"
@@ -452,7 +451,7 @@
                         android:id="@+id/TLClockSetting"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Clock setting for filtration time" />
+                        android:text="@string/clock_setting_for_filtration_time" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -465,7 +464,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Filtration mode :"
+                            android:text="@string/filtration_mode"
                             android:textSize="16sp" />
 
                         <RadioGroup
@@ -481,13 +480,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Automatic" />
+                                android:text="@string/automatic" />
 
                             <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Manuel" />
+                                android:text="@string/manuel" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -503,7 +502,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Robot mode :"
+                            android:text="@string/robot_mode"
                             android:textSize="16sp" />
 
                         <RadioGroup
@@ -519,13 +518,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Automatic" />
+                                android:text="@string/automatic" />
 
                             <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Manuel" />
+                                android:text="@string/manuel" />
                         </RadioGroup>
 
                     </LinearLayout>
@@ -541,7 +540,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Projector mode :"
+                            android:text="@string/projector_mode"
                             android:textSize="16sp" />
 
                         <RadioGroup
@@ -557,13 +556,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Automatic" />
+                                android:text="@string/automatic" />
 
                             <RadioButton
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Manuel" />
+                                android:text="@string/manuel" />
                         </RadioGroup>
 
                         <LinearLayout
@@ -578,7 +577,7 @@
                                 android:layout_width="150dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="15dp"
-                                android:text="Water meter reading :" />
+                                android:text="@string/water_meter_reading" />
 
                             <EditText
                                 android:id="@+id/TLProjectorMeterReading"
@@ -603,7 +602,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="The cleaning of the room must be done"
+                            android:text="@string/the_cleaning_of_the_room_must_be_done"
                             android:textColor="@android:color/holo_red_light" />
 
                         <CheckBox
@@ -613,7 +612,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Cleaning of the room" />
+                            android:text="@string/cleaning_of_the_room" />
 
                     </LinearLayout>
 
@@ -633,7 +632,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Proper functioning of electronic devices"
+                    android:text="@string/proper_functioning_of_electronic_devices"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textSize="18sp" />
 
@@ -656,7 +655,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Salt apparatus :"
+                            android:text="@string/salt_apparatus"
                             android:textSize="16sp" />
 
                         <CheckBox
@@ -666,7 +665,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="RAS" />
+                            android:text="@string/ras" />
 
                         <CheckBox
                             android:id="@+id/PFEDCellProblem"
@@ -674,7 +673,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Cell problem" />
+                            android:text="@string/cell_problem" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -687,7 +686,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="30dp"
                                 android:layout_marginEnd="30dp"
-                                android:text="Descaling of the cell must be done"
+                                android:text="@string/descaling_of_the_cell_must_be_done"
                                 android:textColor="@android:color/holo_red_light" />
 
                             <CheckBox
@@ -697,7 +696,7 @@
                                 android:layout_marginStart="30dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="30dp"
-                                android:text="Descaling of the cell" />
+                                android:text="@string/descaling_of_the_cell" />
 
                         </LinearLayout>
 
@@ -708,7 +707,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Other problem :"
+                            android:text="@string/other_problem"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                         <LinearLayout
@@ -756,7 +755,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="CHLORA"
+                            android:text="@string/chlora"
                             android:textSize="16sp" />
 
                         <CheckBox
@@ -766,7 +765,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="RAS" />
+                            android:text="@string/ras" />
 
                         <CheckBox
                             android:id="@+id/PFEDChloraFaulty"
@@ -774,7 +773,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Faulty device" />
+                            android:text="@string/faulty_device" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -798,7 +797,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="PH"
+                            android:text="@string/ph"
                             android:textSize="16sp" />
 
                         <CheckBox
@@ -808,7 +807,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="RAS" />
+                            android:text="@string/ras" />
 
                         <CheckBox
                             android:id="@+id/PFEDPHFaulty"
@@ -816,7 +815,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Faulty device" />
+                            android:text="@string/faulty_device" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -840,7 +839,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="UV"
+                            android:text="@string/uv"
                             android:textSize="16sp" />
 
                         <CheckBox
@@ -850,7 +849,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="30dp"
-                            android:text="RAS" />
+                            android:text="@string/ras" />
 
                         <CheckBox
                             android:id="@+id/PFEDUVCell"
@@ -858,7 +857,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Cell problem" />
+                            android:text="@string/cell_problem" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -866,7 +865,7 @@
                             android:layout_marginStart="30dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Other problem :"
+                            android:text="@string/other_problem"
                             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                         <LinearLayout
@@ -914,7 +913,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="PH"
+                            android:text="@string/ph"
                             android:textSize="16sp" />
 
                         <LinearLayout
@@ -928,7 +927,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="15dp"
-                                android:text="Water temperature" />
+                                android:text="@string/water_temperature" />
 
                             <EditText
                                 android:id="@+id/PFEDPHWatherTemp"
@@ -954,7 +953,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="RAS" />
+                            android:text="@string/ras" />
 
                         <CheckBox
                             android:id="@+id/PFEDPH2Faulty"
@@ -962,7 +961,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
                             android:layout_marginEnd="30dp"
-                            android:text="Faulty device" />
+                            android:text="@string/faulty_device" />
 
                     </LinearLayout>
                 </LinearLayout>

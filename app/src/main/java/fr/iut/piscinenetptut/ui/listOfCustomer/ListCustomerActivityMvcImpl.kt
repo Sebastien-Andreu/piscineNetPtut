@@ -36,7 +36,7 @@ class ListCustomerActivityMvcImpl(
     init {
         try {
             root = View.inflate(context, R.layout.activity_user_list, null)
-            listUserActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = "List of customer"
+            listUserActivity.activity?.findViewById<TextView>(R.id.textToolBar)?.text = context.getString(R.string.ListCustomer)
 
 
             if (root != null){

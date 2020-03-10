@@ -7,7 +7,11 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+<<<<<<< HEAD
 import fr.iut.piscinenetptut.ui.forgottenPassword.ForgottenPasswordActivity
+=======
+import fr.iut.piscinenetptut.library.extension.setAppLocale
+>>>>>>> master
 
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listeners {
@@ -31,6 +35,7 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listen
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
+
             splashScreenActivityMvcImpl = SplashScreenActivityMvcImpl(this, this)
             splashScreenActivityViewModel = SplashScreenActivityViewModel()
 

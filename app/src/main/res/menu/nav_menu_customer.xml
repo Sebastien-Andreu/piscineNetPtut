@@ -13,6 +13,9 @@
                 android:id="@+id/menuSetting"
                 android:title="@string/setting"/>
             <item
+                android:id="@+id/language"
+                android:title="@string/changer_la_langue"/>
+            <item
                 android:id="@+id/menuSignOut"
                 android:title="@string/menuSignOut"/>
         </menu>

@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Caractéristique de la piscine"
+                android:text="@string/caract_ristique_de_la_piscine"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -48,7 +48,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Taille du bassin : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/taille_du_bassin" />
 
                     <TextView
                         android:id="@+id/detailPoolSize"
@@ -65,7 +66,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Profondeur : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/profondeur" />
 
                     <TextView
                         android:id="@+id/detailPoolDepth"
@@ -83,7 +85,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Forme : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/forme" />
 
                     <TextView
                         android:id="@+id/detailPoolShape"
@@ -100,7 +103,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Environnement : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/environnement" />
 
                     <TextView
                         android:id="@+id/detailPoolEnvronment"
@@ -117,7 +121,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="État général du bassin : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/tat_g_n_ral_du_bassin" />
 
                     <TextView
                         android:id="@+id/detailPoolState"
@@ -135,7 +140,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Type de revêtement : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/type_de_rev_tement" />
 
                     <TextView
                         android:id="@+id/detailPoolTypeOfCover"
@@ -153,7 +159,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Distance du siège : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/distance_du_si_ge" />
 
                     <TextView
                         android:id="@+id/detailPoolDistance"
@@ -170,7 +177,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Accès : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/acc_s" />
 
                     <TextView
                         android:id="@+id/detailPoolAcces"
@@ -191,7 +199,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Il y a un système d'alarme" />
+                        android:text="@string/il_y_a_un_syst_me_d_alarme" />
 
                     <TextView
                         android:id="@+id/detailPoolWarning"
@@ -211,7 +219,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Il y a une bache d'hivernage" />
+                        android:text="@string/il_y_a_une_bache_d_hivernage" />
 
                     <TextView
                         android:id="@+id/detailPoolWinterCover"
@@ -231,7 +239,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Filtre à sable changé le " />
+                        android:text="@string/filtre_sable_chang_le" />
 
                     <TextView
                         android:id="@+id/detailPoolDateSandFilter"
@@ -251,7 +259,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Marque du filtre à sable : "
+                        android:text="@string/marque_du_filtre_sable"
                         tools:visibility="gone" />
 
                     <TextView
@@ -295,7 +303,7 @@
                         android:id="@+id/poolDetailLabelBrandFilter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Marque : " />
+                        android:text="@string/marque" />
 
                     <TextView
                         android:id="@+id/detailPoolBrandFilter"
@@ -313,7 +321,7 @@
                         android:id="@+id/poolDetailLabelCV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CV : " />
+                        android:text="@string/cv" />
 
                     <TextView
                         android:id="@+id/detailPoolCV"
@@ -330,7 +338,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date de l'appareil : " />
+                        android:text="@string/date_de_l_appareil" />
 
                     <TextView
                         android:id="@+id/detailPoolDateFilter"
@@ -354,7 +362,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Appareil électronique"
+                android:text="@string/appareil_lectronique"
                 android:textColor="@color/colorSecondaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -373,7 +381,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Type d'appareil : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/type_d_appareil" />
 
                     <TextView
                         android:id="@+id/detailPoolElectronicalType"
@@ -390,7 +399,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date de l'appareil : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/date_de_l_appareil" />
 
                     <TextView
                         android:id="@+id/detailPoolDateElectronicalDevice"
@@ -417,7 +427,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Appareil PH"
+                android:text="@string/appareil_ph"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -434,7 +444,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date de l'appareil : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/date_de_l_appareil" />
 
                     <TextView
                         android:id="@+id/detailPoolDatePH"
@@ -460,7 +471,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pompe à chaleur"
+                android:text="@string/pompe_chaleur"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -477,7 +488,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date de l'appareil : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/date_de_l_appareil" />
 
                     <TextView
                         android:id="@+id/detailPoolDateHeatPump"
@@ -503,7 +515,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Remplissage automatique"
+                android:text="@string/remplissage_automatique"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -520,7 +532,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date de l'appareil : " />
+                        android:layout_marginRight="3dp"
+                        android:text="@string/date_de_l_appareil" />
 
                     <TextView
                         android:id="@+id/detailPoolDateRemp"
