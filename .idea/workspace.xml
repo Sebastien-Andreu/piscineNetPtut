@@ -12,61 +12,11 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e94a603c-21d7-4623-b07f-00b6900879f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/entities/Language.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/library/extension/language.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/switch_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="e94a603c-21d7-4623-b07f-00b6900879f3" name="Default Changelist" comment="new method of version">
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/accountSetting/AccountSettingActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/accountSetting/AccountSettingActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/customerdetails/CustomerDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/customerdetails/CustomerDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/customerdetails/CustomerDetailsActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/customerdetails/CustomerDetailsActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/customerdetails/customer/CustomerDetailFragmentMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/customerdetails/customer/CustomerDetailFragmentMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/employeeDetails/EmployeeDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/employeeDetails/EmployeeDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/employeeDetails/EmployeeDetailsMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/employeeDetails/EmployeeDetailsMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/home/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/home/HomeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/home/HomeActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/home/HomeActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfCustomer/ListCustomerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfCustomer/ListCustomerActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfCustomer/ListCustomerActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfCustomer/ListCustomerActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfEmployee/ListEmployeeActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfEmployee/ListEmployeeActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfVisit/ListOfVisitActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/listOfVisit/ListOfVisitActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementCustomer/ManagementCustomerActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementCustomer/ManagementCustomerActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementCustomer/ManagementCustomerActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementCustomer/ManagementCustomerActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementCustomer/swimmingpool/SwimmingPoolFragmentMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementCustomer/swimmingpool/SwimmingPoolFragmentMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementEmployee/ManagementEmployeeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementEmployee/ManagementEmployeeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementEmployee/ManagementEmployeeMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/managementEmployee/ManagementEmployeeMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/splashscreen/SplashScreenActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/splashscreen/SplashScreenActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/visitDetails/VisitDetailsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/visitDetails/VisitDetailsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/visitDetails/VisitDetailsMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/visitDetails/VisitDetailsMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/workingmethod/WorkingMethodActivityMvcImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/workingmethod/WorkingMethodActivityMvcImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_employee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome_customer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome_customer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/details_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/details_employee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_pool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_pool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_customer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_customer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_maintenance_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_maintenance_sheet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_observation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_observation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_swimming_pool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_swimming_pool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_technical_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_technical_sheet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_account_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_account_management.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/user_list_user_preview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_list_user_preview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/nac_menu_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/nac_menu_employee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/nav_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/nav_menu_customer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/nav_menu_customer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +24,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_R" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="LMG710EAW24c3bc81" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -139,6 +89,30 @@
       </state>
     </system>
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_account_management.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -158,22 +132,76 @@
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_account_management.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/splashscreen/SplashScreenActivity.kt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="137" />
+    <option name="y" value="-25" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1YtUcDURyxCNWqhcBPqRY3DtBrL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="piscineNetPtut" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="piscineNetPtut" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="piscineNetPtut" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="piscineNetPtut" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ce11160b820f600104" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-02-18T18:42:01.810Z" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
@@ -185,21 +213,21 @@
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="fr.iut.piscinenetptut.entities" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Sebastien\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui\visitDetails" />
-      <recent name="C:\Users\Sebastien\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui\visitDetails\maintenanceSheet" />
-      <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\res\layout" />
-      <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui" />
-      <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\res\drawable" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sebastien\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui\managementCustomer" />
       <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\res\drawable-xhdpi" />
       <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\res\drawable" />
       <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\res\layout" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="fr.iut.piscinenetptut.entities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android Projer\piscineNetPtut\app\src\main\res\drawable-xhdpi" />
+      <recent name="C:\Users\Sebastien\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui\visitDetails" />
+      <recent name="C:\Users\Sebastien\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui\visitDetails\maintenanceSheet" />
+      <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\res\layout" />
+      <recent name="C:\Users\ANDREU\Desktop\piscineNetPtut\app\src\main\java\fr\iut\piscinenetptut\ui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -237,6 +265,8 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
@@ -328,13 +358,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576353087740</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Implement user list&#10;&#10;- Make a userPreviewfactory&#10;- Create activity userList&#10;- Create temp user class&#10;&#10;Create link between view&#10;&#10;- home&#10;- userList&#10;- customerDetails&#10;- workingMethod">
-      <created>1576426323620</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1576426323620</updated>
     </task>
     <task id="LOCAL-00005" summary="Implement user list&#10;&#10;- Make a userPreviewfactory&#10;- Create activity userList&#10;- Create temp user class&#10;&#10;Create link between view&#10;&#10;- home&#10;- userList&#10;- customerDetails&#10;- workingMethod&#10;- listOfVisit&#10;- addCustomer">
       <created>1576439734193</created>
@@ -672,7 +695,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583687410791</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="new method of version">
+      <created>1583867690496</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1583867690497</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView">
@@ -684,14 +714,64 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info active="true" id="Project" order="1" visible="true" weight="0.32995737" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Designer" order="5" />
+      <window_info id="Resources Explorer" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Logcat" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="6" visible="true" weight="0.17659806" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" visible="true" weight="0.32995737" />
+    </layout>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -724,6 +804,103 @@
     <MESSAGE value="show list of visit and details" />
     <MESSAGE value="new method of version" />
     <option name="LAST_COMMIT_MESSAGE" value="new method of version" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_customer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_employee.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_employee_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_forgotten_password.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splashscreen.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_visit_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_welcome_customer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_working_method.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/details_employee.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_swimming_pool.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_observation.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_technical_sheet.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_maintenance_sheet.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/iut/piscinenetptut/ui/splashscreen/SplashScreenActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/employee_list_preview.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_add_customer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_add_pool.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_customer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_account_management.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

@@ -7,11 +7,11 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import fr.iut.piscinenetptut.ui.forgottenPassword.ForgottenPasswordActivity
-=======
+//=======
 import fr.iut.piscinenetptut.library.extension.setAppLocale
->>>>>>> master
+//>>>>>>> master
 
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listeners {
