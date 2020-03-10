@@ -127,4 +127,5 @@
     <string name="updateEmployeeButton">Modifier l\'employé</string>
     <string name="deleteEmployeeButton">Supprimer l\'employé</string>
     <string name="menuDetailsPoolCustomer">Ma piscine</string>
+    <string name="forgottenPasswordSendMail">Envoyer nouveau mot de passe</string>
 </resources>

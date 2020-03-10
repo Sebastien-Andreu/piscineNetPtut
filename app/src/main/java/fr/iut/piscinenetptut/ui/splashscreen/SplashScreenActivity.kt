@@ -3,9 +3,11 @@ package fr.iut.piscinenetptut.ui.splashscreen
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import fr.iut.piscinenetptut.library.extension.toTreatFor
+import fr.iut.piscinenetptut.ui.forgottenPassword.ForgottenPasswordActivity
 
 
 class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listeners {
@@ -48,5 +50,9 @@ class SplashScreenActivity : AppCompatActivity(), SplashScreenActivityMvc.Listen
         } catch (exception: Exception) {
             exception.toTreatFor(TAG)
         }
+    }
+
+    override fun onForgottenPassword() {
+        ForgottenPasswordActivity.start(this)
     }
 }

@@ -38,5 +38,6 @@
         <activity android:name=".ui.managementEmployee.ManagementEmployeeActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.employeeDetails.EmployeeDetailsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.visitDetails.VisitDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.forgottenPassword.ForgottenPasswordActivity" android:screenOrientation="portrait"/>
     </application>
 </manifest>
