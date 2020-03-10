@@ -5,5 +5,6 @@ interface SplashScreenActivityMvc {
     fun onRegisterInformationIdLoaded()
     interface Listeners {
         fun onUserWantToLogin()
+        fun onForgottenPassword()
     }
 }

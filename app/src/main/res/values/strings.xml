@@ -134,6 +134,7 @@
     <string name="updateEmployeeButton">Update the employee</string>
     <string name="deleteEmployeeButton">Delete the employee</string>
     <string name="menuDetailsPoolCustomer">My pool</string>
+    <string name="forgottenPasswordSendMail" >Send new password</string>
     <string name="create_new_employee">Create new employee</string>
     <string name="bienvenue_sur_l_application_de_piscinenet">Welcome to the PiscineNet application</string>
     <string name="contact">Contact</string>

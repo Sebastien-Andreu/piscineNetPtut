@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.yesidlazaro:GmailBackground:1.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c23b6e362c51679567e879de0e946bd/jetified-GmailBackground-1.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c23b6e362c51679567e879de0e946bd/jetified-GmailBackground-1.2.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c23b6e362c51679567e879de0e946bd/jetified-GmailBackground-1.2.0/jars/libs/activation.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c23b6e362c51679567e879de0e946bd/jetified-GmailBackground-1.2.0/jars/libs/additionnal.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2c23b6e362c51679567e879de0e946bd/jetified-GmailBackground-1.2.0/jars/libs/mail.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/583be82af72d07745f1f4a9bd314a3b0/jetified-GmailBackground-1.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/583be82af72d07745f1f4a9bd314a3b0/jetified-GmailBackground-1.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/583be82af72d07745f1f4a9bd314a3b0/jetified-GmailBackground-1.2.0/jars/libs/activation.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/583be82af72d07745f1f4a9bd314a3b0/jetified-GmailBackground-1.2.0/jars/libs/additionnal.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/583be82af72d07745f1f4a9bd314a3b0/jetified-GmailBackground-1.2.0/jars/libs/mail.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

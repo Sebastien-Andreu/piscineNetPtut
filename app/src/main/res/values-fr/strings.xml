@@ -122,6 +122,7 @@
     <string name="updateEmployeeButton">Modifier l\'employé</string>
     <string name="deleteEmployeeButton">Supprimer l\'employé</string>
     <string name="menuDetailsPoolCustomer">Ma piscine</string>
+    <string name="forgottenPasswordSendMail">Envoyer nouveau mot de passe</string>
     <string name="create_new_employee">Créer un nouvel employé</string>
     <string name="bienvenue_sur_l_application_de_piscinenet">Bienvenue sur l\'application de PiscineNet</string>
     <string name="contact">Contact</string>
@@ -272,5 +273,4 @@
     <string name="Observation">Observation</string>
     <string name="SaveWork">Veuillez enregistrer les avancements</string>
     <string name="changer_la_langue">Changer la langue</string>
-
 </resources>
